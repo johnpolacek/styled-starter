@@ -13,7 +13,8 @@
   "dependencies": {
     "next": "latest",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "styled-system-html": "^0.1.9"
   },
   "devDependencies": {
     "babel-plugin-transform-define": "^1.3.0"
@@ -23,7 +24,11 @@
     "url": "git+https://github.com/johnpolacek/styled-starter.git"
   },
   "keywords": [
-    "react","styleguide","design-system","next.js","styled-components"
+    "react",
+    "styleguide",
+    "design-system",
+    "next.js",
+    "styled-components"
   ],
   "author": "John Polacek",
   "license": "ISC",
