@@ -2,7 +2,7 @@ import Index 	from '../src/Index'
 import Page		from '../src/components/Page'
 
 export default () => (
-	<Page>
+	<Page name="Index">
     	<Index />
     </Page>
 )
