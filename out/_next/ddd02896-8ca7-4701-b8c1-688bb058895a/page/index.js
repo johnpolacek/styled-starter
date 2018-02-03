@@ -1,0 +1,6 @@
+
+          window.__NEXT_REGISTER_PAGE('/', function() {
+            var comp = module.exports=webpackJsonp([4],{374:function(e,t,u){e.exports=u(375)},375:function(e,t,u){"use strict";function l(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var n=u(3),a=l(n),r=u(376),f=l(r),o=u(136),d=l(o);t.default=function(){return a.default.createElement(d.default,null,a.default.createElement(f.default,null))}},376:function(e,t,u){"use strict";function l(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var n=u(13),a=l(n),r=u(4),f=l(r),o=u(5),d=l(o),c=u(14),s=l(c),i=u(15),_=l(i),m=u(3),p=l(m),b=u(119),E=u(130),v=l(E),h=function(e){function t(){return(0,f.default)(this,t),(0,s.default)(this,(t.__proto__||(0,a.default)(t)).call(this))}return(0,_.default)(t,e),(0,d.default)(t,[{key:"render",value:function(){return p.default.createElement(b.Box,null,p.default.createElement(b.Text,null,"Hello World. ",p.default.createElement(v.default,{href:"/about",as:"/styled-starter/about"},p.default.createElement("a",null,"About"))))}}]),t}(m.Component);t.default=h}},[374]);
+            return { page: comp.default }
+          })
+        
