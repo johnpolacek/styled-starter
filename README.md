@@ -1,5 +1,5 @@
-#Building a Starter Kit with React, Next.js and Styled System
+# Building a Starter Kit with React, Next.js and Styled System
 
-*Get projects up and running with a design theme, built-in styleguide and test suite configuration*
+*Starter Kit with React, Next.js, Styled System and Styleguidist to get projects going with a design theme, built-in styleguide and browser testing*
 
 --
