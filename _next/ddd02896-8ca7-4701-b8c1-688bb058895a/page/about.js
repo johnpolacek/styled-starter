@@ -1,6 +1,0 @@
-
-          window.__NEXT_REGISTER_PAGE('/about', function() {
-            var comp = module.exports=webpackJsonp([5],{220:function(e,t,u){e.exports=u(221)},221:function(e,t,u){"use strict";function l(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var n=u(3),a=l(n),r=u(222),f=l(r),d=u(136),o=l(d);t.default=function(){return a.default.createElement(o.default,null,a.default.createElement(f.default,null))}},222:function(e,t,u){"use strict";function l(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var n=u(13),a=l(n),r=u(4),f=l(r),d=u(5),o=l(d),c=u(14),s=l(c),i=u(15),_=l(i),m=u(3),p=l(m),E=u(119),v=u(130),x=l(v),b=function(e){function t(){return(0,f.default)(this,t),(0,s.default)(this,(t.__proto__||(0,a.default)(t)).call(this))}return(0,_.default)(t,e),(0,o.default)(t,[{key:"render",value:function(){return p.default.createElement(E.Box,null,p.default.createElement(E.Text,null,"About us"),p.default.createElement(E.Text,null,"Back to ",p.default.createElement(x.default,{href:"/",as:"/styled-starter/"},p.default.createElement("a",null,"Home"))))}}]),t}(m.Component);t.default=b}},[220]);
-            return { page: comp.default }
-          })
-        
