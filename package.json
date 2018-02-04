@@ -7,6 +7,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "test": "mocha test/test",
     "export": "next export",
     "deploy": "git push origin master && rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
@@ -17,7 +18,10 @@
     "styled-system-html": "^0.1.9"
   },
   "devDependencies": {
-    "babel-plugin-transform-define": "^1.3.0"
+    "babel-plugin-transform-define": "^1.3.0",
+    "chai": "^4.1.2",
+    "mocha": "^5.0.0",
+    "selenium-webdriver": "^3.6.0"
   },
   "repository": {
     "type": "git",

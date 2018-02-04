@@ -12,7 +12,7 @@ class SiteNavLink extends Component {
 			    		<Text color="white">{this.props.text}</Text>
 			    	) : (
 				    	<Link href={this.props.url} as={process.env.BACKEND_URL + this.props.url}>
-				    		<A color="white" style={{'text-decoration':'none',opacity:.5}} href={this.props.url}>{this.props.text}</A>
+				    		<A color="white" style={{textDecoration:'none',opacity:.5}} href={this.props.url}>{this.props.text}</A>
 				    	</Link>	    	
 			    	)
 			    }
