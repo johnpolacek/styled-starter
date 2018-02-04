@@ -2,6 +2,15 @@ var webdriver = require('selenium-webdriver'),
     By = webdriver.By,
     until = webdriver.until;
 
+var chromeCapabilities = webdriver.Capabilities.chrome();
+//setting chrome options to start the browser fully maximized
+var chromeOptions = {
+    'args': ['--headless', '--disable-gpu']
+};
+chromeCapabilities.set('chromeOptions', chromeOptions);
+
+
+
 var test = require('selenium-webdriver/testing');
 var assert = require('assert');
 
@@ -10,7 +19,7 @@ var driver;
 test.describe( 'SiteNav' , function(){
   
     test.beforeEach(function(){
-    	driver = new webdriver.Builder().forBrowser('chrome').build();
+    	driver = new webdriver.Builder().withCapabilities(chromeCapabilities).build();
         driver.get('http://localhost:3000/');
     });
  
