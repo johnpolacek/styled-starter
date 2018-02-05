@@ -3,10 +3,13 @@ var webdriver = require('selenium-webdriver'),
     until = webdriver.until;
 
 var chromeCapabilities = webdriver.Capabilities.chrome();
+//setting chrome options to start the browser fully maximized
 var chromeOptions = {
     'args': ['--headless', '--disable-gpu']
 };
-// chromeCapabilities.set('chromeOptions', chromeOptions); // uncomment to run headless
+chromeCapabilities.set('chromeOptions', chromeOptions);
+
+
 
 var test = require('selenium-webdriver/testing');
 var assert = require('assert');
@@ -16,19 +19,7 @@ var driver;
 test.describe( 'SiteNav' , function(){
   
     test.beforeEach(function(){
-        if (process.env.SAUCE_USERNAME != undefined) {
-            driver = new webdriver.Builder()
-                .usingServer('http://'+ process.env.SAUCE_USERNAME+':'+process.env.SAUCE_ACCESS_KEY+'@ondemand.saucelabs.com:80/wd/hub')
-                .withCapabilities({
-                    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-                    build: process.env.TRAVIS_BUILD_NUMBER,
-                    username: process.env.SAUCE_USERNAME,
-                    accessKey: process.env.SAUCE_ACCESS_KEY,
-                    browserName: "chrome"
-                }).build();
-        }  else {
-            driver = new webdriver.Builder().withCapabilities(chromeCapabilities).build();
-        }
+    	driver = new webdriver.Builder().withCapabilities(chromeCapabilities).build();
         driver.get('http://localhost:3000/');
     });
  
