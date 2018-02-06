@@ -9,10 +9,10 @@ install:
 - sudo chmod +x /usr/local/share/chromedriver
 - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
 script:
-- whereis google-chrome-stable
-- whereis chromedriver
+# - whereis google-chrome-stable
+# - whereis chromedriver
 - npm install
 - npm run dev &
-- sleep 5s &
+- sleep 10s
 - npm run test
 - killall node
