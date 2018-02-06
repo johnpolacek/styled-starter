@@ -13,5 +13,6 @@ script:
 - whereis chromedriver
 - npm install
 - npm run dev &
+- npm sleep 5s &
 - npm run test
 - killall node
