@@ -1,5 +1,5 @@
 import About 	from '../src/About'
-import Page		from '../src/components/Page'
+import Page		from '../src/containers/Page'
 
 export default () => (
 	<Page>
