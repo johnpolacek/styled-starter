@@ -12,7 +12,7 @@ script:
 # - whereis google-chrome-stable
 # - whereis chromedriver
 - npm install
-- npm run dev &
-- sleep 5s
+- npm run build
+- npm start &
 - npm run test
 - killall node
