@@ -5,7 +5,7 @@ import Head		from './Head'
 
 export default (props) => (
 	<div>
-	    <Head />
+	    <Head prefix={props.prefix} />
 	    <ThemeProvider theme={theme}>
     		{props.children}
     	</ThemeProvider>
