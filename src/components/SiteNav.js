@@ -14,7 +14,7 @@ class SiteNav extends Component {
 	    			<SiteNavLink url="/getting-started" isCurrent={this.props.current === 'Getting Started'}>Getting Started</SiteNavLink>
 	    			<SiteNavLink url="/styleguide" isCurrent={this.props.current === 'Styleguide'}>Styleguide</SiteNavLink>
 	    			<Box ml="auto">
-	    				<SiteNavLinkExternal url="https://github.com/johnpolacek/styled-starter"><Img position="relative" style={{top:'3px',left:'-1px'}} src="./static/images/github.svg" height="18" alt="Octocat" /> Github</SiteNavLinkExternal>
+	    				<SiteNavLinkExternal url="https://github.com/johnpolacek/styled-starter"><Img position="relative" style={{top:'3px',left:'-1px'}} src="/static/images/github.svg" height="18" alt="Octocat" /> Github</SiteNavLinkExternal>
 	    			</Box>
 		    	</Flex>
 	    	</Nav>
