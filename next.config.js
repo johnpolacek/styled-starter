@@ -5,12 +5,12 @@
 const debug = process.env.NODE_ENV !== 'production'
 
 module.exports = {
-  exportPathMap: function () {
-    return {
-      '/': { page: '/' },
-      '/getting-started': { page: '/getting-started' },
-      '/styleguide': { page: '/styleguide' }
-    }
-  },
-  assetPrefix: '/styled-starter/',
+  	exportPathMap: function () {
+		return {
+			'/': { page: '/' },
+			'/getting-started': { page: '/getting-started' },
+			'/styleguide': { page: '/styleguide' }
+		}
+  	},
+  	assetPrefix: !debug ? '/styled-starter/' : ''
 }
