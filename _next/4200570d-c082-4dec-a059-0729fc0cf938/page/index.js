@@ -1,6 +1,0 @@
-
-          window.__NEXT_REGISTER_PAGE('/', function() {
-            var comp = module.exports=webpackJsonp([4],{349:function(e,t,u){e.exports=u(350)},350:function(e,t,u){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var l=u(2),a=n(l),r=u(351),d=n(r),f=u(119),o=n(f);t.default=function(){return a.default.createElement(o.default,{name:"Index"},a.default.createElement(d.default,null))}},351:function(e,t,u){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var l=u(9),a=n(l),r=u(4),d=n(r),f=u(5),o=n(f),c=u(10),i=n(c),s=u(11),m=n(s),_=u(2),p=n(_),x=u(39),E=u(112),v=n(E),h=u(118),M=n(h),b=u(54),w=(n(b),function(e){function t(){return(0,d.default)(this,t),(0,i.default)(this,(t.__proto__||(0,a.default)(t)).call(this))}return(0,m.default)(t,e),(0,o.default)(t,[{key:"render",value:function(){return p.default.createElement(x.Box,null,p.default.createElement(v.default,{current:"Index"}),p.default.createElement(M.default,null),p.default.createElement(x.Box,{p:5,mw:"1200px",mx:"auto"},p.default.createElement(x.Text,null,"Index content will go here...")))}}]),t}(_.Component));t.default=w}},[349]);
-            return { page: comp.default }
-          })
-        
