@@ -6,7 +6,7 @@ import Link from 'next/link'
 class SiteNavLink extends Component {
 	render() {
 	    return (
-		    <Box p={3}>
+		    <Box w={this.props.url === '/' ? [1,'auto'] : 'auto'} p={[2,3]}>
 			    {
 			    	this.props.isCurrent ? (
 			    		<Text color="white">{this.props.text}</Text>

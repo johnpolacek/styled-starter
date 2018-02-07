@@ -7,10 +7,10 @@ import SiteNavLink from './SiteNavLink'
 class SiteNav extends Component {
 	render() {
 	    return (
-	    	<Nav bg="green7" align='center' px={3} position="relative" style={{zIndex:9999}}>
+	    	<Nav bg="green7" align='left' px={[2,0,2]} position="relative" style={{zIndex:9999}}>
 	    		<Flex wrap="wrap">
 		    		<SiteNavLink url="/" text="Styled Starter" isCurrent={this.props.current === 'Index'} />
-		    		<SiteNavLink url="/about" text="About" isCurrent={this.props.current === 'About'} />
+		    		<SiteNavLink url="/getting-started" text="Getting Started" isCurrent={this.props.current === 'Getting Started'} />
 		    		<SiteNavLink url="/styleguide" text="Styleguide" isCurrent={this.props.current === 'Styleguide'} />
 		    	</Flex>
 	    	</Nav>

@@ -14,7 +14,7 @@ class Index extends Component {
 			<Box>
 				<SiteNav current="Index" />
 				<SiteHeader />
-				<Box p={5} mw="1200px" mx="auto">
+				<Box p={[4,5]} mw="1200px" mx="auto">
 					<Text>Index content will go here...</Text>
 				</Box>
 			</Box>

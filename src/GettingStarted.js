@@ -4,7 +4,7 @@ import SiteNav from './components/SiteNav'
 import SiteHeader from './components/SiteHeader'
 
 
-class About extends Component {
+class GettingStarted extends Component {
 	constructor() {
 		super();
 	}
@@ -12,14 +12,14 @@ class About extends Component {
 	render() {
 		return (
 			<Box>
-				<SiteNav current="About" />
+				<SiteNav current="Getting Started" />
 				<SiteHeader />
-				<Box p={5} mw="1200px" mx="auto">
-					<Text>About content will go here...</Text>
+				<Box p={[4,5]} mw="1200px" mx="auto">
+					<Text>Getting Started content will go here...</Text>
 				</Box>
 			</Box>
 		);
 	}
 }
 
-export default About;
+export default GettingStarted;

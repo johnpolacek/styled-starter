@@ -29,21 +29,21 @@ test.describe( 'SiteNav' , function(){
  
     test.it('can navigate', function() {
         console.log('\n      - active nav is home');
-        shouldNotFindXpath("//nav//p[text()='About']");
+        shouldNotFindXpath("//nav//p[text()='Getting Started']");
         verifyXpath("//nav//p[text()='Styled Starter']");
         
-        console.log('      - click about link\n')
-        clickXpath("//nav//a[@href='/about' and text()='About']");
+        console.log('      - click Getting Started link\n')
+        clickXpath("//nav//a[@href='/getting-started' and text()='Getting Started']");
         waitForPageLoad();
         
-        console.log('      - active nav is about\n')
-        verifyXpath("//nav//p[text()='About']");
+        console.log('      - active nav is Getting Started\n')
+        verifyXpath("//nav//p[text()='Getting Started']");
 
         console.log('      - click home link\n')
         clickXpath("//nav//a[@href='/' and text()='Styled Starter']");
 
         console.log('      - active nav is home');
-        shouldNotFindXpath("//nav//p[text()='About']");
+        shouldNotFindXpath("//nav//p[text()='Getting Started']");
         verifyXpath("//nav//p[text()='Styled Starter']");
     });
  
