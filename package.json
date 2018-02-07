@@ -12,10 +12,12 @@
     "deploy": "git push origin master && rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
+    "catalog": "^3.2.4",
     "grid-styled": "^3.0.0",
     "next": "latest",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
+    "path-match": "^1.2.4",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "styled-components": "^3.1.6",
     "styled-system-html": "^0.1.9"
   },
