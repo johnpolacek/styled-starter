@@ -12,5 +12,5 @@ module.exports = {
       '/styleguide': { page: '/styleguide' }
     }
   },
-  assetPrefix: isProduction ? '/styled-starter/' : '',
+  assetPrefix: '/styled-starter/',
 }
