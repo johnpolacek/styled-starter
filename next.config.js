@@ -9,7 +9,7 @@ module.exports = {
 		return {
 			'/': { page: '/' },
 			'/getting-started': { page: '/getting-started' },
-			'/styleguide': { page: '/styleguide' }
+			'/design': { page: '/design' }
 		}
   	},
   	assetPrefix: !debug ? '/styled-starter/' : ''
