@@ -5,7 +5,7 @@ import { Box, Text, A } from 'styled-system-html';
 class SiteNavLinkExternal extends Component {
 	render() {
 	    return (
-		    <Box p={[2,3]}>
+		    <Box display="inline-block" p={[2,3]}>
 			    <A color="white" style={{textDecoration:'none',opacity:.5}} href={this.props.url}>{this.props.children}</A>
 			</Box>
 	    );
