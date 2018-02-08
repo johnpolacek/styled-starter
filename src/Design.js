@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Box, Text } from 'styled-system-html';
 import SiteNav from './components/SiteNav'
-import Introduction from './styleguide/Introduction'
+import Introduction from './design/Introduction'
 import ReactDOM from 'react-dom';
 import {Catalog} from 'catalog';
 import theme from './_Theme';
 
 // See catalog/DefaultTheme.js - https://github.com/interactivethings/catalog/blob/master/src/DefaultTheme.js
-const styleguideTheme = {
+const designTheme = {
 	// Colors
 	background: theme.colors.gray0 || '#F2F2F2',
 	textColor: theme.colors.black,
@@ -52,7 +52,7 @@ const styleguideTheme = {
 };
 
 
-class Styleguide extends Component {
+class Design extends Component {
 	constructor() {
 		super();
 	}
@@ -61,29 +61,29 @@ class Styleguide extends Component {
 		ReactDOM.render(
 		  	<Catalog
 			    title='Styled Starter Design System'
-			    theme={styleguideTheme}
+			    theme={designTheme}
 			    pages={[
 			      {
 			        path: '/',
 			        title: 'Introduction',
-			        content: require('./styleguide/Introduction')
+			        content: require('./design/Introduction')
 			      },
 			      {
 			        path: '/color',
 			        title: 'Color',
-			        content: require('./styleguide/Color')
+			        content: require('./design/Color')
 			      }
 			    ]}
 			/>,
-			document.getElementById('styleguide-container')
+			document.getElementById('design-container')
 		)
 	}
 
 	render() {
 		return (
 			<Box>
-				<SiteNav current="Styleguide" />
-				<div id="styleguide-container" />
+				<SiteNav current="Design" />
+				<div id="design-container" />
 			</Box>
 		);
 	}
@@ -91,4 +91,4 @@ class Styleguide extends Component {
 
 
 
-export default Styleguide;
+export default Design;
