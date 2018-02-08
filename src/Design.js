@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Box, Text } from 'styled-system-html';
-import SiteNav from './components/SiteNav'
 import Introduction from './design/Introduction'
 import ReactDOM from 'react-dom';
 import {Catalog} from 'catalog';
@@ -82,7 +81,6 @@ class Design extends Component {
 	render() {
 		return (
 			<Box>
-				<SiteNav current="Design" />
 				<div id="design-container" />
 			</Box>
 		);
