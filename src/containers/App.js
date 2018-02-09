@@ -1,31 +1,30 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
-import { Box, Text } from 'styled-system-html';
+import { Box, Text, H3 } from 'styled-system-html';
 import theme 	from '../_Theme';
 import Head		from './Head'
 import SiteNav from '../components/SiteNav'
+import EditThemeModal from '../components/EditThemeModal'
 
 class App extends Component {
 
 	constructor() {
 		super();
-		this.state = {theme:theme};
-
-		this.onEditTheme = this.onEditTheme.bind(this);
+		this.state = {theme:theme, editTheme:false};
 	}
 
-	onEditTheme() {
-		alert('Theme editing... coming soon!');
-	}
-	
 	render() {
 	    return (
 	    	<Box>
 			    <Head prefix={this.props.prefix} />
 			    <ThemeProvider theme={this.state.theme || theme}>
 			    	<Box>
-						<SiteNav onEditTheme={this.onEditTheme} current={this.props.name} />
+			    		{
+			    			this.state.editTheme &&
+							<EditThemeModal onClose={() => this.setState({editTheme:false})} />
+			    		}
+						<SiteNav onEditTheme={() => this.setState({editTheme:true})} current={this.props.name} />
 						<Box>
 							{this.props.children}
 						</Box>

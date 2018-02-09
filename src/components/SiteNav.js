@@ -23,6 +23,7 @@ class SiteNav extends Component {
 	    				<SiteNavLinkExternal url="https://github.com/johnpolacek/styled-starter"><Img position="relative" style={{top:'3px',left:'-1px'}} src={(this.props.current === 'Index' ? '.' : '..') + '/static/images/github.svg'} height="18" alt="Octocat" /> Github</SiteNavLinkExternal>
 	    			</Box>
 		    	</Flex>
+		    	
 	    	</Nav>
 	    );
 	}
