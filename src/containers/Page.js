@@ -5,6 +5,8 @@ import Head		from './Head'
 import { Box, Text } from 'styled-system-html';
 import SiteNav from '../components/SiteNav'
 
+//  <SiteNav current={props.name} onThemeChange={this.onThemeChange} />
+
 export default (props) => (
 	<div>
 	    <Head prefix={props.prefix} />
