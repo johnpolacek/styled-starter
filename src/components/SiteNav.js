@@ -8,8 +8,8 @@ import SiteNavLinkExternal from './SiteNavLinkExternal'
 class SiteNav extends Component {
 	render() {
 	    return (
-	    	<Box bg="base">
-	    		<Nav bg="rgba(0,0,0,.2)" align='left' px={[2,0,2]} position="relative" style={{zIndex:9999}}>
+	    	<Box bg="base" position="relative" style={{zIndex:9999}}>
+	    		<Nav bg="rgba(0,0,0,.2)" align='left' px={[2,0,2]}>
 			    	<Box position="absolute" style={{top:0,right:0}} mt={[4,3]} pt={4} pr={2}>
 						<Text onClick={this.props.onEditTheme} style={{cursor:'pointer'}} display="inline-block" f={1} pr={3} color="white">{this.props.currentTheme} <Button fontWeight="bold" ml={1} px={1} py='2px' f={0} color="blue">edit</Button></Text>
 						<Box display="inline-block" p={3} mt={2}>
