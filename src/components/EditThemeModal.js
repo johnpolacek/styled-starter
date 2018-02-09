@@ -6,7 +6,7 @@ import { Box, H3, Text } from 'styled-system-html';
 const styles = {
 	overlay: {
 		zIndex: '99999',
-		background: 'rgba(255,255,255,.95)'
+		background: 'rgba(234, 234, 234, 0.95)'
 	},
   	content : {
 		top : '50%',
