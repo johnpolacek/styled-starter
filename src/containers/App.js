@@ -21,7 +21,7 @@ class App extends Component {
 
 	render() {
 	    return (
-	    	<Box>
+	    	<Box style={{fontFamily:this.state.theme.fontFamilies.sans}}>
 			    <Head prefix={this.props.prefix} />
 			    <ThemeProvider theme={this.state.theme || theme}>
 			    	<Box>
@@ -35,6 +35,10 @@ class App extends Component {
 						</Box>
 					</Box>
 		    	</ThemeProvider>
+		    	{
+		    		this.state.theme.webfonts && this.state.theme.webfonts.sans && 
+					<link key={this.state.theme.webfonts.sans} rel='stylesheet' href={"https://fonts.googleapis.com/css?family="+this.state.theme.webfonts.sans+":100,200,300,400,500,600,700,800,900"} />
+				}
 		  	</Box>
 	    );
 	}
