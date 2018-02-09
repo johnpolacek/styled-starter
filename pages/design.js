@@ -1,4 +1,4 @@
-import Design 	from '../src/Design'
+import Design 	from '../src/pages/Design'
 import Page			from '../src/containers/Page'
 
 export default class extends React.Component {

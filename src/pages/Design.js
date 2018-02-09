@@ -3,7 +3,7 @@ import { Box, Text } from 'styled-system-html';
 import Introduction from './design/Introduction'
 import ReactDOM from 'react-dom';
 import {Catalog} from 'catalog';
-import theme from './_Theme';
+import theme from '../_Theme';
 
 // See catalog/DefaultTheme.js - https://github.com/interactivethings/catalog/blob/master/src/DefaultTheme.js
 const designTheme = {

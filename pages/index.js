@@ -1,4 +1,4 @@
-import Index from '../src/Index'
+import Index from '../src/pages/Index'
 import Page	from '../src/containers/Page'
 
 export default () => (

@@ -1,4 +1,4 @@
-import GettingStarted from '../src/GettingStarted'
+import GettingStarted from '../src/pages/GettingStarted'
 import Page	from '../src/containers/Page'
 
 export default () => (

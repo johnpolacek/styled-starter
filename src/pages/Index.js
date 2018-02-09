@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Box, Text } from 'styled-system-html';
-import SiteHeader from './components/SiteHeader'
+import SiteHeader from '../components/SiteHeader'
 
 
-class GettingStarted extends Component {
+class Index extends Component {
 	constructor() {
 		super();
 	}
@@ -13,11 +13,11 @@ class GettingStarted extends Component {
 			<Box>
 				<SiteHeader />
 				<Box p={[4,5]} mw="1200px" mx="auto">
-					<Text>Getting Started content will go here...</Text>
+					<Text>Index content will go here...</Text>
 				</Box>
 			</Box>
 		);
 	}
 }
 
-export default GettingStarted;
+export default Index;
