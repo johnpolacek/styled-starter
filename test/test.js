@@ -63,7 +63,7 @@ function verifyXpath(xpath) {
         return driver.findElements(webdriver.By.xpath(xpath)).then(function(elements) {
             return elements[0];
         });
-    }, 2000, 'Failed to find '+xpath+' after 1 second');
+    }, 2000, 'Failed to find '+xpath+' after 2 seconds');
 }
 
 function clickXpath(xpath) {
@@ -72,7 +72,7 @@ function clickXpath(xpath) {
             driver.findElement(By.xpath(xpath)).click();
             return element;
         });
-    }, 2000, 'Failed to find '+xpath+' after 1 second');
+    }, 2000, 'Failed to find '+xpath+' after 2 seconds');
 }
 
 function waitForPageLoad() {
