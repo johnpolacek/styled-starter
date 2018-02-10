@@ -4,7 +4,7 @@ import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
 
 
-class GettingStarted extends Component {
+class About extends Component {
 	constructor() {
 		super();
 	}
@@ -22,4 +22,4 @@ class GettingStarted extends Component {
 	}
 }
 
-export default GettingStarted;
+export default About;

@@ -18,7 +18,7 @@ class SiteNav extends Component {
 					</Box>
 		    		<Flex wrap="wrap">
 		    			<SiteNavLink url="/" isCurrent={this.props.current === 'Index'}>Styled Starter</SiteNavLink>
-		    			<SiteNavLink url="/getting-started" isCurrent={this.props.current === 'Getting Started'}>Getting Started</SiteNavLink>
+		    			<SiteNavLink url="/about" isCurrent={this.props.current === 'About'}>About</SiteNavLink>
 		    			<SiteNavLink url="/design" isCurrent={this.props.current === 'Design'}>Design</SiteNavLink>
 		    			<Box ml="auto">
 		    				<SiteNavLinkExternal url="https://github.com/johnpolacek/styled-starter">
