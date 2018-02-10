@@ -16,7 +16,10 @@ var assert = require('assert');
 
 var driver;
 
-test.describe( 'SiteNav' , function(){
+test.describe( 'SiteNav' , function() {
+
+    // longer timeout for selenium tests
+    this.timeout(10000);
   
     test.beforeEach(function(){
         driver = new webdriver.Builder().withCapabilities(chromeCapabilities).build();
@@ -60,7 +63,7 @@ function verifyXpath(xpath) {
         return driver.findElements(webdriver.By.xpath(xpath)).then(function(elements) {
             return elements[0];
         });
-    }, 1000, 'Failed to find '+xpath+' after 1 second');
+    }, 2000, 'Failed to find '+xpath+' after 1 second');
 }
 
 function clickXpath(xpath) {
@@ -69,7 +72,7 @@ function clickXpath(xpath) {
             driver.findElement(By.xpath(xpath)).click();
             return element;
         });
-    }, 1000, 'Failed to find '+xpath+' after 1 second');
+    }, 2000, 'Failed to find '+xpath+' after 1 second');
 }
 
 function waitForPageLoad() {
