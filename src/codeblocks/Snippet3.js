@@ -3,16 +3,16 @@ import { ghcolors } from 'react-syntax-highlighter/styles/prism';
 import { Box } from 'styled-system-html';
 
 
-const codeString = `// pages/newpage.js
-
-import NewPage from '../src/pages/NewPage'
-import Page	from '../src/containers/Page'
-
-export default () => (
-	<Page name="NewPage" prefix="..">
-    	<NewPage />
-    </Page>
-)
+const codeString = `module.exports = {
+  	exportPathMap: function () {
+		return {
+			'/': { page: '/' },
+			'/about': { page: '/about' },
+			'/newpage': { page: '/newpage' }, // <-- our new route!
+			'/design': { page: '/design' }
+		}
+  	},
+  	...
 `;
 
 export default () => (

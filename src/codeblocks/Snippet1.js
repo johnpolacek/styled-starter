@@ -3,8 +3,10 @@ import { ghcolors } from 'react-syntax-highlighter/styles/prism';
 import { Box } from 'styled-system-html';
 
 
-const codeString = `import React, { Component } from 'react';
-import { Box, H2, Text, A } from 'styled-system-html';
+const codeString = `// src/pages/NewPage.js
+
+import React, { Component } from 'react';
+import { Box } from 'styled-system-html';
 import SiteFooter from '../components/SiteFooter'
 
 class NewPage extends Component {
@@ -16,8 +18,9 @@ class NewPage extends Component {
 		return (
 			<Box>
 				<Box p={6} mw="1200px" mx="auto" align="center">
-					<H2 pt={5} pb={4}>New Page</H2>
-					<Text pb={5}>This is a new page</Text>
+					{
+						/* Page content will go here */ 
+					}
 				</Box>
 				<SiteFooter />
 			</Box>
