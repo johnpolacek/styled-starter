@@ -31,7 +31,7 @@ class App extends Component {
 			    		}
 						<SiteNav currentTheme={this.state.currentTheme} onEditTheme={() => this.setState({editTheme:true})} current={this.props.name} />
 						<Box>
-							{this.props.children}
+							{React.cloneElement(this.props.children, { theme: this.state.theme })}
 						</Box>
 					</Box>
 		    	</ThemeProvider>
