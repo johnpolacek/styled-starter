@@ -3,7 +3,7 @@ import { Box, Span } from 'styled-system-html';
 import Para from '../../components/Para'
 import Link from '../../components/Link'
 
-export default () => (
+export default (props) => (
 	<Box py={5} px={3}>
 		<Box py={5}>
 			<Box pt={3} px={2} mw="960px">

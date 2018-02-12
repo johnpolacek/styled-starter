@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Box, Text } from 'styled-system-html';
 import Introduction from './design/Introduction'
 import Color from './design/Color'
+import Typography from './design/Typography'
 import ReactDOM from 'react-dom';
 import {Catalog} from 'catalog';
 import theme from '../_Theme';
@@ -69,16 +70,25 @@ class Design extends Component {
 			    title='Styled Starter Design System'
 			    theme={catalogTheme}
 			    pages={[
-			      {
-			        path: '/',
-			        title: 'Introduction',
-			        content: require('./design/Introduction')
-			      },
-			      {
-			        path: '/color',
-			        title: 'Color',
-			        content: () => {
+			      	{
+				        path: '/',
+				        title: 'Introduction',
+				        content: () => {
+					    	return <Introduction theme={this.state.theme} />
+					    }
+					},
+					{
+				        path: '/color',
+				        title: 'Color',
+				        content: () => {
 					    	return <Color theme={this.state.theme} />
+					    }
+					},
+					{
+				        path: '/typography',
+				        title: 'Typography',
+				        content: () => {
+					    	return <Typography theme={this.state.theme} />
 					    }
 					}
 			    ]}

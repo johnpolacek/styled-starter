@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Flex, Box, H3, Text } from 'styled-system-html';
-import {Page, ReactSpecimen, ColorPaletteSpecimen} from 'catalog';
 
 export default (props) => (
 	<Box py={5} px={3}>
