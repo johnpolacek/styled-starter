@@ -1,6 +1,6 @@
 {
   "name": "styled-starter",
-  "version": "0.0.1-wip",
+  "version": "0.1.0",
   "description": "Starter Kit with React, Next.js and Styled System to get projects up and running with a design theme, built-in styleguide and test suite configuration",
   "main": "src/App.js",
   "scripts": {

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Box, Text } from 'styled-system-html';
 import Introduction from './design/Introduction'
+import Color from './design/Color'
 import ReactDOM from 'react-dom';
 import {Catalog} from 'catalog';
 import theme from '../_Theme';
@@ -16,6 +17,8 @@ class Design extends Component {
 	}
 
 	renderCatalog() {
+		console.dir(this.state.theme);
+
 		const catalogTheme = {
 			// Colors
 			background: this.state.theme.colors.gray0 || '#F2F2F2',
@@ -74,8 +77,10 @@ class Design extends Component {
 			      {
 			        path: '/color',
 			        title: 'Color',
-			        content: require('./design/Color')
-			      }
+			        content: () => {
+					    	return <Color theme={this.state.theme} />
+					    }
+					}
 			    ]}
 			/>,
 			document.getElementById('design-container')
