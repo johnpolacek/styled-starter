@@ -4,7 +4,7 @@ import { Box, Text } from 'styled-system-html';
 import Introduction from './design/Introduction'
 import Color from './design/Color'
 import Typography from './design/Typography'
-import Elements from './design/Elements'
+import Components from './design/Components'
 import ReactDOM from 'react-dom';
 import {Catalog} from 'catalog';
 import theme from '../_Theme';
@@ -93,10 +93,10 @@ class Design extends Component {
 					    }
 					},
 					{
-				        path: '/elements',
-				        title: 'Elements',
+				        path: '/components',
+				        title: 'Components',
 				        content: () => {
-					    	return <Elements theme={this.state.theme} />
+					    	return <Components theme={this.state.theme} />
 					    }
 					}
 			    ]}
