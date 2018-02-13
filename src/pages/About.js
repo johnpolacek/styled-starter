@@ -17,7 +17,7 @@ class About extends Component {
 		return (
 			<Box>
 				<SiteHeader />
-				<Box p={[4,5]} mw="1000px" mx="auto">
+				<Box p={[4,5]} mw="960px" mx="auto">
 					<Section>
 						<Para>Styled Starter is built on top of <Link href="https://github.com/zeit/next.js">Next.js</Link> and <Link href="http://jxnblk.com/styled-system/">Styled System</Link>, using <Link href="https://www.catalog.style/">Catalog</Link> for the styleguide.</Para>
 					</Section>

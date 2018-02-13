@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { ThemeProvider } from 'styled-components';
 import { Flex, Box, H3, Text } from 'styled-system-html';
 
 export default (props) => (
-	<Box py={5} px={3}>
-		<Box py={5}>
-    		<Box p={2}>
+	<ThemeProvider theme={props.theme}>
+		<Box p={4} mx={1}>
+			<Box pt={3} px={2} mw="960px">
     			<H3 py={2}>Color Palette</H3>
 				<Flex wrap="wrap">{
 					Object.keys(props.theme.colors).map(
@@ -20,5 +21,5 @@ export default (props) => (
 				</Flex>
     		</Box>
     	</Box>
-	</Box>
+	</ThemeProvider>
 )
