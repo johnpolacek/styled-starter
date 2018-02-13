@@ -2,16 +2,25 @@ import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Flex, Box, H1, H2, H3, H4, H5, H6, Text, Code, Em, Strong, Small, U, Del } from 'styled-system-html';
 import Section from '../../components/Section'
+import Heading from '../../components/Heading'
 import Link from '../../components/Link'
-import {CodeSpecimen} from 'catalog';
+import CodeSpecimen from '../../components/CodeSpecimen'
 import * as snippets from '../../snippets'
+import {
+  LiveProvider,
+  LiveEditor,
+  LiveError,
+  LivePreview
+} from 'react-live'
+
+const scope = { Flex, Box, H1, H2, H3, H4, H5, H6, Text, Code, Em, Strong, Small, U, Del, Link };
 
 export default (props) => (
 	<ThemeProvider theme={props.theme}>
 		<Box p={4} mx={1}>
 			<Box pt={3} px={2} mw="960px">
 				<Section>
-	    			<H3 pt={2}>Font</H3>
+	    			<Heading>Font</Heading>
 	    			<Text f={0} color="gray">{props.theme.font}</Text>
 	    			<Text pt={3} f={5}>The quick brown fox jumps over the lazy dog.</Text>
 	    			<Flex wrap="wrap" pt={2}>
@@ -49,7 +58,7 @@ export default (props) => (
 	    		</Section>
 
 	    		<Section>
-	    			<H3>Type Scale</H3>
+	    			<Heading>Type Scale</Heading>
 	    			<Flex wrap="wrap">
 	    				{
 	    					props.theme.fontSizes.map((size) => {
@@ -73,39 +82,25 @@ export default (props) => (
 	    		</Section>
 				
 	    		<Section>
-	    			<H3>Headings</H3>
-	    			<Flex wrap="wrap">
-	    				<Box w={1/3}>
-		    				<CodeSpecimen lang="jsx">{snippets.headings}</CodeSpecimen>
-						</Box>
-						<Box pt={2} pl={4} w={1/2}>
-		    				<H1 f={6}>Heading 1</H1>
-							<H2 f={5}>Heading 2</H2>
-							<H3 f={4}>Heading 3</H3>
-							<H4 f={3}>Heading 4</H4>
-							<H5 f={2}>Heading 5</H5>
-							<H6 f={1}>Heading 6</H6>
-						</Box>
-	    			</Flex>
+	    			<Heading>Headings</Heading>
+	    			<CodeSpecimen code={`<H1 f={6}>Heading 1</H1>`} scope={scope} />
+					<CodeSpecimen code={`<H2 f={5}>Heading 2</H2>`} scope={scope} />
+					<CodeSpecimen code={`<H3 f={4}>Heading 3</H3>`} scope={scope} />
+					<CodeSpecimen code={`<H4 f={3}>Heading 4</H4>`} scope={scope} />
+					<CodeSpecimen code={`<H5 f={2}>Heading 5</H5>`} scope={scope} />
+					<CodeSpecimen code={`<H6 f={1}>Heading 6</H6>`} scope={scope} />
 	    		</Section>
 	    		
 	    		<Section>
-					<H3 pt={3}>Text</H3>
-					<Flex wrap="wrap">
-	    				<Box w={1/3}>
-		    				<CodeSpecimen lang="jsx">{snippets.text}</CodeSpecimen>
-						</Box>
-						<Box pt={4} pl={4} w={1/2}>
-		    				<Text>A text element</Text>
-		    				<Link href="#">A link</Link><br/>
-		    				<Code>// Some code</Code><br/>
-		    				<Em>Em</Em><br/>
-							<Strong>Strong</Strong><br/>
-							<Small>Small</Small><br/>
-							<U>Underline</U><br/>
-							<Del>Del</Del><br/>
-						</Box>
-	    			</Flex>
+					<Heading>Text</Heading>
+					<CodeSpecimen code={`<Text>A text element</Text>`} scope={scope} />
+    				<CodeSpecimen code={`<Link href="#">A link</Link>`} scope={scope} />
+    				<CodeSpecimen code={`<Code>// Some code</Code>`} scope={scope} />
+    				<CodeSpecimen code={`<Em>Em</Em>`} scope={scope} />
+					<CodeSpecimen code={`<Strong>Strong</Strong>`} scope={scope} />
+					<CodeSpecimen code={`<Small>Small</Small>`} scope={scope} />
+					<CodeSpecimen code={`<U>Underline</U>`} scope={scope} />
+					<CodeSpecimen code={`<Del>Del</Del>`} scope={scope} />
 	    		</Section>
 			</Box>
 		</Box>
