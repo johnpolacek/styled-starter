@@ -13,13 +13,16 @@ export default (props) => (
 		<Box p={4} mx={1}>
 			<Box pt={3} px={2} mw="960px">
 				<Section>
-					<Text pt={2}>Use <Link href="http://jxnblk.com/styled-system/">Styled System</Link> primitives as building blocks for your own React Components or from an existing library.</Text>
-					<UL>
-						<LI><Link href="http://jxnblk.com/rebass/">Rebass</Link></LI>
-						<LI><Link href="https://github.com/jxnblk/grid-styled">Grid Styled</Link></LI>
-						<LI><Link href="https://github.com/jxnblk/system-components">System Components</Link></LI>
-						<LI><Link href="https://johnpolacek.github.io/styled-system-html/">Styled System HTML</Link></LI>
-					</UL>
+					<Section>
+						<Heading>Cards</Heading>
+						<Box w={1/4} bg="white" overflow="hidden" borderRadius="8px" borderColor="rgba(0,0,0,.1)" borderWidth="1px">
+							<Image style={{display:'block'}} m={0} w={1} src="https://unsplash.it/g/270/270" alt="A placeholder image from Unsplash" />
+							<Box p={3}>
+								<H3 color="base" pb={2}>Title</H3>
+								<Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+							</Box>
+						</Box>
+					</Section>
 				</Section>
     		</Box>
     	</Box>

@@ -5,6 +5,8 @@ import Introduction from './design/Introduction'
 import Color from './design/Color'
 import Typography from './design/Typography'
 import Components from './design/Components'
+import Buttons from './design/Buttons'
+import Cards from './design/Cards'
 import ReactDOM from 'react-dom';
 import {Catalog} from 'catalog';
 import theme from '../_Theme';
@@ -93,12 +95,31 @@ class Design extends Component {
 					    }
 					},
 					{
-				        path: '/components',
-				        title: 'Components',
-				        content: () => {
-					    	return <Components theme={this.state.theme} />
-					    }
-					}
+						title: 'Components',
+						pages: [
+							{
+								path: '/overview',
+						        title: 'Overview',
+						        content: () => {
+							    	return <Components theme={this.state.theme} />
+							    }
+							},
+							{
+								path: '/buttons',
+						        title: 'Buttons',
+						        content: () => {
+							    	return <Buttons theme={this.state.theme} />
+							    }
+							},
+							{
+								path: '/cards',
+						        title: 'Cards',
+						        content: () => {
+							    	return <Cards theme={this.state.theme} />
+							    }
+							},
+						]
+				    }
 			    ]}
 			/>,
 			document.getElementById('design-container')

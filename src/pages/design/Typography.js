@@ -5,13 +5,6 @@ import Section from '../../components/Section'
 import Heading from '../../components/Heading'
 import Link from '../../components/Link'
 import CodeSpecimen from '../../components/CodeSpecimen'
-import * as snippets from '../../snippets'
-import {
-  LiveProvider,
-  LiveEditor,
-  LiveError,
-  LivePreview
-} from 'react-live'
 
 const scope = { Flex, Box, H1, H2, H3, H4, H5, H6, Text, Code, Em, Strong, Small, U, Del, Link };
 
