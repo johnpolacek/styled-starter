@@ -20,7 +20,7 @@ export default (props) => (
 						<Section>
 							<Text pb={2}>With image</Text>
 							<CodeSpecimen f="14px" w={2/3} code={`<Card 
-	title="Title" 
+	title="Card Title" 
 	imageSrc="https://unsplash.it/g/270/270" 
 	imageAlt="A placeholder image from Unsplash">
 	<Text>
@@ -34,7 +34,7 @@ export default (props) => (
 
 						<Section>
 							<Text pb={2}>No image</Text>
-							<CodeSpecimen f="14px" w={2/3} code={`<Card title="Title">
+							<CodeSpecimen f="14px" w={2/3} code={`<Card title="Card Title">
 	<Text>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit sed
 		vivamus risus metus vero integer imperdiet aenean dolor. 
@@ -51,7 +51,7 @@ export default (props) => (
 								Object.keys(props.theme.colors).map(
 									(color) => { 
 										if (color != 'base' && color != 'white' && color != 'black' && color != 'gray' && !(/\d/.test(color))) {
-											return <Box pb={4}><CodeSpecimen f="14px" w={2/3} code={`<Card color="`+color+`" title="Title">
+											return <Box pb={4}><CodeSpecimen f="14px" w={2/3} code={`<Card color="`+color+`" title="Card Title">
 	<Text>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit sed
 		vivamus risus metus vero integer imperdiet aenean dolor. 
