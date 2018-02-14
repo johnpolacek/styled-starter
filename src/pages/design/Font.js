@@ -49,52 +49,6 @@ export default (props) => (
 						</Box>
 					</Flex>
 	    		</Section>
-
-	    		<Section>
-	    			<Heading>Type Scale</Heading>
-	    			<Flex wrap="wrap">
-	    				{
-	    					props.theme.fontSizes.map((size) => {
-	    						return (
-	    							<Box key={'f'+size} w={[1/2,1/4,1/5]} style={{minHeight:'140px'}} pb={1} pr={1} align="center">
-										<Box bg="white" borderWidth="1px" borderColor="#eee" style={{height:'100%'}}>
-											<Box borderWidth="1px" borderColor="#eee" borderBottom py={1} px={3}>
-												<Text f={0} color='gray'>{size}</Text>
-											</Box>
-											<Flex align='center' style={{height:'75%'}}>
-												<Box mx='auto'>
-													<Text py={1} px={3} f={size}>Aa</Text>
-												</Box>
-											</Flex>
-										</Box>
-									</Box>
-	    						)
-	    					})
-	    				}
-	    			</Flex>
-	    		</Section>
-				
-	    		<Section>
-	    			<Heading>Headings</Heading>
-	    			<CodeSpecimen code={`<H1 f={6}>Heading 1</H1>`} scope={scope} />
-					<CodeSpecimen code={`<H2 f={5}>Heading 2</H2>`} scope={scope} />
-					<CodeSpecimen code={`<H3 f={4}>Heading 3</H3>`} scope={scope} />
-					<CodeSpecimen code={`<H4 f={3}>Heading 4</H4>`} scope={scope} />
-					<CodeSpecimen code={`<H5 f={2}>Heading 5</H5>`} scope={scope} />
-					<CodeSpecimen code={`<H6 f={1}>Heading 6</H6>`} scope={scope} />
-	    		</Section>
-	    		
-	    		<Section>
-					<Heading>Text</Heading>
-					<CodeSpecimen code={`<Text>A text element</Text>`} scope={scope} />
-    				<CodeSpecimen code={`<Link href="#">A link</Link>`} scope={scope} />
-    				<CodeSpecimen code={`<Code>// Some code</Code>`} scope={scope} />
-    				<CodeSpecimen code={`<Em>Em</Em>`} scope={scope} />
-					<CodeSpecimen code={`<Strong>Strong</Strong>`} scope={scope} />
-					<CodeSpecimen code={`<Small>Small</Small>`} scope={scope} />
-					<CodeSpecimen code={`<U>Underline</U>`} scope={scope} />
-					<CodeSpecimen code={`<Del>Del</Del>`} scope={scope} />
-	    		</Section>
 			</Box>
 		</Box>
 	</ThemeProvider>

@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Box, Text } from 'styled-system-html';
-import Introduction from './design/Introduction'
-import Color from './design/Color'
-import Typography from './design/Typography'
-import Components from './design/Components'
-import Buttons from './design/Buttons'
-import Cards from './design/Cards'
+import Introduction from './design/Introduction';
+import Color from './design/Color';
+import Font from './design/Font';
+import TypeScale from './design/TypeScale';
+import Headings from './design/Headings';
+import TextElements from './design/TextElements';
+import Components from './design/Components';
+import Buttons from './design/Buttons';
+import Cards from './design/Cards';
 import ReactDOM from 'react-dom';
 import {Catalog} from 'catalog';
 import theme from '../_Theme';
@@ -88,11 +91,37 @@ class Design extends Component {
 					    }
 					},
 					{
-				        path: '/typography',
-				        title: 'Typography',
-				        content: () => {
-					    	return <Typography theme={this.state.theme} />
-					    }
+						title: 'Typography',
+						pages: [
+							{
+								path: '/font',
+						        title: 'Font',
+						        content: () => {
+							    	return <Font theme={this.state.theme} />
+							    }
+							},
+							{
+								path: '/type-scale',
+						        title: 'Type Scale',
+						        content: () => {
+							    	return <TypeScale theme={this.state.theme} />
+							    }
+							},
+							{
+								path: '/headings',
+						        title: 'Headings',
+						        content: () => {
+							    	return <Headings theme={this.state.theme} />
+							    }
+							},
+							{
+								path: '/text-elements',
+						        title: 'Text Elements',
+						        content: () => {
+							    	return <TextElements theme={this.state.theme} />
+							    }
+							},
+						]
 					},
 					{
 						title: 'Components',
