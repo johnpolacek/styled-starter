@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Text } from 'styled-system-html';
+import { P } from 'styled-system-html';
 
 export default (props) => (
-	<Text pb={3}>{props.children}</Text>
+	<P {...Object.assign({}, {pb:3}, props)}>{props.children}</P>
 )

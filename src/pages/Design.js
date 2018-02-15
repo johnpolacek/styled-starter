@@ -6,7 +6,9 @@ import Color from './design/Color';
 import Font from './design/Font';
 import TypeScale from './design/TypeScale';
 import Headings from './design/Headings';
+import Lists from './design/Lists';
 import TextElements from './design/TextElements';
+import Paragraph from './design/Paragraph';
 import Components from './design/Components';
 import Buttons from './design/Buttons';
 import Cards from './design/Cards';
@@ -108,6 +110,13 @@ class Design extends Component {
 							    }
 							},
 							{
+								path: '/text-elements',
+						        title: 'Text Elements',
+						        content: () => {
+							    	return <TextElements theme={this.state.theme} />
+							    }
+							},
+							{
 								path: '/headings',
 						        title: 'Headings',
 						        content: () => {
@@ -115,12 +124,19 @@ class Design extends Component {
 							    }
 							},
 							{
-								path: '/text-elements',
-						        title: 'Text Elements',
+								path: '/paragraph',
+						        title: 'Paragraph',
 						        content: () => {
-							    	return <TextElements theme={this.state.theme} />
+							    	return <Paragraph theme={this.state.theme} />
 							    }
 							},
+							{
+								path: '/lists',
+						        title: 'Lists',
+						        content: () => {
+							    	return <Lists theme={this.state.theme} />
+							    }
+							}
 						]
 					},
 					{
