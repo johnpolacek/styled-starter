@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Flex, Box, H1, H2, H3, H4, H5, H6, Text, UL, LI, Image } from 'styled-system-html';
-import system from 'system-components';
 
 export default (props) => (
 	<Box bg={props.bg || 'white'} overflow="hidden" borderRadius="8px" borderColor="rgba(0,0,0,.1)" borderWidth="1px">

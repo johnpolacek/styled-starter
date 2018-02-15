@@ -28,8 +28,6 @@ class Design extends Component {
 	}
 
 	renderCatalog() {
-		console.dir(this.state.theme);
-
 		const catalogTheme = {
 			// Colors
 			background: this.state.theme.colors.gray0 || '#F2F2F2',

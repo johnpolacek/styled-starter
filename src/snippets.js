@@ -63,7 +63,7 @@ import { Blockquote, Footer } from 'styled-system-html';
 export default (props) => (
     <Blockquote 
         bg="gray0" color="base" 
-        px={4} py={3} mb={4} 
+        px={4} py={3} 
         borderLeft borderWidth={4} borderColor="gray2"
         f={4} fontStyle="italic">
         {props.children}

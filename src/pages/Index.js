@@ -30,6 +30,7 @@ class Index extends Component {
 						<Box w="144px" px={3} py={1} mb={4} bg="rgba(0,0,0,.01)" borderWidth="1px" borderColor="rgba(0,0,0,.025)">
 							<Pre><Code color="rgb(57, 58, 52)" f={2}>npm run dev</Code></Pre>
 						</Box>
+						<Para>Open up <Link href="http://localhost:3000/">localhost:3000</Link> on your browser and you should see a page that looks <Link href="https://johnpolacek.github.io/styled-starter-basic/">like this</Link>.</Para>
 					</Section>
 
 					<Section>
@@ -47,12 +48,12 @@ class Index extends Component {
 						<Heading>Components and Content</Heading>
 						<Para>Compose UI with <Link href="https://github.com/jxnblk/styled-system">Styled System</Link> primitives and components like <Link href="http://jxnblk.com/grid-styled/">Grid Styled</Link>, <Link href="https://johnpolacek.github.io/styled-system-html/">Styled System HTML</Link> (SSHTML).</Para>
 						<Para>SSHTML looks a lot like regular HTML. The key difference is every SSHTML element is a <Link href="https://www.styled-components.com/">styled component</Link> that inherits style props from your design theme. SSHTML is built on top of <Link href="https://github.com/jxnblk/styled-system">Styled System</Link> which includes <Link href="http://jxnblk.com/grid-styled/">Grid Styled</Link> making it easy to build responsive layouts.</Para>
-						<Para>We can use SSHTML elements as primitives when creating components. For example, here is how one could create a Blockquote component.</Para>
-						<CodeBlock>{snippets.blockquoteComponent}</CodeBlock>
-						<Para>Then use it in your project.</Para>
+						<Para>We can use SSHTML elements as primitives when creating components. For example, to use a Blockquote component like this...</Para>
 						<BQ author="Grandpa Polacek">Son, you have the eyes of an eagle... a dead one.</BQ>
 						<CodeBlock language="xml">{snippets.blockquoteUsage}</CodeBlock>
-						<Para>There are many ways to build components with Styled System. More documention and examples are in the <Link href="./design">Design</Link> section of this site.</Para>
+						<Para>... you might create that component from SSHTML like this...</Para>
+						<CodeBlock>{snippets.blockquoteComponent}</CodeBlock>
+						<Para>There are many ways to build components with <Link href="https://github.com/jxnblk/styled-system">Styled System</Link>. More documention and examples are in the <Link href="./design">Design</Link> section of this site.</Para>
 						<Para>See also:</Para>
 						<UL>
 							<LI><Link href="https://johnpolacek.github.io/styled-system-html/">Styled System HTML</Link></LI>
@@ -71,6 +72,7 @@ class Index extends Component {
 					{
 						/* 
 							Testing
+							Deployment
 						*/
 					}
 
