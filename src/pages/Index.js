@@ -45,40 +45,27 @@ class Index extends Component {
 
 					<Section>
 						<Heading>Components and Content</Heading>
-						<Para>Compose UI elements with <Link href="https://johnpolacek.github.io/styled-system-html/">Styled System HTML</Link> (SSHTML).</Para>
-						<Para>SSHTML looks a lot like regular HTML. The key difference is every SSHTML element is a <Link href="https://www.styled-components.com/">styled component</Link> that inherits style props from your design theme.</Para>
+						<Para>Compose UI with <Link href="https://github.com/jxnblk/styled-system">Styled System</Link> primitives and components like <Link href="http://jxnblk.com/grid-styled/">Grid Styled</Link>, <Link href="https://johnpolacek.github.io/styled-system-html/">Styled System HTML</Link> (SSHTML).</Para>
+						<Para>SSHTML looks a lot like regular HTML. The key difference is every SSHTML element is a <Link href="https://www.styled-components.com/">styled component</Link> that inherits style props from your design theme. SSHTML is built on top of <Link href="https://github.com/jxnblk/styled-system">Styled System</Link> which includes <Link href="http://jxnblk.com/grid-styled/">Grid Styled</Link> making it easy to build responsive layouts.</Para>
 						<Para>We can use SSHTML elements as primitives when creating components. For example, here is how one could create a Blockquote component.</Para>
 						<CodeBlock>{snippets.blockquoteComponent}</CodeBlock>
 						<Para>Then use it in your project.</Para>
 						<BQ author="Grandpa Polacek">Son, you have the eyes of an eagle... a dead one.</BQ>
-						<CodeBlock>{snippets.blockquoteUsage}</CodeBlock>
-						<Para>SSHTML is built on top of <Link href="https://github.com/jxnblk/styled-system">Styled System</Link> which includes <Link href="http://jxnblk.com/grid-styled/">Grid Styled</Link> making it easy to build responsive layouts.</Para>
-						<Flex w={1} wrap="wrap" color="white" pb={4}>
-							<Box w={[1,1/2,1/4]} bg="gray6" py={4} px={3} align="center">
-								<Code>{ `<Box w={[1,1/2,1/4]} />` } </Code>
-							</Box>
-							<Box w={[1,1/2,1/4]} bg="gray7" py={4} px={3} align="center">
-								<Code>{ `<Box w={[1,1/2,1/4]} />` } </Code>
-							</Box>
-							<Box w={[1,1/2,1/4]} bg="gray8" py={4} px={3} align="center">
-								<Code>{ `<Box w={[1,1/2,1/4]} />` } </Code>
-							</Box>
-							<Box w={[1,1/2,1/4]} bg="gray9" py={4} px={3} align="center">
-								<Code>{ `<Box w={[1,1/2,1/4]} />` } </Code>
-							</Box>
-						</Flex>
-						<Para>For more information, see these helpful links:</Para>
+						<CodeBlock language="xml">{snippets.blockquoteUsage}</CodeBlock>
+						<Para>There are many ways to build components with Styled System. More documention and examples are in the <Link href="./design">Design</Link> section of this site.</Para>
+						<Para>See also:</Para>
 						<UL>
 							<LI><Link href="https://johnpolacek.github.io/styled-system-html/">Styled System HTML</Link></LI>
 							<LI><Link href="https://github.com/jxnblk/styled-system">Styled System</Link></LI>
 							<LI><Link href="http://jxnblk.com/grid-styled/">Grid Styled</Link></LI>
+							<LI><Link href="https://github.com/jxnblk/macro-components">Macro Components</Link></LI>							
 							<LI><Link href="https://www.styled-components.com/">Styled Components</Link></LI>
 						</UL>
 					</Section>
 
 					<Section>
 						<Heading>Theming</Heading>
-						<Para>To adjust colors and typography, edit the <Link href="https://github.com/johnpolacek/styled-starter-basic/blob/master/src/_Theme.js">theme file</Link> in the <Code f={2}>/src</Code> directory. You can use <Link href="https://johnpolacek.github.io/design-system-playground/">Design System Playground</Link> to generate theme data.</Para>
+						<Para>To adjust colors, layout and typography, edit the <Link href="https://github.com/johnpolacek/styled-starter-basic/blob/master/src/_Theme.js">theme file</Link> in the <Code f={2}>/src</Code> directory. You can use <Link href="https://johnpolacek.github.io/design-system-playground/">Design System Playground</Link> to generate theme data. Try out some sample themes by clicking <Link href="#editTheme">edit theme</Link> at the top of this page.</Para>
 					</Section>
 
 					{

@@ -4,6 +4,6 @@ import { Box } from 'styled-system-html';
 
 export default (props) => (
 	<Box mb={5}>
-		<SyntaxHighlighter language='javascript' style={ghcolors}>{props.children}</SyntaxHighlighter>
+		<SyntaxHighlighter language={props.language || 'javascript'} style={ghcolors}>{props.children}</SyntaxHighlighter>
 	</Box>
 )
