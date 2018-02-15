@@ -23,7 +23,6 @@ test.describe( 'About' , function() {
   
     test.beforeEach(function(){
         driver = new webdriver.Builder().withCapabilities(chromeCapabilities).build();
-        driver.get('http://localhost:3000/');
     });
  
     test.afterEach(function(){
@@ -43,7 +42,6 @@ test.describe( 'Design' , function() {
   
     test.beforeEach(function(){
         driver = new webdriver.Builder().withCapabilities(chromeCapabilities).build();
-        driver.get('http://localhost:3000/');
     });
  
     test.afterEach(function(){
@@ -53,10 +51,55 @@ test.describe( 'Design' , function() {
     test.it('can navigate top level', function() {
         verifyTopLevelNav('Design');
     });
+
+    test.it('can navigate design pages', function() {
+        driver.get('http://localhost:3000/design#/');
+        waitForPageLoad();
+
+        console.log('\n      - default section is Introduction');
+        verifyXpath("//h1[text()='Introduction']");
+
+        verifyDesignCenterNav('Color', 'Color');
+        verifyDesignCenterNav('Typography', 'Font');
+        verifyDesignCenterNav('Layout', 'Layout');
+        verifyDesignCenterNav('Components','Overview');
+        verifyDesignCenterNav('Introduction','Introduction');
+    });
+
+    test.it('can navigate design typography subsections', function() {
+        driver.get('http://localhost:3000/design#/font');
+        waitForPageLoad();
+
+        console.log('\n      - default section is Font');
+        verifyXpath("//h1[text()='Font']");
+
+        verifyDesignCenterSubsection('Type Scale');
+        verifyDesignCenterSubsection('Text Elements');
+        verifyDesignCenterSubsection('Headings');
+        verifyDesignCenterSubsection('Paragraph');
+        verifyDesignCenterSubsection('Lists');
+        verifyDesignCenterSubsection('Font');
+    });
+
+    test.it('can navigate design components subsections', function() {
+        driver.get('http://localhost:3000/design#/overview');
+        waitForPageLoad();
+
+        console.log('\n      - default section is Overview');
+        verifyXpath("//h1[text()='Overview']");
+
+        verifyDesignCenterSubsection('Buttons');
+        verifyDesignCenterSubsection('Cards');
+        verifyDesignCenterSubsection('Forms');
+        verifyDesignCenterSubsection('Overview');
+    });
  
 });
 
 function verifyTopLevelNav(section) {
+    driver.get('http://localhost:3000/');
+    waitForPageLoad();
+
     console.log('\n      - active nav is home');
     shouldNotFindXpath("//nav//p[text()='"+section+"']");
     verifyXpath("//nav//p[text()='Styled Starter']");
@@ -74,6 +117,22 @@ function verifyTopLevelNav(section) {
     console.log('      - active nav is home');
     shouldNotFindXpath("//nav//p[text()='"+section+"']");
     verifyXpath("//nav//p[text()='Styled Starter']");
+}
+
+function verifyDesignCenterNav(navText, section) {
+    console.log('\n      - verify design center nav: '+section);
+
+    clickXpath("//ul//li//a[text()='"+navText+"']")
+    waitForPageLoad();
+    verifyXpath("//h1[text()='"+section+"']");
+}
+
+function verifyDesignCenterSubsection(section) {
+    console.log('\n      - verify design center nav: '+section);
+
+    clickXpath("//ul//li//ul//li//a[text()='"+section+"']")
+    waitForPageLoad();
+    verifyXpath("//h1[text()='"+section+"']");
 }
 
 function shouldNotFindXpath(xpath) {
