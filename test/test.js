@@ -16,7 +16,7 @@ var assert = require('assert');
 
 var driver;
 
-test.describe( 'SiteNav' , function() {
+test.describe( 'About' , function() {
 
     // longer timeout for selenium tests
     this.timeout(10000);
@@ -30,27 +30,51 @@ test.describe( 'SiteNav' , function() {
         driver.quit();
     });
  
-    test.it('can navigate', function() {
-        console.log('\n      - active nav is home');
-        shouldNotFindXpath("//nav//p[text()='About']");
-        verifyXpath("//nav//p[text()='Styled Starter']");
-        
-        console.log('      - click About link\n')
-        clickXpath("//nav//a[@href='/about' and text()='About']");
-        waitForPageLoad();
-        
-        console.log('      - active nav is About\n')
-        verifyXpath("//nav//p[text()='About']");
-
-        console.log('      - click home link\n')
-        clickXpath("//nav//a[@href='/' and text()='Styled Starter']");
-
-        console.log('      - active nav is home');
-        shouldNotFindXpath("//nav//p[text()='About']");
-        verifyXpath("//nav//p[text()='Styled Starter']");
+    test.it('can navigate top level', function() {
+        verifyTopLevelNav('About');
     });
  
 });
+
+test.describe( 'Design' , function() {
+
+    // longer timeout for selenium tests
+    this.timeout(10000);
+  
+    test.beforeEach(function(){
+        driver = new webdriver.Builder().withCapabilities(chromeCapabilities).build();
+        driver.get('http://localhost:3000/');
+    });
+ 
+    test.afterEach(function(){
+        driver.quit();
+    });
+ 
+    test.it('can navigate top level', function() {
+        verifyTopLevelNav('Design');
+    });
+ 
+});
+
+function verifyTopLevelNav(section) {
+    console.log('\n      - active nav is home');
+    shouldNotFindXpath("//nav//p[text()='"+section+"']");
+    verifyXpath("//nav//p[text()='Styled Starter']");
+    
+    console.log('      - click '+section+' link\n')
+    clickXpath("//nav//a[@href='/"+section.toLowerCase()+"' and text()='"+section+"']");
+    waitForPageLoad();
+    
+    console.log('      - active nav is '+section+'\n')
+    verifyXpath("//nav//p[text()='"+section+"']");
+
+    console.log('      - click home link\n')
+    clickXpath("//nav//a[@href='/' and text()='Styled Starter']");
+
+    console.log('      - active nav is home');
+    shouldNotFindXpath("//nav//p[text()='"+section+"']");
+    verifyXpath("//nav//p[text()='Styled Starter']");
+}
 
 function shouldNotFindXpath(xpath) {
     driver.findElements(By.xpath(xpath)).then(function(elements) {
