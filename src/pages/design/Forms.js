@@ -17,7 +17,7 @@ export default (props) => (
 					<CodeSpecimen f="12px" code={`<Form pt={2} pb={5}>
 	<Box pb={3}>
 		<Box pb={1}>
-			<Label for="textInput" mr={2}>Text Input Label</Label>
+			<Label for="textInput">Text Input Label</Label>
 		</Box>
 		<Input type="text" name="textInput" id="textInput" />
 	</Box>
@@ -34,7 +34,7 @@ export default (props) => (
 	</Box>
 	<Box pb={3}>
 		<Box pb={1}>
-			<Label for="textArea" mr={2}>Text Area Label</Label>
+			<Label for="textArea">Text Area Label</Label>
 		</Box>
 		<TextArea w={1} name="textArea" id="textArea" />
 	</Box>
@@ -59,7 +59,7 @@ export default (props) => (
 	</Box>
 	<Box py={3}>
 		<Label for="checkbox" mr={2}>
-			<Input type="checkbox" name="checkbox" id="checkbox" /> 
+			<Input type="checkbox" name="check" id="check" /> 
 			Checkbox Input Label
 		</Label>
 	</Box>
@@ -125,7 +125,7 @@ export default (props) => (
 	<Flex align="flex-start" wrap="wrap" pb={3}>
 		<Box ml={[0,'33.33%']} w={[1]}>
 			<Label for="checkbox" mr={2}>
-				<Input type="checkbox" name="checkbox" id="checkbox" /> 
+				<Input type="checkbox" name="check" id="check" /> 
 				Checkbox Input
 			</Label>
 		</Box>

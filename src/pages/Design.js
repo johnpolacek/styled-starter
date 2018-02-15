@@ -9,6 +9,7 @@ import Headings from './design/Headings';
 import Lists from './design/Lists';
 import TextElements from './design/TextElements';
 import Paragraph from './design/Paragraph';
+import Layout from './design/Layout';
 import Components from './design/Components';
 import Buttons from './design/Buttons';
 import Cards from './design/Cards';
@@ -139,6 +140,13 @@ class Design extends Component {
 							    }
 							}
 						]
+					},
+					{
+				        path: '/layout',
+				        title: 'Layout',
+				        content: () => {
+					    	return <Layout theme={this.state.theme} />
+					    }
 					},
 					{
 						title: 'Components',
