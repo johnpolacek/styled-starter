@@ -23,7 +23,7 @@ export default (props) => (
 					</UL>
 				</Section>
 				<Section>
-					<Para>This demo has some examples of components. <Link f={1} fontStyle='italic' href="https://github.com/johnpolacek/styled-starter/tree/master/src/components">view source</Link></Para>
+					<Para>Explore this demo to see some examples of components. <Link f={1} fontStyle='italic' href="https://github.com/johnpolacek/styled-starter/tree/master/src/components">view source</Link></Para>
 				</Section>
     		</Box>
     	</Box>

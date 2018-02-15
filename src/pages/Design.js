@@ -12,6 +12,7 @@ import Paragraph from './design/Paragraph';
 import Components from './design/Components';
 import Buttons from './design/Buttons';
 import Cards from './design/Cards';
+import Forms from './design/Forms';
 import ReactDOM from 'react-dom';
 import {Catalog} from 'catalog';
 import theme from '../_Theme';
@@ -161,6 +162,13 @@ class Design extends Component {
 						        title: 'Cards',
 						        content: () => {
 							    	return <Cards theme={this.state.theme} />
+							    }
+							},
+							{
+								path: '/forms',
+						        title: 'Forms',
+						        content: () => {
+							    	return <Forms theme={this.state.theme} />
 							    }
 							},
 						]
