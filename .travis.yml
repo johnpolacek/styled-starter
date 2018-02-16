@@ -7,7 +7,6 @@ addons:
 before_script:
 - npm install
 - npm run dev
-- sleep 2
 script:
 - npm run test
 - killall node
