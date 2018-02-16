@@ -6,8 +6,8 @@ addons:
     username: johnpolacek
 before_script:
 - npm install
-- npm run dev
 script:
+- npm run dev & 
 - npm run test
 - killall node
 env:
