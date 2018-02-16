@@ -26,10 +26,12 @@ describe("testing javascript in the browser", function() {
   });
 
   afterEach(function() {
+    console.log('after');
     return driver.quit();
   });
 
   it("should handle clicking on a headline", function(done) {
+    console.log('testing...')
     verifyXpath("//h1");
     done();
   });
