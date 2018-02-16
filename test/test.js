@@ -22,7 +22,7 @@ describe("testing javascript in the browser", function() {
       }).build();
     }
 
-    return driver.get("http://localhost:8000/page/index.html");
+    return driver.get("http://localhost:3000");
   });
 
   afterEach(function() {
