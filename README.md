@@ -6,4 +6,4 @@
 
 ----
 
-[Docs/Demo](https://johnpolacek.github.io/styled-starter/)
+Docs/Demo: [johnpolacek.github.io/styled-starter](https://johnpolacek.github.io/styled-starter/)
