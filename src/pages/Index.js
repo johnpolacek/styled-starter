@@ -69,6 +69,19 @@ class Index extends Component {
 						<Para>To adjust colors, layout and typography, edit the <Link href="https://github.com/johnpolacek/styled-starter-basic/blob/master/src/_Theme.js">theme file</Link> in the <Code f={2}>/src</Code> directory. You can use <Link href="https://johnpolacek.github.io/design-system-playground/">Design System Playground</Link> to generate theme data. Try out some sample themes by clicking <Link href="#editTheme">edit theme</Link> at the top of this page.</Para>
 					</Section>
 
+					<Section>
+						<Heading>Testing</Heading>
+						<Para>Included is a very simple end-to-end <Link href="http://seleniumhq.github.io/selenium/docs/api/javascript/">Selenium</Link> integration test which can be run in your local environment. With the server running:</Para>
+						<Box w="144px" px={3} py={1} mb={4} bg="rgba(0,0,0,.01)" borderWidth="1px" borderColor="rgba(0,0,0,.025)">
+							<Pre><Code color="rgb(57, 58, 52)" f={2}>npm run test</Code></Pre>
+						</Box>
+						<Para>For a more detailed example, with integration with Travis CI and SauceLabs, refer to the <Link href="https://github.com/johnpolacek/styled-starter/tree/master/test">Styled Starter project tests</Link>.</Para>
+						<UL>
+							<LI><Link href="http://seleniumhq.github.io/selenium/docs/api/javascript/">Selenium WebDriver JavaScript API</Link></LI>
+						</UL>
+						<Para>Bring your own unit tests (BYOUT).</Para>
+					</Section>
+
 					{
 						/* 
 							Testing
