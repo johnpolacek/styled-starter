@@ -75,9 +75,11 @@ class Index extends Component {
 						<Box w="144px" px={3} py={1} mb={4} bg="rgba(0,0,0,.01)" borderWidth="1px" borderColor="rgba(0,0,0,.025)">
 							<Pre><Code color="rgb(57, 58, 52)" f={2}>npm run test</Code></Pre>
 						</Box>
-						<Para>For a more detailed example, with integration with Travis CI and SauceLabs, refer to the <Link href="https://github.com/johnpolacek/styled-starter/tree/master/test">Styled Starter project tests</Link>.</Para>
+						<Para>For a more detailed example, with integration with Travis CI and SauceLabs, refer to the <Link href="https://github.com/johnpolacek/styled-starter/tree/master/test">Styled Starter project tests</Link>. More info:</Para>
 						<UL>
 							<LI><Link href="http://seleniumhq.github.io/selenium/docs/api/javascript/">Selenium WebDriver JavaScript API</Link></LI>
+							<LI><Link href="https://docs.travis-ci.com/user/sauce-connect/">Using Sauce Labs with Travis CI</Link></LI>
+							<LI><Link href="http://samsaccone.com/posts/testing-with-travis-and-sauce-labs.html">Testing with Travis CI and Sauce Labs</Link></LI>
 						</UL>
 						<Para>Bring your own unit tests (BYOUT).</Para>
 					</Section>
