@@ -4,6 +4,8 @@ var webdriver = require("selenium-webdriver");
 var driver;
 
 describe("testing javascript in the browser", function() {
+    this.timeout(10000);
+    
   beforeEach(function() {
     if (process.env.SAUCE_USERNAME != undefined) {
       driver = new webdriver.Builder()
