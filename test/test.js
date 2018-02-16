@@ -29,6 +29,7 @@ describe("testing styled starter project", function() {
                 browserName: "chrome"
             }).build();
         }
+        this.driver.sleep(4000);
         return this.driver.get("http://localhost:3000");
     });
 
