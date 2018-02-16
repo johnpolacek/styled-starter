@@ -88,9 +88,6 @@ describe("testing styled starter project", function() {
 });
 
 function verifyTopLevelNav(driver, section) {
-    driver.get('http://localhost:3000/');
-    waitForPageLoad(driver);
-
     console.log('      - active nav is home');
     shouldNotFindXpath(driver, "//nav//p[text()='"+section+"']");
     verifyXpath(driver, "//nav//p[text()='Styled Starter']");
