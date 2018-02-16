@@ -1,22 +1,14 @@
+language: node_js
 addons:
   sauce_connect:
-    username: "johnpolacek"
-  jwt:
-    secure: "rPT4+ItZmbJitGdH8C0YwL7CbndV4L5My1GPA8JK3bfZEpIaYKuwvWQAyn6D1WVA9N5zL1xjK8CTetuW24bkLw8JfqAapJmL0IuMjkg7gy4VOb0M3Nodu1p5ts7BBgC8Jbo8uSaRMQ2UUXLZeDNeGLIfbwPSBaQRh7MfnEdB54PhQ7w08RBC8vOzFN89GtuOjiRKJc9FjjJx31BWlQRlilHY5g/Do8+tn0M3dOaF3AJzSqKd89IWDK3fvyaYvuEu7mpMkQgd0XxcAgZUhSlAfQsisWnI6iXhX4jDn7mZTNJoV4MWIYQStFTjESKjK6Y5/igyPghH3/eNSFVwR4tDiHOq5VkNWVGT61Xi/2bc76brwMPGmQQ1+rIP9iSp4Fpq/Zj4aLYmPIWlfm5rlTfV/hYPNn6gSxEYJYWgDopyKzuIzmIexZYQrxZ8TeWxW1wlaWPGiEBgyptzttDr2dmE0B9VRjDsiZFhUmclb9jKYZHAXlia5tgk1q1gEmT8YXbQs2Eh0VojtquE/niqgz7xnZMJx2tOgZAk7ZMAH+4IBXCg+jBIOzjdq+Xh+bupe5Ljbh/1F1SEl5BKwCiCxKcdtD/FvKgHbNtnjZp5VDSR9SdIBlT+1JjJFHSArpHndV9QSQMGY1rmCiw29N5THa/TnxMbJFTDLCTmB77vgtUxkxA="
-# addons:
-#   chrome: stable
-# install:
-# - wget -N http://chromedriver.storage.googleapis.com/2.35/chromedriver_linux64.zip
-#   -P ~/
-# - unzip ~/chromedriver_linux64.zip -d ~/
-# - rm ~/chromedriver_linux64.zip
-# - sudo mv -f ~/chromedriver /usr/local/share/
-# - sudo chmod +x /usr/local/share/chromedriver
-# - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
-script:
-# - whereis google-chrome-stable
-# - whereis chromedriver
+    username: johnpolacek
+before_script:
 - npm install
-- npm run dev &
+- npm run dev
+- sleep 2
+script:
 - npm run test
 - killall node
+env:
+  global:
+    secure: gqRtVWESJfZoAzNfhM0Ole2ED7Wzc8AeoFPz+EKNiNjqy2y3LCQCPxCC4qrO4NXZfaDqoSkrbvR6x4OuLSycrP22HNtDpQ/DBFwYtXP55PIi9GFHyMZhSqb1DSx+hVOBie3juk7HguDDMj/IJlU0MlYANlVlcyEDH1IvoWzzGYJqAr+EQ7poCPQ6j1EzpmtM3FatkRkqyFay7ZTWLZBK0DE3hcsFKRzholGtKEr7Wb6zGpLqbO/dNpKupU5hWqBne8jLovW9j096649QNGGIYie8xZ8ihP+hOulUPPXxjpET7iZ54USr59qBC0d7ZFTxw3zhIce1nIRgs45i5WEcOBwZtFi1BIhG87YaCBIIL2xy+DHBBdIF2MQ0qZdILr647tuKEPtZX9NoIR6X3ZG4ofMOdB/5qvemSQEhy0ysxs4ICXoUqDtFoZ4Tx1sS+6tHSjFm4ajjQX/E+G1XBlHKVTpK0W+2YgzaAWw+Qc0A7krBRtBTTcpAJ19QMQgVj0c0iiXdbDwgV+mmpV1Py8m0BDN2TOnu9Q4nH/JDF/xqLNJXPSFyfcYvUId/oXgP8BZYksPG0S8lR3rWFJFIgmNXcgsepFOLO/8jJaRXx/acYJFu8cVOkIxqH37yL52rG7fhnRH6jXg9zRrRJNlx96aMI2AMtayYKGBOEz/wLZwxZXc=
