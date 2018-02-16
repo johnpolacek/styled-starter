@@ -8,7 +8,7 @@ before_script:
 - npm install
 script:
 - npm run dev &
-- sleep 5s
+- sleep 10s
 - npm run test
 - killall node
 env:
