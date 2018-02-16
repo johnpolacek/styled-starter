@@ -33,9 +33,8 @@ class About extends Component {
 					</Section>
 					<Section>
 						<Heading>Styled Components / Styled System</Heading>
-						<Para><Link href="https://www.styled-components.com/">Styled Components</Link> is a library which allows you to write CSS directly in your components. <Link href="https://github.com/jxnblk/styled-system">Styled System</Link> is a utility that allows you to hook style props into a design theme.</Para>
-						<Para>Using these together enables us to create components around a design system with consistency across colors, typography and layout structure.</Para>
-						<Para>As you build components, keep them documented in the styleguide, powered by <Link href="https://www.catalog.style/">Catalog</Link>.</Para>
+						<Para><Link href="https://www.styled-components.com/">Styled Components</Link> is a library for writing CSS directly in components. <Link href="https://github.com/jxnblk/styled-system">Styled System</Link> is a utility that hooks style props from a design theme into components. Use them together to inject components with a design system.</Para>
+						<Para>As you build components, keep them documented in the <Link href="./design">styleguide</Link>, powered by <Link href="https://www.catalog.style/">Catalog</Link>.</Para>
 					</Section>
 				</Box>
 				<SiteFooter />
