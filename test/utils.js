@@ -25,6 +25,7 @@ module.exports = {
         }, 4000, 'Failed to find '+xpath+' after 4 seconds');
     },
     waitForPageLoad: function(driver) {
+        driver.sleep(500);
         // Make sure new page init has started...
         return driver.executeScript('return document.readyState').then(function(readyState) {
             if (readyState != 'complete') {

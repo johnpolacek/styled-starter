@@ -36,11 +36,11 @@ describe("testing styled starter project", function() {
         return this.driver.quit();
     });
 
-    it('can navigate top level nav - About', function() {
+    it('can navigate top level page - About', function() {
         return verifyTopLevelNav(this.driver, 'About');
     });
 
-    it('can navigate top level - Design', function() {
+    it('can navigate top level page - Design', function() {
         return verifyTopLevelNav(this.driver, 'Design');
     });
 
