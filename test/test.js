@@ -97,7 +97,7 @@ function verifyTopLevelNav(driver, section) {
     clickXpath(driver, "//nav//a[@href='/"+section.toLowerCase()+"' and text()='"+section+"']");
     waitForPageLoad(driver);
 
-    driver.sleep(4000);
+    driver.sleep(10000);
     
     console.log('      - active nav is '+section+'')
     verifyXpath(driver, "//nav//p[text()='"+section+"']");
