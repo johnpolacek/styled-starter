@@ -1,17 +1,18 @@
-dist: trusty
 addons:
-  chrome: stable
-before_install:
-  - # start your web application and listen on `localhost`
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
-install:
-- wget -N http://chromedriver.storage.googleapis.com/2.35/chromedriver_linux64.zip
-  -P ~/
-- unzip ~/chromedriver_linux64.zip -d ~/
-- rm ~/chromedriver_linux64.zip
-- sudo mv -f ~/chromedriver /usr/local/share/
-- sudo chmod +x /usr/local/share/chromedriver
-- sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+  sauce_connect:
+    username: "Your Sauce Labs username"
+  jwt:
+    secure: "YspwMjgNQ04Yg7S+wTFSFi4j3ueoIdb2u31gpz3/Ey2W3FIXg4rguf4708sDCfMhEIUzy9vABmnz7hyPpUlpciiBPBPFfThyQadQ2zlFpSohpZnBgxalCSYXP2uCNXHYjfahMUAfbYOP5JMmji2XafEHtzSuoaQOCnB4il/8XmiSXOerlnqZdw4g+yprt8Y9AuNvpVXDQkxwe14Kh1FUPVyw9l1gmOGZ/+XHfKbGUTRG6wGaur3ydWpIB7HKlhdowJkyZyNaR0VSjGdWZfkuyqElo5qxeOJlMEAs5y6M8MYufhKz+6zonnLfqBDEntrO77n4DoeVrZCt73JDxs9KSlLdtZBG0s6wXHRrjF7jAoLkaXynuq3WHNEvKLPKGJgR66b/PegXQtASS30tOruw5vHVtQoqE1oxXjpnAgFrIF9/sbKp45JWQ51+Wk6bx/wQFMWngLV6O7f7vZoWjDaMU8MElJvn1cXq2fbsd6vRCPwjiMASxDJKZEpH2QnmRgpgI+8sY8Q/1fYumihrYmeI6JccZqzhiYiQo3r4Hk8M9g5cITxY2uJ4aLrBCgsWpdlzGmSqT5KezFoq6udIsd96IkUfLYtJIb183vpcb4GkRIB5nbQ3CvwFQaXH4ed/qu8kenpfHv2UYqS4mFvKhju5ssWmTNCkWG5EvykacN4XY/c="
+# addons:
+#   chrome: stable
+# install:
+# - wget -N http://chromedriver.storage.googleapis.com/2.35/chromedriver_linux64.zip
+#   -P ~/
+# - unzip ~/chromedriver_linux64.zip -d ~/
+# - rm ~/chromedriver_linux64.zip
+# - sudo mv -f ~/chromedriver /usr/local/share/
+# - sudo chmod +x /usr/local/share/chromedriver
+# - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
 script:
 # - whereis google-chrome-stable
 # - whereis chromedriver
