@@ -70,12 +70,18 @@ class Index extends Component {
 					</Section>
 
 					<Section>
+						<Heading>Publish and Deploy</Heading>
+						<Para>The default deploy script will publish to github if you update <code>package.json</code> with your repository url.</Para>
+						<Para>For more information on publishing and deploying, refer to the <Link href="https://github.com/zeit/next.js#production-deployment">Next.js documentation</Link>. To publish as a Github Page, refer to </Para>
+					</Section>
+
+					<Section>
 						<Heading>Testing</Heading>
 						<Para>Included is a very simple end-to-end <Link href="http://seleniumhq.github.io/selenium/docs/api/javascript/">Selenium</Link> integration test which can be run in your local environment. With the server running:</Para>
 						<Box w="144px" px={3} py={1} mb={4} bg="rgba(0,0,0,.01)" borderWidth="1px" borderColor="rgba(0,0,0,.025)">
 							<Pre><Code color="rgb(57, 58, 52)" f={2}>npm run test</Code></Pre>
 						</Box>
-						<Para>For a more detailed example, with integration with Travis CI and SauceLabs, refer to the <Link href="https://github.com/johnpolacek/styled-starter/tree/master/test">Styled Starter project tests</Link>. More info:</Para>
+						<Para>For a more detailed example, with integration with Travis CI and SauceLabs, refer to the <Link href="https://github.com/johnpolacek/styled-starter/tree/master/test">tests directory</Link> in the Styled Starter project repo. More info:</Para>
 						<UL>
 							<LI><Link href="http://seleniumhq.github.io/selenium/docs/api/javascript/">Selenium WebDriver JavaScript API</Link></LI>
 							<LI><Link href="https://docs.travis-ci.com/user/sauce-connect/">Using Sauce Labs with Travis CI</Link></LI>
@@ -84,14 +90,6 @@ class Index extends Component {
 						<Para>Bring your own unit tests (BYOUT).</Para>
 					</Section>
 
-					{
-						/* 
-							Testing
-							Deployment
-						*/
-					}
-
-					<Text fontStyle="italic" py={5} color="gray">More info coming soon...</Text>
 				</Box>
 				<SiteFooter />
 			</Box>
