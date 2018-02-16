@@ -10,7 +10,7 @@ var assert = require("assert"),
 
 
 describe("testing styled starter project", function() {
-    this.timeout(10000);
+    this.timeout(20000);
 
     beforeEach(function() {
         if (process.env.SAUCE_USERNAME != undefined) {
@@ -29,8 +29,8 @@ describe("testing styled starter project", function() {
                 browserName: "chrome"
             }).build();
         }
-        this.driver.sleep(4000);
-        return this.driver.get("http://localhost:3000");
+        this.driver.get("http://localhost:3000");
+        return waitForPageLoad(this.driver);
     });
 
     afterEach(function() {
@@ -96,6 +96,8 @@ function verifyTopLevelNav(driver, section) {
     console.log('      - click '+section+' link');
     clickXpath(driver, "//nav//a[@href='/"+section.toLowerCase()+"' and text()='"+section+"']");
     waitForPageLoad(driver);
+
+    driver.sleep(2000);
     
     console.log('      - active nav is '+section+'')
     verifyXpath(driver, "//nav//p[text()='"+section+"']");
