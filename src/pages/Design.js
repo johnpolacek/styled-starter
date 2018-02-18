@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Box, Text } from 'styled-system-html';
 import Introduction from './design/Introduction';
+import Theme from './design/Theme';
 import Color from './design/Color';
 import Font from './design/Font';
 import TypeScale from './design/TypeScale';
@@ -83,6 +84,13 @@ class Design extends Component {
 				        title: 'Introduction',
 				        content: () => {
 					    	return <Introduction theme={this.state.theme} />
+					    }
+					},
+					{
+				        path: '/theme',
+				        title: 'Theme',
+				        content: () => {
+					    	return <Theme theme={this.state.theme} />
 					    }
 					},
 					{
