@@ -1,6 +1,13 @@
-import { injectGlobal } from 'styled-components';
+import { injectGlobal } from 'styled-components'
 import App from './App'
+import theme 	from '../_Theme'
+
+const initial = {
+	theme:theme, 
+	editTheme:false, 
+	currentTheme: 'Default Theme'
+}
 
 export default (props) => (
-	<App children={props.children} prefix={props.prefix} name={props.name} />
+	<App {...Object.assign({}, initial, props)} />
 )
