@@ -30,7 +30,7 @@ describe("testing styled starter project", function() {
             }).build();
         }
         this.driver.get("http://localhost:3000");
-        driver.sleep(10000);
+        this.driver.sleep(10000);
         return waitForPageLoad(this.driver);
 
     });
