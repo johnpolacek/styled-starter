@@ -8,12 +8,6 @@ import Head		from './Head'
 import SiteNav from '../components/SiteNav'
 import EditThemeModal from '../components/EditThemeModal'
 
-// REFACTORING to Refunk
-
-// remove all state refs - create methods in updaters instead
-// 
-
-
 const App = (props) => (
 
 	<Box style={{fontFamily:props.theme.fontFamilies.sans}}>
