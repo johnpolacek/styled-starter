@@ -7,8 +7,8 @@ addons:
 before_script:
 - npm install
 script:
-- npm run dev &
-- sleep 10s
+- npm run build && npm run export && npm run start
+- sleep 5s
 - npm run test
 - killall node
 env:
