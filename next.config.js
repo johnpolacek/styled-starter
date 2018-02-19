@@ -1,8 +1,7 @@
-// This file is not going through babel transformation.
-// So, we write it in vanilla JS
-// (But you could use ES2015 features supported by your Node.js version)
+const assetPrefix = process.env.ENV_GH_PAGES ? '/styled-starter/' : '';
 
-const debug = process.env.NODE_ENV !== 'production'
+console.log('process.env.ENV_GH_PAGES',process.env.ENV_GH_PAGES);
+console.log('assetPrefix: '+assetPrefix);
 
 module.exports = {
   	exportPathMap: function () {
@@ -12,5 +11,5 @@ module.exports = {
 			'/design': { page: '/design' }
 		}
   	},
-  	assetPrefix: !debug ? '/styled-starter/' : ''
+  	assetPrefix: assetPrefix
 }

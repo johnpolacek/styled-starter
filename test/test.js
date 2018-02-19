@@ -30,9 +30,7 @@ describe("testing styled starter project", function() {
             }).build();
         }
         this.driver.get("http://localhost:3000");
-        waitForPageLoad(this.driver);
-        return this.driver.sleep(10000);
-
+        return waitForPageLoad(this.driver);
     });
 
     afterEach(function() {
@@ -98,8 +96,6 @@ function verifyTopLevelNav(driver, section) {
     console.log('      - click '+section+' link');
     clickXpath(driver, "//nav//a[@href='/"+section.toLowerCase()+"' and text()='"+section+"']");
     waitForPageLoad(driver);
-
-    driver.sleep(10000);
     
     console.log('      - active nav is '+section+'')
     verifyXpath(driver, "//nav//p[text()='"+section+"']");
