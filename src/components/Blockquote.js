@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import { Blockquote, Footer } from 'styled-system-html';
 
 // Example usage:

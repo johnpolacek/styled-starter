@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import { P } from 'styled-system-html';
 
 export default (props) => (

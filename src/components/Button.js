@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import { Button } from 'styled-system-html';
 
 export default (props) => (

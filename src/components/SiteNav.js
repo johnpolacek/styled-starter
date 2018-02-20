@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import connect from 'refunk';
 import { setEditTheme } from '../updaters'
 import PropTypes from 'prop-types';
@@ -7,7 +6,7 @@ import Link from 'next/link'
 import SiteNavLink from './SiteNavLink'
 import SiteNavLinkExternal from './SiteNavLinkExternal'
 
-const SiteNav = (props) => (
+export default (props) => (
 	<Box bg="base" position="relative" style={{zIndex:9999}}>
 		<Nav bg="rgba(0,0,0,.2)" align='left' px={[2,0,2]}>
 	    	<Box position="absolute" style={{top:0,right:0}} mt={[4,3]} pt={4} pr={2}>
@@ -29,5 +28,3 @@ const SiteNav = (props) => (
 		</Nav>
 	</Box>
 )
-
-export default connect(SiteNav);

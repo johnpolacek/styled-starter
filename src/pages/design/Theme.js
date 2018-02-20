@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Box, Text } from 'styled-system-html';
 import Heading from '../../components/Heading';
