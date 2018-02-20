@@ -81,7 +81,7 @@ class Index extends Component {
 						<Box w="144px" px={3} py={1} mb={4} bg="rgba(0,0,0,.01)" borderWidth="1px" borderColor="rgba(0,0,0,.025)">
 							<Pre><Code color="rgb(57, 58, 52)" f={2}>npm run test</Code></Pre>
 						</Box>
-						<Para>For a more detailed example, with integration with Travis CI and SauceLabs, refer to the <Link href="https://github.com/johnpolacek/styled-starter/tree/master/test">tests directory</Link> in the Styled Starter project repo. More info:</Para>
+						<Para>For a more detailed example, with integration with <Link href="https://travis-ci.org/">Travis CI</Link> and <Link href="https://saucelabs.com/opensauce">SauceLabs</Link>, refer to the <Link href="https://github.com/johnpolacek/styled-starter/tree/master/test">tests directory</Link> in the Styled Starter project repo. More info:</Para>
 						<UL>
 							<LI><Link href="http://seleniumhq.github.io/selenium/docs/api/javascript/">Selenium WebDriver JavaScript API</Link></LI>
 							<LI><Link href="https://docs.travis-ci.com/user/sauce-connect/">Using Sauce Labs with Travis CI</Link></LI>
