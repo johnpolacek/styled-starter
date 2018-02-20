@@ -5,7 +5,7 @@
   "main": "src/App.js",
   "scripts": {
     "dev": "next",
-    "build": "rm -rf node_modules/.cache && next build",
+    "build": "rm -rf node_modules/.cache && next build && npm run export",
     "export": "next export",
     "start": "next start",
     "test": "mocha test/test",
