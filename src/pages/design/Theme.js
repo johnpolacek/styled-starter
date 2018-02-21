@@ -1,14 +1,22 @@
+import connect from 'refunk';
 import { ThemeProvider } from 'styled-components';
-import { Box, Text } from 'styled-system-html';
+import { Flex, Box, H4, Text } from 'styled-system-html';
 import Heading from '../../components/Heading';
 import Link from '../../components/Link';
 import CodeBlock from '../../components/CodeBlock'
+import FontSelectBrowser from '../../components/FontSelectBrowser'
 
-export default (props) => (
+
+const Theme = (props) => (
 	<ThemeProvider theme={props.theme}>
-		<Box p={4} mx={1}>
-			<Box pt={3} px={2} mw="960px">
-				<Heading>Theme JSON</Heading>
+		<Flex p={4} mx={1}>
+			<Box w={1/2}>
+				<Heading>Edit Theme</Heading>
+				<H4 py={2}>Choose a font</H4>
+				<FontSelectBrowser setFont={props.setFont} />
+			</Box>
+			<Box w={1/2}>
+				<Heading>Theme Data</Heading>
 				{
 					props.theme &&
 					<Box my={2} bg="white">
@@ -16,6 +24,8 @@ export default (props) => (
 					</Box>
 				}
 			</Box>
-		</Box>
+		</Flex>
 	</ThemeProvider>
 )
+
+export default connect(Theme);

@@ -4,7 +4,6 @@ import theme 	from '../_Theme'
 
 const initial = {
 	theme:theme, 
-	editTheme:false, 
 	currentTheme: 'Default Theme'
 }
 

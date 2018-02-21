@@ -6,7 +6,9 @@ import theme 	from '../_Theme';
 import themes 	from '../_Themes';
 import Head		from './Head'
 import SiteNav from '../components/SiteNav'
-import EditThemeModal from '../components/EditThemeModal'
+import ChooseThemeModal from '../components/ChooseThemeModal'
+
+import FontSelectBrowser from '../components/FontSelectBrowser'
 
 const App = (props) => (
 
@@ -15,8 +17,8 @@ const App = (props) => (
 	    <ThemeProvider theme={props.theme || theme}>
 	    	<Box>
 	    		{
-	    			props.editTheme &&
-					<EditThemeModal themes={themes} />
+	    			props.enableChooseThemeModal &&
+					<ChooseThemeModal themes={themes} />
 	    		}
 				<SiteNav currentTheme={props.currentTheme} current={props.name} />
 				<Box>

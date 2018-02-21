@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { setFont } from '../updaters'
+import connect from 'refunk';
 import PropTypes from 'prop-types';
 import { Box, Text } from 'styled-system-html';
 import Introduction from './design/Introduction';
@@ -23,25 +25,29 @@ import theme from '../_Theme';
 class Design extends Component {
 	constructor() {
 		super();
-
-		this.state = {theme:theme};
+		
 		this.renderCatalog = this.renderCatalog.bind(this);
+		this.setFont = this.setFont.bind(this);
+	}
+
+	setFont(newFont) {
+		this.props.update(setFont(newFont));
 	}
 
 	renderCatalog() {
 		const catalogTheme = {
 			// Colors
-			background: this.state.theme.colors.gray0 || '#F2F2F2',
-			textColor: this.state.theme.colors.black,
-			codeColor: this.state.theme.colors.gray || '#AAA',
-			linkColor: this.state.theme.colors.base,
+			background: this.props.theme.colors.gray0 || '#F2F2F2',
+			textColor: this.props.theme.colors.black,
+			codeColor: this.props.theme.colors.gray || '#AAA',
+			linkColor: this.props.theme.colors.base,
 
 			// NavigationBar background color, but also sometimes used as a foreground
 			// or border color.
 			lightColor: '#D6D6D6',
 
 			// Used in PageHeader
-			pageHeadingBackground: this.state.theme.colors.base,
+			pageHeadingBackground: this.props.theme.colors.base,
 			pageHeadingTextColor: '#fff',
 
 			// Used in Menu and PageHeader to make sure the top parts have
@@ -50,27 +56,27 @@ class Design extends Component {
 
 			// Used for navigation bar
 			navBarBackground: '#fff',
-			navBarTextColor: this.state.theme.colors.blue || this.state.theme.colors.black,
+			navBarTextColor: this.props.theme.colors.blue || this.props.theme.colors.black,
 
 			// Used in ResponsiveTabs (tab text), Download specimen (title text).
 			// Typography: headings.
-			brandColor: this.state.theme.colors.base,
+			brandColor: this.props.theme.colors.base,
 
 			sidebarColor: '#fff',
-			sidebarColorActive: this.state.theme.colors.gray1 || '#D1312E',
-			sidebarColorText: this.state.theme.colors.gray9 || '#003B5C',
-			sidebarColorTextActive: this.state.theme.colors.base,
-			sidebarColorLine: this.state.theme.colors.gray0 || '#EBEBEB',
-			sidebarColorHeading: this.state.theme.colors.base,
+			sidebarColorActive: this.props.theme.colors.gray1 || '#D1312E',
+			sidebarColorText: this.props.theme.colors.gray9 || '#003B5C',
+			sidebarColorTextActive: this.props.theme.colors.base,
+			sidebarColorLine: this.props.theme.colors.gray0 || '#EBEBEB',
+			sidebarColorHeading: this.props.theme.colors.base,
 
 			// Used in the html, react, and image specimens.
-			bgLight: this.state.theme.colors.gray0 || '#F2F2F2',
-			bgDark: this.state.theme.colors.gray8 || '#333333',
+			bgLight: this.props.theme.colors.gray0 || '#F2F2F2',
+			bgDark: this.props.theme.colors.gray8 || '#333333',
 
 			// Fonts
-			fontFamily: this.state.theme.font + "'Roboto', sans-serif",
-			fontHeading: this.state.theme.font + "'Roboto', sans-serif",
-			fontMono: this.state.theme.monospace + "'Roboto Mono', monospace",
+			fontFamily: this.props.theme.font + "'Roboto', sans-serif",
+			fontHeading: this.props.theme.font + "'Roboto', sans-serif",
+			fontMono: this.props.theme.monospace + "'Roboto Mono', monospace",
 		};
 
 		// See catalog/DefaultTheme.js - https://github.com/interactivethings/catalog/blob/master/src/DefaultTheme.js
@@ -83,21 +89,21 @@ class Design extends Component {
 				        path: '/',
 				        title: 'Introduction',
 				        content: () => {
-					    	return <Introduction theme={this.state.theme} />
+					    	return <Introduction theme={this.props.theme} />
 					    }
 					},
 					{
 				        path: '/theme',
 				        title: 'Theme',
 				        content: () => {
-					    	return <Theme theme={this.state.theme} />
+					    	return <Theme setFont={this.setFont} theme={this.props.theme} />
 					    }
 					},
 					{
 				        path: '/color',
 				        title: 'Color',
 				        content: () => {
-					    	return <Color theme={this.state.theme} />
+					    	return <Color theme={this.props.theme} />
 					    }
 					},
 					{
@@ -107,42 +113,42 @@ class Design extends Component {
 								path: '/font',
 						        title: 'Font',
 						        content: () => {
-							    	return <Font theme={this.state.theme} />
+							    	return <Font theme={this.props.theme} />
 							    }
 							},
 							{
 								path: '/type-scale',
 						        title: 'Type Scale',
 						        content: () => {
-							    	return <TypeScale theme={this.state.theme} />
+							    	return <TypeScale theme={this.props.theme} />
 							    }
 							},
 							{
 								path: '/text-elements',
 						        title: 'Text Elements',
 						        content: () => {
-							    	return <TextElements theme={this.state.theme} />
+							    	return <TextElements theme={this.props.theme} />
 							    }
 							},
 							{
 								path: '/headings',
 						        title: 'Headings',
 						        content: () => {
-							    	return <Headings theme={this.state.theme} />
+							    	return <Headings theme={this.props.theme} />
 							    }
 							},
 							{
 								path: '/paragraph',
 						        title: 'Paragraph',
 						        content: () => {
-							    	return <Paragraph theme={this.state.theme} />
+							    	return <Paragraph theme={this.props.theme} />
 							    }
 							},
 							{
 								path: '/lists',
 						        title: 'Lists',
 						        content: () => {
-							    	return <Lists theme={this.state.theme} />
+							    	return <Lists theme={this.props.theme} />
 							    }
 							}
 						]
@@ -151,7 +157,7 @@ class Design extends Component {
 				        path: '/layout',
 				        title: 'Layout',
 				        content: () => {
-					    	return <Layout theme={this.state.theme} />
+					    	return <Layout theme={this.props.theme} />
 					    }
 					},
 					{
@@ -161,28 +167,28 @@ class Design extends Component {
 								path: '/overview',
 						        title: 'Overview',
 						        content: () => {
-							    	return <Components theme={this.state.theme} />
+							    	return <Components theme={this.props.theme} />
 							    }
 							},
 							{
 								path: '/buttons',
 						        title: 'Buttons',
 						        content: () => {
-							    	return <Buttons theme={this.state.theme} />
+							    	return <Buttons theme={this.props.theme} />
 							    }
 							},
 							{
 								path: '/cards',
 						        title: 'Cards',
 						        content: () => {
-							    	return <Cards theme={this.state.theme} />
+							    	return <Cards theme={this.props.theme} />
 							    }
 							},
 							{
 								path: '/forms',
 						        title: 'Forms',
 						        content: () => {
-							    	return <Forms theme={this.state.theme} />
+							    	return <Forms theme={this.props.theme} />
 							    }
 							},
 						]
@@ -193,15 +199,13 @@ class Design extends Component {
 		)
 	}
 
-	componentWillReceiveProps(nextProps) {
-		this.setState({theme:nextProps.theme});
-	}
-
 	componentDidMount() {
+		console.log('Design componentDidMount()');
 		this.renderCatalog();
 	}
 
 	componentDidUpdate() {
+		console.log('Design componentDidUpdate()');
 		this.renderCatalog();
 	}
 
@@ -218,4 +222,4 @@ Design.propTypes = {
 	theme: PropTypes.object
 }
 
-export default Design;
+export default connect(Design);
