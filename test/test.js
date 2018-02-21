@@ -84,6 +84,7 @@ describe("testing styled starter project", function() {
         verifyDesignCenterSubsection(this.driver, 'Buttons');
         verifyDesignCenterSubsection(this.driver, 'Cards');
         verifyDesignCenterSubsection(this.driver, 'Forms');
+        verifyDesignCenterSubsection(this.driver, 'Rebass');
         return verifyDesignCenterSubsection(this.driver, 'Overview');
     });
 });

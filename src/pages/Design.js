@@ -17,6 +17,7 @@ import Components from './design/Components';
 import Buttons from './design/Buttons';
 import Cards from './design/Cards';
 import Forms from './design/Forms';
+import Rebass from './design/Rebass';
 import ReactDOM from 'react-dom';
 import {Catalog} from 'catalog';
 import theme from '../_Theme';
@@ -191,6 +192,13 @@ class Design extends Component {
 							    	return <Forms theme={this.props.theme} />
 							    }
 							},
+							{
+								path: '/rebass',
+						        title: 'Rebass',
+						        content: () => {
+							    	return <Rebass theme={this.props.theme} />
+							    }
+							}
 						]
 				    }
 			    ]}
