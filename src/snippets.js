@@ -46,8 +46,7 @@ export const nextRoute = `module.exports = {
 
 // ------------------------------------------------------------------------------
 
-export const blockquoteComponent = `import React, { Component } from 'react';
-import { Blockquote, Footer } from 'styled-system-html';
+export const blockquoteComponent = `import { Blockquote, Footer } from 'styled-system-html';
 
 export default (props) => (
     <Blockquote 
