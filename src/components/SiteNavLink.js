@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { Box, Text, A } from 'styled-system-html';
 import Link from 'next/link'
 
