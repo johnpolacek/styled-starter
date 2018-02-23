@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { setFont } from '../updaters'
+import { setFont, deleteColor, updateColorName, updateColorValue } from '../updaters'
 import connect from 'refunk';
-import PropTypes from 'prop-types';
 import { Box, Text } from 'styled-system-html';
 import Introduction from './design/Introduction';
 import Theme from './design/Theme';
@@ -26,13 +25,7 @@ import theme from '../_Theme';
 class Design extends Component {
 	constructor() {
 		super();
-		
 		this.renderCatalog = this.renderCatalog.bind(this);
-		this.setFont = this.setFont.bind(this);
-	}
-
-	setFont(newFont) {
-		this.props.update(setFont(newFont));
 	}
 
 	renderCatalog() {
@@ -97,7 +90,12 @@ class Design extends Component {
 				        path: '/theme',
 				        title: 'Theme',
 				        content: () => {
-					    	return <Theme setFont={this.setFont} theme={this.props.theme} />
+					    	return <Theme updaters={{
+					    		setFont: (newFont) => {this.props.update(setFont(newFont))},
+								deleteColor: (color) => {this.props.update(deleteColor(color))},
+								updateColorName: (colorName) => {this.props.update(updateColorName(colorName))},
+								updateColorValue: (color) => {this.props.update(updateColorValue(color))},
+					    	}} theme={this.props.theme} />
 					    }
 					},
 					{
@@ -208,12 +206,10 @@ class Design extends Component {
 	}
 
 	componentDidMount() {
-		console.log('Design componentDidMount()');
 		this.renderCatalog();
 	}
 
 	componentDidUpdate() {
-		console.log('Design componentDidUpdate()');
 		this.renderCatalog();
 	}
 
@@ -224,10 +220,6 @@ class Design extends Component {
 			</Box>
 		);
 	}
-}
-
-Design.propTypes = {
-	theme: PropTypes.object
 }
 
 export default connect(Design);

@@ -8,8 +8,6 @@ import Head		from './Head'
 import SiteNav from '../components/SiteNav'
 import ChooseThemeModal from '../components/ChooseThemeModal'
 
-import FontSelectBrowser from '../components/FontSelectBrowser'
-
 const App = (props) => (
 
 	<Box style={{fontFamily:props.theme.fontFamilies.sans}}>

@@ -1,9 +1,7 @@
 import { Select } from 'styled-system-html'
-import connect from 'refunk';
-import { setFont } from '../updaters'
 
 const FontSelectBrowser = (props) => (
-	<Select onChange={(e) => (props.setFont && props.setFont(e.target.value)) || props.update(setFont(e.target.value))}>
+	<Select onChange={(e) => props.setFont(e.target.value)}>
         <option value=''>Browser Fonts...</option>
         <option disabled> </option>
         <option disabled>────────── sans-serif</option>
@@ -31,4 +29,4 @@ const FontSelectBrowser = (props) => (
     </Select>
 )
 
-export default connect(FontSelectBrowser)
+export default FontSelectBrowser
