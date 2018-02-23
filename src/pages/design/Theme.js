@@ -32,7 +32,7 @@ const Theme = (props) => (
 													}
 												}} w={120} mr={3} defaultValue={color} />
 											) : (
-												<Input readOnly bg='#f8f8f8' borderColor='#f8f8f8' w={120} mr={3} defaultValue={color} />
+												<Input readOnly borderColor='white' w={120} mr={3} defaultValue={color} />
 											)
 										}
 										

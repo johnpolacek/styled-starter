@@ -1,10 +1,6 @@
 // Typography
-const fonts = {
-  sans:`'Nunito', sans-serif`,
-}
-
-export const font = fonts.sans;
-export const fontFamilies = fonts;
+export const fontFamilies = [`'Nunito', sans-serif`];
+export const font = fontFamilies[0];
 export const monospace = `"SF Mono", "Roboto Mono", Menlo, monospace`
 
 export const fontSizes = [
