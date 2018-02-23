@@ -21,7 +21,7 @@ export default (props) => (
 							<Text pb={2}>With image</Text>
 							<CodeSpecimen f="14px" w={2/3} code={`<Card 
 	title="Card Title" 
-	imageSrc="https://unsplash.it/g/270/270" 
+	imageSrc="https://unsplash.it/g/280/280" 
 	imageAlt="A placeholder image from Unsplash">
 	<Text>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit sed.
