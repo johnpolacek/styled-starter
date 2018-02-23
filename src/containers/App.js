@@ -10,7 +10,7 @@ import ChooseThemeModal from '../components/ChooseThemeModal'
 
 const App = (props) => (
 
-	<Box style={{fontFamily:props.theme.fontFamilies.sans}}>
+	<Box style={{fontFamily:props.theme.fontFamilies[0]}}>
 	    <Head prefix={props.prefix} />
 	    <ThemeProvider theme={props.theme || theme}>
 	    	<Box>
