@@ -18,12 +18,12 @@ export default (props) => (
 			<Box pt={3} px={2} mw="960px">
 				<Section>
 					<Heading>Buttons</Heading>
-					<CodeSpecimen f="14px" w={2/3} code={`<Button>Base Button</Button>`} scope={scope} />
+					<CodeSpecimen pb={4} f="14px" w={2/3} code={`<Button>Base Button</Button>`} scope={scope} />
 					{
 						Object.keys(props.theme.colors).map(
 							(color) => { 
 								if (color != 'base' && color != 'white' && color != 'black' && color != 'gray' && !(/\d/.test(color))) {
-									return <CodeSpecimen f="14px" w={2/3} code={`<Button bg="`+color+`">`+color.substring(0,1).toUpperCase()+color.substring(1)+` Button</Button>`} scope={scope} />
+									return <CodeSpecimen pb={4} f="14px" w={2/3} code={`<Button bg="`+color+`">`+color.substring(0,1).toUpperCase()+color.substring(1)+` Button</Button>`} scope={scope} />
 								}
 							}
 						)
@@ -32,14 +32,14 @@ export default (props) => (
 						Object.keys(props.theme.colors).map(
 							(color) => { 
 								if (color != 'base' && color != 'white' && color != 'black' && color != 'gray' && !(/\d/.test(color))) {
-									return <CodeSpecimen f="14px" w={2/3} code={`<ButtonOutline color="`+color+`">Outline `+color.substring(0,1).toUpperCase()+color.substring(1)+`</ButtonOutline>`} scope={scope} />
+									return <CodeSpecimen pb={4} f="14px" w={2/3} code={`<ButtonOutline color="`+color+`">Outline `+color.substring(0,1).toUpperCase()+color.substring(1)+`</ButtonOutline>`} scope={scope} />
 								}
 							}
 						)
 					}
-					<CodeSpecimen f="14px" w={2/3} code={`<ButtonDisabled>Disabled</ButtonDisabled>`} scope={scope} />
-					<CodeSpecimen f="14px" w={2/3} code={`<ButtonSmall>Small Button</ButtonSmall>`} scope={scope} />
-					<CodeSpecimen f="14px" w={2/3} code={`<ButtonLarge>Large Button</ButtonLarge>`} scope={scope} />
+					<CodeSpecimen pb={4} f="14px" w={2/3} code={`<ButtonDisabled>Disabled</ButtonDisabled>`} scope={scope} />
+					<CodeSpecimen pb={4} f="14px" w={2/3} code={`<ButtonSmall>Small Button</ButtonSmall>`} scope={scope} />
+					<CodeSpecimen pb={4} f="14px" w={2/3} code={`<ButtonLarge>Large Button</ButtonLarge>`} scope={scope} />
 				</Section>
     		</Box>
     	</Box>
