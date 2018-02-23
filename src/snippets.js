@@ -2,30 +2,19 @@
 
 export const newPage1 = `// src/pages/NewPage.js
 
-import React, { Component } from 'react';
-import { Box } from 'styled-system-html';
+import { Box } from 'styled-system';
 import SiteFooter from '../components/SiteFooter'
 
-class NewPage extends Component {
-	constructor() {
-		super();
-	}
-
-	render() {
-		return (
-			<Box>
-				<Box p={6} mw="1200px" mx="auto" align="center">
-					{
-						/* Page content will go here */ 
-					}
-				</Box>
-				<SiteFooter />
-			</Box>
-		);
-	}
-}
-
-export default NewPage;`;
+export default (props) => (
+	<Box>
+		<Box p={6} mw="1200px" mx="auto" align="center">
+			{
+				/* Page content will go here */ 
+			}
+		</Box>
+		<SiteFooter />
+	</Box>
+)`;
 
 // ------------------------------------------------------------------------------
 
