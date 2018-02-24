@@ -36,7 +36,7 @@ const Theme = (props) => (
 											)
 										}
 										
-										<Input onBlur={(e) => {
+										<Input data-value={props.theme.colors[color].toUpperCase().replace('#','')} onBlur={(e) => {
 											if (/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(e.target.value)) {
 												props.updaters.updateColorValue({name:color,value:e.target.value})
 											} else {
@@ -44,9 +44,12 @@ const Theme = (props) => (
 											}
 										}} w={120} defaultValue={props.theme.colors[color].toUpperCase()} />
 									</Box>
-									<Box position="absolute" style={{top:'-2px',right:0, cursor:'pointer'}} pr={[2,2,2,2,3]} py={[0,0,0,0,3]}>
-										<Text data-color={color} onClick={(e) => props.updaters.deleteColor(color)} f='24px' color={props.theme.colors.red6 || 'indianred'} children='×' />
-									</Box>
+									{
+										color !== 'base' &&
+										<Box position="absolute" style={{top:'-2px',right:0, cursor:'pointer'}} pr={[2,2,2,2,3]} py={[0,0,0,0,3]}>
+											<Text data-color={color} onClick={(e) => props.updaters.deleteColor(color)} f='24px' color={props.theme.colors.red6 || 'indianred'} children='×' />
+										</Box>
+									}
 								</Flex>
 							}
 						})
@@ -57,7 +60,7 @@ const Theme = (props) => (
 				<Heading>Theme Data</Heading>
 				{
 					props.theme &&
-					<Box my={2} bg="white">
+					<Box id="themeData" my={2} bg="white">
 						<CodeBlock>{JSON.stringify(props.theme, null, 2)}</CodeBlock>
 					</Box>
 				}

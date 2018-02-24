@@ -1,11 +1,12 @@
 var assert = require("assert"),
     webdriver = require("selenium-webdriver"),
     utils = require('./utils'),
-    shouldNotFindXpath = utils.shouldNotFindXpath,
+    shouldNotFind = utils.shouldNotFindXpath,
     verifyXpath = utils.verifyXpath,
     clickXpath = utils.clickXpath,
     selectOption = utils.selectOption,
     waitForPageLoad = utils.waitForPageLoad,
+    setInputValue = utils.setInputValue,
     By = webdriver.By,
     until = webdriver.until;
 
@@ -89,23 +90,73 @@ describe("testing styled starter project", function() {
         return verifyDesignCenterSubsection(this.driver, 'Overview');
     });
 
-    it('can edit theme font', function() {
-        clickXpath(this.driver, "//a[text()='Design']");
+    it('can choose theme', function() {
+        verifyXpath(this.driver, "//*[@id='currentTheme' and text()='Default Theme']");
+        verifyXpath(this.driver, "//header[@class='sc-EHOje wXwPz']");
+        verifyXpath(this.driver, "//div[contains(@style,'Nunito')]")
+        clickXpath(this.driver, "//button[text()='choose theme']");
+        this.driver.sleep(1000);
+        selectOption(this.driver, "selectTheme", "Orchid");
+        console.log('      - choose new theme');
+        verifyXpath(this.driver, "//*[@id='currentTheme' and text()='Orchid']");
+        verifyXpath(this.driver, "//header[@class='sc-EHOje dLSSXv']");
+        verifyXpath(this.driver, "//h1[@class='sc-VigVT echnWL']")
+        console.log('      - styles applied');
+        return verifyXpath(this.driver, "//div[contains(@style,'Quicksand')]")
+    });
+
+    it('can edit theme', function() {
+        this.driver.get('http://localhost:3000/design#/theme');
         waitForPageLoad(this.driver);
-        clickXpath(this.driver, "//a[text()='Theme']");
-        waitForPageLoad(this.driver);
-        verifyXpath(this.driver, "//div[@style='font-family:'Nunito', sans-serif']")
-        selectOption(this.driver, 'selectBrowserFont', 'Avenir');
+        verifyXpath(this.driver, "//*[@id='themeData']//*[contains(text(),'Nunito')]");
+        verifyXpath(this.driver, "//div[contains(@style,'Nunito')]")
+        
+        selectOption(this.driver, 'selectBrowserFont', 'Arial, sans-serif');
+
         console.log('      - select new font');
-        verifyXpath(this.driver, "//div[@style='font-family: \"avenir next\", avenir, helvetica, arial, sans-serif;']")
+        shouldNotFind(this.driver, "//*[@id='themeData']//*[contains(text(),'Nunito')]");
+        shouldNotFind(this.driver, "//div[contains(@style,'Nunito')]")
+        verifyXpath(this.driver, "//*[@id='themeData']//*[contains(text(),'Arial')]");
+        verifyXpath(this.driver, "//div[contains(@style,'Arial')]")
         console.log('      - font updated');
+
+        verifyXpath(this.driver, "//input[@value='base' and @readonly]");
+        shouldNotFind(this.driver, "//input[@value='base' and @readonly]/..//*[text()='×']");
+        console.log('      - base color not editable');
+
+        verifyXpath(this.driver, "//input[@value='blue']");
+        clickXpath(this.driver, "//*[text()='×' and @data-color='blue']");
+        shouldNotFind(this.driver, "//input[@value='blue']");
+        shouldNotFind(this.driver, "//*[text()='×' and @data-color='blue']");
+        console.log('      - can delete colors');
+
+        shouldNotFind(this.driver, "//*[@id='themeData']//*[text()='\"grey\"']");
+        setInputValue(this.driver, 'input[value=gray]', 'grey');
+        verifyXpath(this.driver, "//*[@id='themeData']//*[text()='\"grey\"']");
+        verifyXpath(this.driver, "//*[@id='themeData']//*[text()='\"grey0\"']");
+        verifyXpath(this.driver, "//*[@id='themeData']//*[text()='\"grey1\"']");
+        verifyXpath(this.driver, "//*[@id='themeData']//*[text()='\"grey2\"']");
+        verifyXpath(this.driver, "//*[@id='themeData']//*[text()='\"grey3\"']");
+        verifyXpath(this.driver, "//*[@id='themeData']//*[text()='\"grey4\"']");
+        verifyXpath(this.driver, "//*[@id='themeData']//*[text()='\"grey5\"']");
+        verifyXpath(this.driver, "//*[@id='themeData']//*[text()='\"grey6\"']");
+        verifyXpath(this.driver, "//*[@id='themeData']//*[text()='\"grey7\"']");
+        verifyXpath(this.driver, "//*[@id='themeData']//*[text()='\"grey8\"']");
+        verifyXpath(this.driver, "//*[@id='themeData']//*[text()='\"grey9\"']");
+        console.log('      - can edit color name');
+
+        shouldNotFind(this.driver, "//*[@id='themeData']//*[text()='\"#bababa\"']");
+        setInputValue(this.driver, 'input[data-value=ADB4B9]', '#bababa');
+        console.log('      - can edit color value');
+        return verifyXpath(this.driver, "//*[@id='themeData']//*[text()='\"#bababa\"']");
+        
     });
 
 });
 
 function verifyTopLevelNav(driver, section) {
     console.log('      - active nav is home');
-    shouldNotFindXpath(driver, "//nav//p[text()='"+section+"']");
+    shouldNotFind(driver, "//nav//p[text()='"+section+"']");
     verifyXpath(driver, "//nav//p[text()='Styled Starter']");
     
     console.log('      - click '+section+' link');
@@ -119,7 +170,7 @@ function verifyTopLevelNav(driver, section) {
     clickXpath(driver, "//nav//a[@href='/' and text()='Styled Starter']");
 
     console.log('      - active nav is home');
-    shouldNotFindXpath(driver, "//nav//p[text()='"+section+"']");
+    shouldNotFind(driver, "//nav//p[text()='"+section+"']");
     return verifyXpath(driver, "//nav//p[text()='Styled Starter']");
 }
 

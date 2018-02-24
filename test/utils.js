@@ -32,18 +32,22 @@ module.exports = {
             return elements[0];
         });
     },
-    selectOption(driver, id, val) {
-        verifyXpath(driver, "//select[@id='id']");
-        driver.executeScript(''+
-            'var select = document.getElementById(id);'+
+    setInputValue(driver, selector, value) {
+        console.log('var input = document.querySelector("'+selector+'");input.value = "'+value+'";input.dispatchEvent(new Event("change", { bubbles: true }));input.dispatchEvent(new Event("blur", { bubbles: true }));');
+        return driver.executeScript('var input = document.querySelector("'+selector+'");input.value = "'+value+'";input.dispatchEvent(new Event("change", { bubbles: true }));input.dispatchEvent(new Event("blur", { bubbles: true }));');
+    },
+    selectOption(driver, selectId, val) {
+        verifyXpath(driver, "//select[@id='"+selectId+"']");
+        return driver.executeScript(''+
+            'var select = document.getElementById("'+selectId+'");'+
             'for (var opt, i = 0; opt = select.options[i]; i++) {'+
-            '    if (opt.value == val) {'+
+            '    if (opt.value == "'+val+'") {'+
             '        select.selectedIndex = i;'+
             '        break;'+
             '    }'+
-            '}'
+            '}'+
+            'select.dispatchEvent(new Event("change", { bubbles: true }));'
         );
-        
     },
     waitForPageLoad: function(driver) {
         driver.sleep(500);
