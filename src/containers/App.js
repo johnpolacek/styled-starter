@@ -25,8 +25,8 @@ const App = (props) => (
 			</Box>
     	</ThemeProvider>
     	{
-    		props.theme.webfonts && props.theme.webfonts.sans && 
-			<link key={props.theme.webfonts.sans} rel='stylesheet' href={"https://fonts.googleapis.com/css?family="+props.theme.webfonts.sans+":100,200,300,400,500,600,700,800,900"} />
+    		props.theme.webfont && 
+			<link key={props.theme.webfont} rel='stylesheet' href={"https://fonts.googleapis.com/css?family="+props.theme.webfont+":100,200,300,400,500,600,700,800,900"} />
 		}
   	</Box>
 )

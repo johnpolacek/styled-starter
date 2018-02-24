@@ -105,7 +105,7 @@ describe("testing styled starter project", function() {
         return verifyXpath(this.driver, "//div[contains(@style,'Quicksand')]")
     });
 
-    it('can edit theme', function() {
+    it('can edit theme font', function() {
         this.driver.get('http://localhost:3000/design#/theme');
         waitForPageLoad(this.driver);
         verifyXpath(this.driver, "//*[@id='themeData']//*[contains(text(),'Nunito')]");
@@ -113,13 +113,23 @@ describe("testing styled starter project", function() {
         
         selectOption(this.driver, 'selectBrowserFont', 'Arial, sans-serif');
 
-        console.log('      - select new font');
+        console.log('      - select new browser font');
         shouldNotFind(this.driver, "//*[@id='themeData']//*[contains(text(),'Nunito')]");
         shouldNotFind(this.driver, "//div[contains(@style,'Nunito')]")
         verifyXpath(this.driver, "//*[@id='themeData']//*[contains(text(),'Arial')]");
-        verifyXpath(this.driver, "//div[contains(@style,'Arial')]")
         console.log('      - font updated');
+        verifyXpath(this.driver, "//div[contains(@style,'Arial')]")
 
+        console.log('      - select new web font');
+        selectOption(this.driver, 'selectWebFont', 'Cabin');
+        verifyXpath(this.driver, "//*[@id='themeData']//*[contains(text(),'Cabin')]");
+        return verifyXpath(this.driver, "//div[contains(@style,'Cabin')]")
+    });
+
+    it('can edit theme color', function() {
+        this.driver.get('http://localhost:3000/design#/theme');
+        waitForPageLoad(this.driver);
+        
         verifyXpath(this.driver, "//input[@value='base' and @readonly]");
         shouldNotFind(this.driver, "//input[@value='base' and @readonly]/..//*[text()='×']");
         console.log('      - base color not editable');
@@ -149,7 +159,6 @@ describe("testing styled starter project", function() {
         setInputValue(this.driver, 'input[data-value=ADB4B9]', '#bababa');
         console.log('      - can edit color value');
         return verifyXpath(this.driver, "//*[@id='themeData']//*[text()='\"#bababa\"']");
-        
     });
 
 });

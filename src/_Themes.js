@@ -3,12 +3,13 @@ import defaultTheme from './_Theme';
 let crimson = Object.assign({},defaultTheme);
 crimson.fontFamilies = [`"Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif`]
 crimson.font = crimson.fontFamilies[0];
-crimson.webfonts = {}
+crimson.webfont = [];
 crimson.colors = {"base":"#DC143C","black":"#000","blue":"#14a0dc","blue0":"#e4f4fb","blue1":"#c7e8f7","blue2":"#a6dbf2","blue3":"#80ccec","blue4":"#51b9e5","blue5":"#14a0dc","blue6":"#1291c7","blue7":"#107fae","blue8":"#0d6990","blue9":"#094b67","gray":"#bfafb2","gray0":"#faf9f9","gray1":"#f0eded","gray2":"#e6dfe0","gray3":"#dad1d3","gray4":"#cdc1c3","gray5":"#bfafb2","gray6":"#af9b9f","gray7":"#9c8388","gray8":"#81656a","gray9":"#4c3b3e","green":"#3cdc14","green0":"#e9fbe5","green1":"#d1f7c8","green2":"#b6f2a7","green3":"#96ec80","green4":"#6fe552","green5":"#3cdc14","green6":"#36c712","green7":"#30af10","green8":"#28920d","green9":"#1d690a","orange":"#dc5014","orange0":"#fbede7","orange1":"#f7d9cc","orange2":"#f3c2ad","orange3":"#eda788","orange4":"#e6845a","orange5":"#dc5014","orange6":"#c74812","orange7":"#ae3f10","orange8":"#90340d","orange9":"#662509","pink":"#dc14a0","pink0":"#fceaf7","pink1":"#f8d3ed","pink2":"#f4b8e2","pink3":"#f097d5","pink4":"#e96bc3","pink5":"#dc14a0","pink6":"#c71291","pink7":"#ae107f","pink8":"#910d69","pink9":"#68094b","red":"#dc143c","red0":"#fcebee","red1":"#f9d4db","red2":"#f5b9c5","red3":"#f099aa","red4":"#e96d86","red5":"#dc143c","red6":"#c71236","red7":"#ae1030","red8":"#910d27","red9":"#68091c","violet":"#5014dc","violet0":"#f0eafc","violet1":"#ded3f8","violet2":"#cbb9f5","violet3":"#b298f0","violet4":"#926ce9","violet5":"#5014dc","violet6":"#4812c6","violet7":"#3f10ad","violet8":"#340d8e","violet9":"#240963","white":"#ffffff","yellow":"#dcb414","yellow0":"#faf5e1","yellow1":"#f6ebc0","yellow2":"#f0df9c","yellow3":"#ead374","yellow4":"#e4c448","yellow5":"#dcb414","yellow6":"#c7a312","yellow7":"#af8f10","yellow8":"#91770d","yellow9":"#69560a"}
 
 let forest = Object.assign({},defaultTheme);
 forest.fontFamilies = [ "Frutiger, \"Frutiger Linotype\", Univers, Calibri, \"Gill Sans\", \"Gill Sans MT\", \"Myriad Pro\", Myriad, \"DejaVu Sans Condensed\", \"Liberation Sans\", \"Nimbus Sans L\", Tahoma, Geneva, \"Helvetica Neue\", Helvetica, Arial, sans-serif"]
 forest.font = forest.fontFamilies[0];
+forest.webfont = [];
 forest.colors = {"base":"#228b22","black":"#000","blue":"#22568b","blue0":"#e9eef3","blue1":"#d0dbe6","blue2":"#b3c5d7","blue3":"#91abc5","blue4":"#668aaf","blue5":"#22568b","blue6":"#1f4d7d","blue7":"#1a436c","blue8":"#163658","blue9":"#0f253c","brown":"#8b5622","brown0":"#f3ede7","brown1":"#e5d9cd","brown2":"#d5c2b0","brown3":"#c3a88d","brown4":"#ac8761","brown5":"#8b5622","brown6":"#7d4d1f","brown7":"#6d431b","brown8":"#593716","brown9":"#3e260f","cyan":"#228b8b","cyan0":"#e6f2f2","cyan1":"#cbe4e4","cyan2":"#acd3d3","cyan3":"#88c1c1","cyan4":"#5daaaa","cyan5":"#228b8b","cyan6":"#1f7d7d","cyan7":"#1b6e6e","cyan8":"#165a5a","cyan9":"#104040","fuschia":"#8b228b","fuschia0":"#f4eaf4","fuschia1":"#e8d3e8","fuschia2":"#dab8da","fuschia3":"#c998c9","fuschia4":"#b26db2","fuschia5":"#8b228b","fuschia6":"#7d1f7d","fuschia7":"#6d1b6d","fuschia8":"#591659","fuschia9":"#3e0f3e","gray":"#acb6ac","gray0":"#f9faf9","gray1":"#eceeec","gray2":"#dee2de","gray3":"#cfd4cf","gray4":"#bec6be","gray5":"#acb6ac","gray6":"#97a397","gray7":"#7e8d7e","gray8":"#5e715e","gray9":"#344334","green":"#228b22","green0":"#e7f2e7","green1":"#cce4cc","green2":"#aed5ae","green3":"#8bc28b","green4":"#5fab5f","green5":"#228b22","green6":"#1f7d1f","green7":"#1b6e1b","green8":"#165a16","green9":"#104010","red":"#8b2222","red0":"#f4ebeb","red1":"#e8d4d4","red2":"#dab9b9","red3":"#ca9a9a","red4":"#b46f6f","red5":"#8b2222","red6":"#7d1f1f","red7":"#6c1b1b","red8":"#581616","red9":"#3d0f0f","violet":"#56228b","violet0":"#efebf4","violet1":"#ded4e8","violet2":"#cab9da","violet3":"#b19aca","violet4":"#9170b4","violet5":"#56228b","violet6":"#4d1e7c","violet7":"#421a6b","violet8":"#361557","violet9":"#240e3a","white":"#ffffff"}
 
 let gold = Object.assign({},defaultTheme);
@@ -26,13 +27,13 @@ indigo.colors = {"base":"#4b0082","black":"#000","blue":"#003882","blue0":"#e8ed
 let khaki = Object.assign({},defaultTheme);
 khaki.fontFamilies = ["'Open Sans',sans-serif"]
 khaki.font = khaki.fontFamilies[0];
-khaki.webfonts = ['Open+Sans']
+khaki.webfont = ['Open+Sans']
 khaki.colors = {"base":"#bdb76b","black":"#000","burgundy":"#900020","burgundy0":"#fcf8f9","burgundy1":"#f6ebed","burgundy2":"#f0dce0","burgundy3":"#e9ccd2","burgundy4":"#e1bac3","burgundy5":"#d8a6b1","burgundy6":"#ce8e9d","burgundy7":"#c17283","burgundy8":"#b04a61","burgundy9":"#84001d","coffee":"#675118","coffee0":"#faf9f7","coffee1":"#f0ede8","coffee2":"#e4e0d6","coffee3":"#d8d3c4","coffee4":"#cbc3b0","coffee5":"#bcb299","coffee6":"#ab9f80","coffee7":"#978861","coffee8":"#7d6a39","coffee9":"#4e3d12","cream":"#F1E291","cream0":"#fcfaeb","cream1":"#f7eec0","cream2":"#f1e291","cream3":"#e2d488","cream4":"#d2c57e","cream5":"#c0b473","cream6":"#aba167","cream7":"#938a58","cream8":"#746d46","cream9":"#444029","gray":"#b5b4a1","gray0":"#faf9f8","gray1":"#eeeee9","gray2":"#e2e1da","gray3":"#d4d3c8","gray4":"#c6c4b6","gray5":"#b5b4a1","gray6":"#a3a189","gray7":"#8c8a75","gray8":"#6e6d5c","gray9":"#404036","green":"#A0B385","green0":"#f9faf7","green1":"#ebefe5","green2":"#dce3d2","green3":"#ccd7be","green4":"#bbc9a8","green5":"#a8b98f","green6":"#94a67b","green7":"#7f8e6a","green8":"#647053","green9":"#3b4231","khaki":"darkkhaki","khaki0":"#fafaf4","khaki1":"#f0eedd","khaki2":"#e5e2c4","khaki3":"#d8d5a8","khaki4":"#cbc68a","khaki5":"#bcb66a","khaki6":"#a8a25f","khaki7":"#908b51","khaki8":"#716e40","khaki9":"#424026","lightbrown":"#bd8d6b","lightbrown0":"#f7f1ec","lightbrown1":"#eee1d8","lightbrown2":"#e4d0c2","lightbrown3":"#d9bda9","lightbrown4":"#cca78d","lightbrown5":"#bd8d6b","lightbrown6":"#ab7f61","lightbrown7":"#956f55","lightbrown8":"#7c5c46","lightbrown9":"#584232","sepia":"#471605","sepia0":"#faf9f9","sepia1":"#f1edeb","sepia2":"#e6dfdd","sepia3":"#dbd1ce","sepia4":"#cec1bd","sepia5":"#c0b0aa","sepia6":"#b09b94","sepia7":"#9d837a","sepia8":"#85655a","sepia9":"#5f3425","white":"#ffffff"}
 
 let lime = Object.assign({},defaultTheme);
 lime.fontFamilies = [`"Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif`]
 lime.font = lime.fontFamilies[0];
-lime.webfonts = {}
+lime.webfont = [];
 lime.colors = {"base":"#32cd32","black":"#000","blue":"#327fcd","blue0":"#e8f1f9","blue1":"#cfe1f3","blue2":"#b2cfec","blue3":"#91bae4","blue4":"#69a1da","blue5":"#327fcd","blue6":"#2d73b9","blue7":"#2764a2","blue8":"#205285","blue9":"#173a5e","cyan":"#32cdcd","cyan0":"#e6f9f9","cyan1":"#cbf2f2","cyan2":"#adebeb","cyan3":"#8be3e3","cyan4":"#63d9d9","cyan5":"#32cdcd","cyan6":"#2dbaba","cyan7":"#28a3a3","cyan8":"#218787","cyan9":"#186262","fuschia":"#cd32cd","fuschia0":"#faebfa","fuschia1":"#f5d4f5","fuschia2":"#eebbee","fuschia3":"#e79ce7","fuschia4":"#dd74dd","fuschia5":"#cd32cd","fuschia6":"#b92db9","fuschia7":"#a228a2","fuschia8":"#862186","fuschia9":"#601760","gray":"#a5b8a5","gray0":"#f8faf8","gray1":"#eaefea","gray2":"#dbe3db","gray3":"#cbd6cb","gray4":"#b9c8b9","gray5":"#a5b8a5","gray6":"#8ea68e","gray7":"#729172","gray8":"#5a725a","gray9":"#344334","green":"#32cd32","green0":"#e7f9e7","green1":"#cdf3cd","green2":"#b0ecb0","green3":"#8fe48f","green4":"#66da66","green5":"#32cd32","green6":"#2db92d","green7":"#28a328","green8":"#218721","green9":"#186218","indigo":"#3232cd","indigo0":"#ececfa","indigo1":"#d6d6f5","indigo2":"#bdbdef","indigo3":"#a0a0e8","indigo4":"#7878de","indigo5":"#3232cd","indigo6":"#2d2db8","indigo7":"#2727a0","indigo8":"#202082","indigo9":"#16165a","orange":"#FF8C00","orange0":"#fff8f1","orange1":"#ffead1","orange2":"#ffdbaf","orange3":"#ffc988","orange4":"#ffb55b","orange5":"#ff9c22","orange6":"#f08400","orange7":"#ce7100","orange8":"#a35900","orange9":"#603500","red":"#cd3232","red0":"#faebeb","red1":"#f5d5d5","red2":"#efbcbc","red3":"#e79d9d","red4":"#dd7575","red5":"#cd3232","red6":"#b92d2d","red7":"#a22727","red8":"#852121","red9":"#5f1717","violet":"#7f32cd","violet0":"#f2ebfa","violet1":"#e4d4f5","violet2":"#d4bbee","violet3":"#c19ce7","violet4":"#a874dd","violet5":"#7f32cd","violet6":"#722db9","violet7":"#6427a1","violet8":"#522084","violet9":"#39165c","white":"#ffffff","yellow":"#FFD700","yellow0":"#fffadf","yellow1":"#ffef97","yellow2":"#ffe03b","yellow3":"#f7d000","yellow4":"#e5c100","yellow5":"#d2b100","yellow6":"#bb9e00","yellow7":"#a18700","yellow8":"#7f6b00","yellow9":"#4a3f00",}
 
 let orchid = Object.assign({},defaultTheme);
@@ -50,6 +51,7 @@ peru.colors = {"base":"#CD853F","black":"#000","blue":"#3f88cd","blue0":"#e9f1f9
 let royal = Object.assign({},defaultTheme);
 royal.fontFamilies = [`'avenir next', avenir, helvetica, arial, sans-serif`]
 royal.font = royal.fontFamilies[0];
+forest.webfont = [];
 royal.colors = {"base":"#4169e1","black":"#000","blue":"#4169e1","blue0":"#eaeffc","blue1":"#d3ddf8","blue2":"#bac8f4","blue3":"#9bb0ef","blue4":"#7693e9","blue5":"#4169e1","blue6":"#3b5fcb","blue7":"#3353b1","blue8":"#2a4491","blue9":"#1e3066","cyan":"#41b9e1","cyan0":"#e8f6fb","cyan1":"#ceedf7","cyan2":"#b2e3f3","cyan3":"#92d7ee","cyan4":"#6dc9e8","cyan5":"#41b9e1","cyan6":"#3ba7cb","cyan7":"#3493b3","cyan8":"#2b7a94","cyan9":"#1f586b","gray":"#aeb3c0","gray0":"#f9f9fa","gray1":"#ecedf1","gray2":"#dfe1e6","gray3":"#d0d3db","gray4":"#c0c4ce","gray5":"#aeb3c0","gray6":"#9aa0b1","gray7":"#82899e","gray8":"#666c7c","gray9":"#3c3f49","green":"#41e169","green0":"#e9fbed","green1":"#d0f8da","green2":"#b4f3c4","green3":"#95eeab","green4":"#70e88e","green5":"#41e169","green6":"#3bcc5f","green7":"#34b354","green8":"#2b9545","green9":"#1f6c32","indigo":"#6941e1","indigo0":"#f0ecfc","indigo1":"#dfd6f9","indigo2":"#ccbef5","indigo3":"#b5a1f0","indigo4":"#977cea","indigo5":"#6941e1","indigo6":"#5f3bcb","indigo7":"#5233b1","indigo8":"#442a91","indigo9":"#2f1d65","orange":"#eeaa33","orange0":"#fef9f0","orange1":"#fbecd1","orange2":"#f8ddae","orange3":"#f5cd88","orange4":"#f1bb5b","orange5":"#e9a632","orange6":"#d0952d","orange7":"#b38026","orange8":"#8d651e","orange9":"#533b12","pink":"#e141b9","pink0":"#fcecf8","pink1":"#f9d6f0","pink2":"#f5bde7","pink3":"#f0a0dc","pink4":"#ea7bce","pink5":"#e141b9","pink6":"#cb3ba7","pink7":"#b23392","pink8":"#932b79","pink9":"#691e57","red":"#ee5555","red0":"#fef8f8","red1":"#fde9e9","red2":"#fbd9d9","red3":"#f9c7c7","red4":"#f7b2b2","red5":"#f59a9a","red6":"#f27d7d","red7":"#ed5454","red8":"#bb4343","red9":"#6f2828","teal":"#41e1b9","teal0":"#e8fbf7","teal1":"#cff7ed","teal2":"#b3f3e3","teal3":"#93eed7","teal4":"#6ee8ca","teal5":"#41e1b9","teal6":"#3bcca7","teal7":"#34b393","teal8":"#2b957a","teal9":"#1f6c59","violet":"#b941e1","violet0":"#f8ebfc","violet1":"#f0d6f8","violet2":"#e7bdf5","violet3":"#dc9ff0","violet4":"#ce7aea","violet5":"#b941e1","violet6":"#a73bcb","violet7":"#9233b2","violet8":"#792a93","violet9":"#561e68","white":"#ffffff","yellow":"#FFDD22","yellow0":"#fffadf","yellow1":"#ffef95","yellow2":"#ffe037","yellow3":"#f2d220","yellow4":"#e1c31e","yellow5":"#cdb21b","yellow6":"#b79f18","yellow7":"#9d8815","yellow8":"#7c6c11","yellow9":"#493f0a"}
 
 let salmon = Object.assign({},defaultTheme);
@@ -94,10 +96,8 @@ export const webfonts = {
 	sans:{
 		"ABeeZee":"ABeeZee",
 		"Abel":"Abel",
-		"Acme":"Acme",
 		"Alegreya Sans":"Alegreya+Sans",
 		"Amaranth":"Amaranth",
-		"Anton":"Anton",
 		"Archivo Narrow":"Archivo+Narrow",
 		"Arimo":"Arimo",
 		"Armata":"Armata",
@@ -105,7 +105,6 @@ export const webfonts = {
 		"Assistant":"Assistant",
 		"Barlow Condensed":"Barlow+Condensed",
 		"Cabin":"Cabin",
-		"Cabin Condensed":"Cabin+Condensed",
 		"Cairo":"Cairo",
 		"Catamaran":"Catamaran",
 		"Cuprum":"Cuprum",
@@ -113,19 +112,14 @@ export const webfonts = {
 		"Dosis":"Dosis",
 		"Economica":"Economica",
 		"Exo":"Exo",
-		"Exo 2":"Exo+2",
 		"Fira Sans":"Fira+Sans",
-		"Fira Sans Condensed":"Fira+Sans+Condensed",
 		"Fjalla One":"Fjalla+One",
 		"Francois One":"Francois+One",
 		"Gudea":"Gudea",
 		"Heebo":"Heebo",
-		"Hind":"Hind",
 		"Hind Siliguri":"Hind+Siliguri",
 		"Istok Web":"Istok+Web",
 		"Josefin Sans":"Josefin+Sans",
-		"Jura":"Jura",
-		"Kanit":"Kanit",
 		"Karla":"Karla",
 		"Lato":"Lato",
 		"Libre Franklin":"Libre+Franklin",
@@ -145,8 +139,6 @@ export const webfonts = {
 		"Oswald":"Oswald",
 		"Oxygen":"Oxygen",
 		"PT Sans":"PT+Sans",
-		"PT Sans Caption":"PT+Sans+Caption",
-		"PT Sans Narrow":"PT+Sans+Narrow",
 		"Pathway Gothic One":"Pathway+Gothic+One",
 		"Philosopher":"Philosopher",
 		"Play":"Play",
@@ -167,7 +159,6 @@ export const webfonts = {
 		"Teko":"Teko",
 		"Titillium Web":"Titillium+Web",
 		"Ubuntu":"Ubuntu",
-		"Ubuntu Condensed":"Ubuntu+Condensed",
 		"Varela Round":"Varela+Round",
 		"Work Sans":"Work+Sans",
 		"Yanone Kaffeesatz":"Yanone+Kaffeesatz",

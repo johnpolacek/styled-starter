@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { setFont, deleteColor, updateColorName, updateColorValue } from '../updaters'
+import { setFont, setWebFont, deleteColor, updateColorName, updateColorValue } from '../updaters'
 import connect from 'refunk';
 import { Box, Text } from 'styled-system-html';
 import Introduction from './design/Introduction';
@@ -92,6 +92,7 @@ class Design extends Component {
 				        content: () => {
 					    	return <Theme updaters={{
 					    		setFont: (newFont) => {this.props.update(setFont(newFont))},
+					    		setWebFont: (newFont) => {this.props.update(setWebFont(newFont))},
 								deleteColor: (color) => {this.props.update(deleteColor(color))},
 								updateColorName: (colorName) => {this.props.update(updateColorName(colorName))},
 								updateColorValue: (color) => {this.props.update(updateColorValue(color))},

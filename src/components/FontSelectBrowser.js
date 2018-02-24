@@ -1,6 +1,6 @@
 import { Select } from 'styled-system-html'
 
-const FontSelectBrowser = (props) => (
+export default (props) => (
 	<Select id="selectBrowserFont" onChange={(e) => props.setFont(e.target.value)}>
         <option value=''>Browser Fonts...</option>
         <option disabled> </option>
@@ -28,5 +28,3 @@ const FontSelectBrowser = (props) => (
         <option value='Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif'>Times Based</option>
     </Select>
 )
-
-export default FontSelectBrowser

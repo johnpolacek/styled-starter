@@ -5,6 +5,7 @@ import Heading from '../../components/Heading';
 import Link from '../../components/Link';
 import CodeBlock from '../../components/CodeBlock'
 import FontSelectBrowser from '../../components/FontSelectBrowser'
+import FontSelectWeb from '../../components/FontSelectWeb'
 
 
 const Theme = (props) => (
@@ -13,8 +14,13 @@ const Theme = (props) => (
 			<Box w={[1,1,1/2]} pr={4}>
 				<Heading>Edit Theme</Heading>
 				<H4 py={2}>Choose a font</H4>
-				<FontSelectBrowser setFont={props.updaters.setFont} />
-				<H4 pt={5} pb={2}>Choose colors</H4>
+				<Box pb={3}>
+					<FontSelectBrowser setFont={props.updaters.setFont} />
+				</Box>
+				<Box pb={3}>
+					<FontSelectWeb setWebFont={props.updaters.setWebFont} />
+				</Box>
+				<H4 pt={4} pb={2}>Choose colors</H4>
 				<Flex w={[310,310,310,310,370]} wrap="wrap">{
 					Object.keys(props.theme.colors).map(
 						(color) => { 
@@ -24,7 +30,7 @@ const Theme = (props) => (
 									<Box pt={[2,2,2,2,0]}>
 										{
 											color !== 'base' ? (
-												<Input onBlur={(e) => { 
+												<Input style={{fontFamily:props.theme.font}} onBlur={(e) => { 
 													if (e.target.value !== '') {
 														props.updaters.updateColorName({old:color,new:e.target.value})
 													} else { 
