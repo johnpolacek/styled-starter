@@ -33,7 +33,6 @@ module.exports = {
         });
     },
     setInputValue(driver, selector, value) {
-        console.log('var input = document.querySelector("'+selector+'");input.value = "'+value+'";input.dispatchEvent(new Event("change", { bubbles: true }));input.dispatchEvent(new Event("blur", { bubbles: true }));');
         return driver.executeScript('var input = document.querySelector("'+selector+'");input.value = "'+value+'";input.dispatchEvent(new Event("change", { bubbles: true }));input.dispatchEvent(new Event("blur", { bubbles: true }));');
     },
     selectOption(driver, selectId, val) {
@@ -54,7 +53,6 @@ module.exports = {
         // Make sure new page init has started...
         return driver.executeScript('return document.readyState').then(function(readyState) {
             if (readyState != 'complete') {
-                console.log('waitForPageLoad check document.readyState: '+readyState);
                 driver.sleep(1000);
                 driver.executeScript('window.stop();');
                 waitForPageLoad(driver);
