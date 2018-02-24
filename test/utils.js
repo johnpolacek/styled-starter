@@ -1,7 +1,16 @@
 var assert = require("assert"),
     webdriver = require("selenium-webdriver"),
     By = webdriver.By,
+    Select =  webdriver.select,
     until = webdriver.until;
+
+function verifyXpath(driver, xpath) {
+    return driver.wait(function() {
+        return driver.findElements(By.xpath(xpath)).then(function(elements) {
+            return elements[0];
+        });
+    }, 4000, 'Failed to find '+xpath+' after 4 seconds');
+}
 
 module.exports = {
     shouldNotFindXpath: function(driver, xpath) {
@@ -9,13 +18,7 @@ module.exports = {
             assert.equal(0,elements.length);
         });
     },
-    verifyXpath: function(driver, xpath) {
-        return driver.wait(function() {
-            return driver.findElements(By.xpath(xpath)).then(function(elements) {
-                return elements[0];
-            });
-        }, 4000, 'Failed to find '+xpath+' after 4 seconds');
-    },
+    verifyXpath: verifyXpath,
     clickXpath: function(driver, xpath) {
         return driver.wait(function() {
             return driver.findElement(By.xpath(xpath)).then(function(element) {
@@ -23,6 +26,24 @@ module.exports = {
                 return element;
             });
         }, 4000, 'Failed to find '+xpath+' after 4 seconds');
+    },
+    findByXpath(driver, xpath) {
+        return driver.findElements(By.xpath(xpath)).then(function(elements) {
+            return elements[0];
+        });
+    },
+    selectOption(driver, id, val) {
+        verifyXpath(driver, "//select[@id='id']");
+        driver.executeScript(''+
+            'var select = document.getElementById(id);'+
+            'for (var opt, i = 0; opt = select.options[i]; i++) {'+
+            '    if (opt.value == val) {'+
+            '        select.selectedIndex = i;'+
+            '        break;'+
+            '    }'+
+            '}'
+        );
+        
     },
     waitForPageLoad: function(driver) {
         driver.sleep(500);

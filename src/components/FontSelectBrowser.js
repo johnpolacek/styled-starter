@@ -1,7 +1,7 @@
 import { Select } from 'styled-system-html'
 
 const FontSelectBrowser = (props) => (
-	<Select onChange={(e) => props.setFont(e.target.value)}>
+	<Select id="selectBrowserFont" onChange={(e) => props.setFont(e.target.value)}>
         <option value=''>Browser Fonts...</option>
         <option disabled> </option>
         <option disabled>────────── sans-serif</option>

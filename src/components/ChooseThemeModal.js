@@ -26,7 +26,7 @@ const ChooseThemeModal = (props) => (
 			<Box onClick={() => props.update(enableChooseThemeModal(false))} f={2} py={2} px={3} position="absolute" style={{right:0,top:0,cursor:'pointer'}}>&times;</Box>
 			<H3 pb={3}>Choose Theme</H3>
 			<Box>
-				<Select onChange={e => props.update(updateTheme(e.target.value))} style={{display:'inline-block', padding:'8px'}} w={160}>
+				<Select id="selectTheme" onChange={e => props.update(updateTheme(e.target.value))} style={{display:'inline-block', padding:'8px'}} w={160}>
                     {
                     	Object.keys(Object.assign({'Select...':''},props.themes)).map(
                     		(theme) => <option key={theme} value={props.themes[theme] && theme}>{theme}</option>

@@ -3,7 +3,7 @@ import chroma from 'chroma-js';
 
 export const enableChooseThemeModal = value => state => ({ enableChooseThemeModal: value })
 export const updateTheme = newTheme => state => ({ currentTheme:newTheme, theme:themes[newTheme] })
-export const setFont = newFont => state => ({ currentTheme:'Custom', theme:Object.assign({}, state.theme,{font:newFont, fontFamilies:{sans:newFont}}) })
+export const setFont = newFont => state => ({ currentTheme:'Custom', theme:Object.assign({}, state.theme,{font:newFont, fontFamilies:[newFont]}) })
 export const deleteColor = color => state => {
 	let newTheme = {...state.theme}
 	delete newTheme.colors[color]

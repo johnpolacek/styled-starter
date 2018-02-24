@@ -4,6 +4,7 @@ var assert = require("assert"),
     shouldNotFindXpath = utils.shouldNotFindXpath,
     verifyXpath = utils.verifyXpath,
     clickXpath = utils.clickXpath,
+    selectOption = utils.selectOption,
     waitForPageLoad = utils.waitForPageLoad,
     By = webdriver.By,
     until = webdriver.until;
@@ -87,6 +88,19 @@ describe("testing styled starter project", function() {
         verifyDesignCenterSubsection(this.driver, 'Rebass');
         return verifyDesignCenterSubsection(this.driver, 'Overview');
     });
+
+    it('can edit theme font', function() {
+        clickXpath(this.driver, "//a[text()='Design']");
+        waitForPageLoad(this.driver);
+        clickXpath(this.driver, "//a[text()='Theme']");
+        waitForPageLoad(this.driver);
+        verifyXpath(this.driver, "//div[@style='font-family:'Nunito', sans-serif']")
+        selectOption(this.driver, 'selectBrowserFont', 'Avenir');
+        console.log('      - select new font');
+        verifyXpath(this.driver, "//div[@style='font-family: \"avenir next\", avenir, helvetica, arial, sans-serif;']")
+        console.log('      - font updated');
+    });
+
 });
 
 function verifyTopLevelNav(driver, section) {
@@ -124,3 +138,4 @@ function verifyDesignCenterSubsection(driver, section) {
     waitForPageLoad(driver);
     return verifyXpath(driver, "//h1[text()='"+section+"']");
 }
+
