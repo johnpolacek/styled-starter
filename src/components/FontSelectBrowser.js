@@ -6,10 +6,10 @@ export default (props) => (
         <option disabled> </option>
         <option disabled>────────── sans-serif</option>
         <option value='Arial, sans-serif'>Arial</option>
-        <option value='Arial Black, Arial Bold, Gadget, sans-serif'>Arial Black</option>
         <option value="'avenir next', avenir, helvetica, arial, sans-serif">Avenir</option>
         <option value='"Helvetica Neue", Helvetica, Arial, sans-serif'>Helvetica</option>
         <option value='Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif'>Helvetica Based</option>
+        <option value='system-ui,sans-serif'>System</option>
         <option value='Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif'>Tahoma</option>
         <option value='"Trebuchet MS", Verdana, "Verdana Ref", sans-serif'>Trebuchet</option>
         <option value='"Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif'>Trebuchet Based</option>

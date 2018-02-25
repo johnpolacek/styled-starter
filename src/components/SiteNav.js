@@ -9,7 +9,7 @@ const SiteNav = (props) => (
 	<Box bg="base" position="relative" style={{zIndex:9999}}>
 		<Nav bg="rgba(0,0,0,.2)" align='left' px={[2,0,2]}>
 	    	<Box position="absolute" style={{top:0,right:0}} mt={[4,3]} pt={4} pr={2}>
-	    		<Text onClick={() => props.update(enableChooseThemeModal(true))} style={{cursor:'pointer'}} display="inline-block" f={1} pr={3} color="white"><Span id="currentTheme">{props.currentTheme}</Span> <Button fontWeight="bold" ml={1} px={1} py='2px' f={0} color="blue">choose theme</Button></Text>
+	    		<Text onClick={() => props.update(enableChooseThemeModal(true))} style={{cursor:'pointer'}} display="inline-block" f={1} pr={3} color="white"><Span id="currentTheme">{props.theme.name}</Span> <Button fontWeight="bold" ml={1} px={1} py='2px' f={0} color="blue">choose theme</Button></Text>
 				<Box display="inline-block" p={3} mt={2}>
 					<Img position="relative" style={{top:'4px'}} width="80" src="https://travis-ci.org/johnpolacek/styled-starter.svg?branch=master" alt="branch health status" />
 				</Box>

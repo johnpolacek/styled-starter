@@ -102,7 +102,17 @@ describe("testing styled starter project", function() {
         verifyXpath(this.driver, "//header[@class='sc-EHOje dLSSXv']");
         verifyXpath(this.driver, "//h1[@class='sc-VigVT echnWL']")
         console.log('      - styles applied');
-        return verifyXpath(this.driver, "//div[contains(@style,'Quicksand')]")
+        verifyXpath(this.driver, "//div[contains(@style,'Quicksand')]")
+        clickXpath(this.driver, "//*[@id='closeThemeModal']");
+        this.driver.sleep(400);
+        console.log('      - theme saved');
+        clickXpath(this.driver, "//a[text()='Design']");
+        waitForPageLoad(this.driver);
+        clickXpath(this.driver, "//a[text()='Theme']");
+        waitForPageLoad(this.driver);
+        verifyXpath(this.driver, "//*[@id='themeData']//*[contains(text(),'Quicksand')]");
+        verifyXpath(this.driver, "//div[contains(@style,'Quicksand')]")
+        return verifyXpath(this.driver, "//*[@id='currentTheme' and text()='Orchid']");
     });
 
     it('can edit theme font', function() {
@@ -123,7 +133,13 @@ describe("testing styled starter project", function() {
         console.log('      - select new web font');
         selectOption(this.driver, 'selectWebFont', 'Cabin');
         verifyXpath(this.driver, "//*[@id='themeData']//*[contains(text(),'Cabin')]");
-        return verifyXpath(this.driver, "//div[contains(@style,'Cabin')]")
+        verifyXpath(this.driver, "//div[contains(@style,'Cabin')]")
+
+        console.log('      - theme saved');
+        clickXpath(this.driver, "//a[text()='About']");
+        waitForPageLoad(this.driver);
+        verifyXpath(this.driver, "//div[contains(@style,'Cabin')]")
+        return verifyXpath(this.driver, "//*[@id='currentTheme' and text()='Custom']");
     });
 
     it('can edit theme color', function() {
@@ -133,6 +149,8 @@ describe("testing styled starter project", function() {
         verifyXpath(this.driver, "//input[@value='base' and @readonly]");
         shouldNotFind(this.driver, "//input[@value='base' and @readonly]/..//*[text()='×']");
         console.log('      - base color not editable');
+
+        verifyXpath(this.driver, "//*[@id='currentTheme' and text()='Default Theme']");
 
         verifyXpath(this.driver, "//input[@value='blue']");
         clickXpath(this.driver, "//*[text()='×' and @data-color='blue']");
@@ -158,7 +176,11 @@ describe("testing styled starter project", function() {
         shouldNotFind(this.driver, "//*[@id='themeData']//*[text()='\"#bababa\"']");
         setInputValue(this.driver, 'input[data-value=ADB4B9]', '#bababa');
         console.log('      - can edit color value');
-        return verifyXpath(this.driver, "//*[@id='themeData']//*[text()='\"#bababa\"']");
+        verifyXpath(this.driver, "//*[@id='themeData']//*[text()='\"#bababa\"']");
+
+        console.log('      - theme saved');
+        this.driver.get('http://localhost:3000/');
+        return verifyXpath(this.driver, "//*[@id='currentTheme' and text()='Custom']");
     });
 
 });

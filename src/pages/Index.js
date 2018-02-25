@@ -59,7 +59,7 @@ export default (props) => (
 
 			<Section>
 				<Heading>Theming</Heading>
-				<Para>To adjust colors, layout and typography, edit the <Link href="https://github.com/johnpolacek/styled-starter-basic/blob/master/src/_Theme.js">theme file</Link> in the <Code f={2}>/src</Code> directory. You can use <Link href="https://johnpolacek.github.io/design-system-playground/">Design System Playground</Link> to generate theme data. Try out some sample themes by clicking <Link href="#editTheme">edit theme</Link> at the top of this page.</Para>
+				<Para>To adjust colors, layout and typography, edit the <Link href="https://github.com/johnpolacek/styled-starter-basic/blob/master/src/_Theme.js">theme file</Link> in the <Code f={2}>/src</Code> directory. Generate theme data by setting custom fonts or colors in the <Link href="/design#/theme">Theme section</Link>. You can also choose from a selection of sample themes by clicking <Link href="#editTheme">choose theme</Link> at the top of this page.</Para>
 			</Section>
 
 			<Section>

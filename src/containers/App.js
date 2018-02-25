@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import connect from 'refunk';
 import { ThemeProvider } from 'styled-components';
 import { Box, Text, H3 } from 'styled-system-html';

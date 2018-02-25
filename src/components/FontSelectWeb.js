@@ -8,13 +8,13 @@ export default (props) => (
         <option disabled>────────── sans-serif</option>
         {
             Object.keys(webfonts.sans).map((fontName) => {
-                return <option value={webfonts.sans[fontName]}>{fontName}</option>
+                return <option key={fontName} value={webfonts.sans[fontName]}>{fontName}</option>
             })
         }
         <option disabled>────────── serif</option>
         {
             Object.keys(webfonts.serif).map((fontName) => {
-                return <option value={webfonts.serif[fontName]}>{fontName}</option>
+                return <option key={fontName} value={webfonts.serif[fontName]}>{fontName}</option>
             })
         }
     </Select>

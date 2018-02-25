@@ -1,7 +1,8 @@
 // Typography
+export const name = 'Default Theme'
 export const fontFamilies = [`'Nunito', sans-serif`];
 export const font = fontFamilies[0];
-export const monospace = `"SF Mono", "Roboto Mono", Menlo, monospace`
+export const monospace = `'Roboto Mono', Menlo, monospace`
 
 export const fontSizes = [
   12,
@@ -154,6 +155,7 @@ export const space = [
 export const radius = 4
 
 export default {
+  name,
   font,
   monospace,
   fontFamilies,

@@ -1,17 +1,35 @@
 import themes 	from './_Themes';
 import chroma from 'chroma-js';
+import jc from 'json-cycle';
+
+const saveTheme = (theme) => {
+	localStorage.setItem('savedTheme',JSON.stringify(jc.decycle(theme)));
+}
 
 export const enableChooseThemeModal = value => state => ({ enableChooseThemeModal: value })
-export const updateTheme = newTheme => state => ({ currentTheme:newTheme, theme:themes[newTheme] })
-export const setFont = newFont => state => ({ currentTheme:'Custom', theme:Object.assign({}, state.theme,{font:newFont, fontFamilies:[newFont]}) })
-export const setWebFont = webFont => state => ({ currentTheme:'Custom', theme:Object.assign({}, state.theme, {webfont: [webFont.embed], font:webFont.name, fontFamilies:[webFont.name]}) })
+export const updateTheme = newTheme => state => { 
+	saveTheme(themes[newTheme]);
+	return {theme:themes[newTheme]} 
+}
+export const setFont = newFont => state => { 
+	let newTheme = Object.assign({}, state.theme,{name: 'Custom', font:newFont, fontFamilies:[newFont]})
+	saveTheme(newTheme);
+	return {theme: newTheme}
+}
+export const setWebFont = webFont => state => {
+	let newTheme = Object.assign({}, state.theme, {name: 'Custom', webfont: [webFont.embed], font:webFont.name, fontFamilies:[webFont.name]})
+	saveTheme(newTheme);
+	return {theme: newTheme}
+}
 export const deleteColor = color => state => {
 	let newTheme = {...state.theme}
 	delete newTheme.colors[color]
 	for (let i of Array(10).keys()) {
 	    delete newTheme.colors[color + i]
 	}
-	return {currentTheme:'Custom', theme: newTheme}
+	newTheme.name = 'Custom';
+	saveTheme(newTheme);
+	return {theme: newTheme}
 }
 export const updateColorName = colorName => state => {
 	if (colorName.old !== colorName.new) {
@@ -40,7 +58,9 @@ export const updateColorName = colorName => state => {
 		})
 		let newTheme = {...state.theme};
 		newTheme.colors = orderedColors;
-		return {currentTheme:'Custom', theme: newTheme}
+		newTheme.name = 'Custom';
+		saveTheme(newTheme);
+		return {theme: newTheme}
 	} else {
 		return false;
 	}
@@ -54,7 +74,9 @@ export const updateColorValue = color => state => {
 			newTheme.colors[color.name+i] = shadeValue.toLowerCase();
 		}
 	}
-	return {currentTheme:'Custom', theme: newTheme}
+	newTheme.name = 'Custom';
+	saveTheme(newTheme);
+	return {theme: newTheme}
 }
 
 const getShades = (hex) => {

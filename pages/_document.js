@@ -32,7 +32,7 @@ export default class MyDocument extends Document {
 injectGlobal`
   html{box-sizing:border-box;} *,*:before,*:after{box-sizing:inherit;} 
   body{margin:0;font-family:'Nunito',sans-serif;line-height:1.6;} 
-  button,input[type=submit]{cursor:pointer;}
+  button,input[type=submit]{cursor:pointer;font-family:inherit;}
   p{line-height:1.5;}
   select{padding:8px;}
   h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{text-rendering:optimizelegibility;margin:0;}
