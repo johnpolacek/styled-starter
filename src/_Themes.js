@@ -90,6 +90,7 @@ turquoise.colors = {"base":"#48D1CC","black":"#000","blue":"#4893d1","blue0":"#e
 
 export default {
   'Crimson': crimson,
+  'Default': defaultTheme,
   'Forest': forest,
   'Gold': gold,
   'Indigo': indigo,

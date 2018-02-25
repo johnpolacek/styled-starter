@@ -103,12 +103,8 @@ describe("testing styled starter project", function() {
         verifyXpath(this.driver, "//h1[@class='sc-VigVT echnWL']")
         console.log('      - styles applied');
         verifyXpath(this.driver, "//div[contains(@style,'Quicksand')]")
-        clickXpath(this.driver, "//*[@id='closeThemeModal']");
-        this.driver.sleep(400);
         console.log('      - theme saved');
-        clickXpath(this.driver, "//a[text()='Design']");
-        waitForPageLoad(this.driver);
-        clickXpath(this.driver, "//a[text()='Theme']");
+        this.driver.get('http://localhost:3000/design#/theme');
         waitForPageLoad(this.driver);
         verifyXpath(this.driver, "//*[@id='themeData']//*[contains(text(),'Quicksand')]");
         verifyXpath(this.driver, "//div[contains(@style,'Quicksand')]")

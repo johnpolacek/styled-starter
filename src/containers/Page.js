@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
+import connect from 'refunk';
 import App from './App'
 import theme from '../_Theme'
+import { setTheme } from '../updaters'
 
-let savedTheme = false;
-
-class Page extends React.Component {
+class Page extends Component {
 	constructor() {
-		super();
+		super()
+	}
+
+	componentDidMount() {
+		if (typeof localStorage !== 'undefined' && localStorage.getItem('savedTheme')) {
+			this.props.update(setTheme(JSON.parse(localStorage.getItem('savedTheme'))))
+		}
 	}
 
 	render() {
-		if (typeof localStorage !== 'undefined') {
-			savedTheme = JSON.parse(localStorage.getItem('savedTheme'));
-		}
-		
-		return(
-			<App {...Object.assign({}, {theme: savedTheme || theme}, this.props)} />
+		return (
+			<App {...Object.assign({}, {theme:theme}, this.props)} />
 		)
 	}
 }
 
-export default Page;
+export default connect(Page);

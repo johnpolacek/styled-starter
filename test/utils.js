@@ -14,7 +14,11 @@ function verifyXpath(driver, xpath) {
 
 module.exports = {
     shouldNotFindXpath: function(driver, xpath) {
+        
         return driver.findElements(By.xpath(xpath)).then(function(elements) {
+            if (elements.length !== 0) {
+                console.error('shouldNotFindXpath '+xpath);
+            }
             assert.equal(0,elements.length);
         });
     },

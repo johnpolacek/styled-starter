@@ -19,7 +19,6 @@ import Forms from './design/Forms';
 import Rebass from './design/Rebass';
 import ReactDOM from 'react-dom';
 import {Catalog} from 'catalog';
-import theme from '../_Theme';
 
 
 class Design extends Component {
