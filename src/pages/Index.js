@@ -14,6 +14,10 @@ export default (props) => (
 		<SiteHeader />
 		<Box p={[4,5]} mw="960px" mx="auto">
 			<Section>
+				<Para pr={4}>Use Styled Starter to get a React project up and running quickly with Server-Side Rendering (thanks to <Link href="https://github.com/zeit/next.js">Next.js</Link>) and a built-in design system (thanks to <Link href="https://www.styled-components.com/">Styled Components</Link> with <Link href="http://jxnblk.com/styled-system/">Styled System</Link>).</Para>
+			</Section>
+
+			<Section>
 				<Heading>Getting Started</Heading>
 				<Para>First, <Link href="https://github.com/johnpolacek/styled-starter-basic/archive/master.zip">download</Link> the <Link href="https://github.com/johnpolacek/styled-starter-basic/">basic starter kit</Link>, then install from within the project directory.</Para>
 				<Box w="144px" px={3} py={1} mb={4} bg="rgba(0,0,0,.01)" borderWidth="1px" borderColor="rgba(0,0,0,.025)">

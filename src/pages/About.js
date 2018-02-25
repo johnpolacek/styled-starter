@@ -11,7 +11,7 @@ export default (props) => (
 		<SiteHeader />
 		<Box p={[4,5]} mw="960px" mx="auto">
 			<Section>
-				<Para>Styled Starter is built on top of <Link href="http://jxnblk.com/styled-system/">Styled System</Link> and <Link href="https://github.com/zeit/next.js">Next.js</Link>, using <Link href="https://www.catalog.style/">Catalog</Link> for the styleguide.</Para>
+				<Para>Styled Starter is built on top of <Link href="http://jxnblk.com/styled-system/">Styled System</Link> and <Link href="https://github.com/zeit/next.js">Next.js</Link>, using <Link href="https://www.catalog.style/">Catalog</Link> for the design system styleguide.</Para>
 			</Section>
 			<Section>
 				<Heading>Styled Components / Styled System</Heading>
