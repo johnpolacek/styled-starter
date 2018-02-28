@@ -27,18 +27,17 @@ export default (props) => (
 				<Box w="144px" px={3} py={1} mb={4} bg="rgba(0,0,0,.01)" borderWidth="1px" borderColor="rgba(0,0,0,.025)">
 					<Pre><Code color="rgb(57, 58, 52)" f={2}>npm run dev</Code></Pre>
 				</Box>
-				<Para>Open up <Link href="http://localhost:3000/">localhost:3000</Link> on your browser and you should see a page that looks <Link href="https://johnpolacek.github.io/styled-starter-basic/">like this</Link>.</Para>
+				<Para>Open up <Link href="http://localhost:3000/">localhost:3000</Link> on your browser and you should see a page that looks <Link href="https://johnpolacek.github.io/styled-starter-basic-gh-pages/">like this</Link>.</Para>
 			</Section>
 
 			<Section>
 				<Heading>Pages and Routing</Heading>
-				<Para>By default, the starter project has two pages: an <Link href="https://johnpolacek.github.io/styled-starter-basic/">index page</Link> and an <Link href="https://johnpolacek.github.io/styled-starter-basic/">about page</Link>.</Para>
+				<Para>By default, the starter project has two pages: an <Link href="https://johnpolacek.github.io/styled-starter-basic-gh-pages/">index page</Link> and an <Link href="https://johnpolacek.github.io/styled-starter-basic-gh-pages/">about page</Link>.</Para>
 				<Para>To add a new page, go to src/pages and duplicate <Link href="https://github.com/johnpolacek/styled-starter-basic/blob/master/src/pages/About.js">About.js</Link> then change its name and edit it.</Para>
 				<CodeBlock>{snippets.newPage1}</CodeBlock>
 				<Para>Next, go to the <Link href="https://github.com/johnpolacek/styled-starter-basic/tree/master/pages">top level pages directory</Link> and create a new page.</Para>
 				<CodeBlock>{snippets.newPage2}</CodeBlock>
-				<Para>Last, we need to tell <Code f={2} px={1}>next.config.js</Code> about our new route.</Para>
-				<CodeBlock>{snippets.nextRoute}</CodeBlock>
+				<Para>That’s it! Well, unless your project is a Github project page. For that, you will need to set up <code>next.config.js</code> (see <Link href="https://github.com/johnpolacek/styled-starter-basic-gh-pages">this branch</Link> for more info).</Para>
 			</Section>
 
 			<Section>
