@@ -66,6 +66,11 @@ export default (props) => (
 			</Section>
 
 			<Section>
+				<Heading>State Management</Heading>
+				<Para>This demo uses <Link href="https://github.com/jxnblk/refunk">Refunk</Link> for state management. It is a simpler, smaller alternative to other state management libraries that makes use of React’s built-in component state. See <Link href="https://github.com/johnpolacek/styled-starter-with-refunk">Styled Starter with Refunk</Link>.</Para>
+			</Section>
+
+			<Section>
 				<Heading>Publish and Deploy</Heading>
 				<Para>The default deploy script will publish to github if you update <code>package.json</code> with your repository url.</Para>
 				<Para>For more information on publishing and deploying, refer to the <Link href="https://github.com/zeit/next.js#production-deployment">Next.js documentation</Link>. To publish as a Github Page, refer to </Para>
