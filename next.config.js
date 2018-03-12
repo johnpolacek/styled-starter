@@ -1,7 +1,4 @@
-const assetPrefix = process.env.ENV_GH_PAGES ? '/styled-starter/' : '';
-
-console.log('process.env.ENV_GH_PAGES',process.env.ENV_GH_PAGES);
-console.log('assetPrefix: '+assetPrefix);
+const assetPrefix = process.env.ENV_GH_PAGES ? '/styled-starter' : '';
 
 module.exports = {
   	exportPathMap: function () {
