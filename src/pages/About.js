@@ -1,4 +1,4 @@
-import { Box, UL, LI } from 'styled-system-html';
+import { Div, UL, LI } from 'styled-system-html';
 import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
 import Section from '../components/Section'
@@ -7,9 +7,9 @@ import Para from '../components/Para'
 import Link from '../components/Link'
 
 export default (props) => (
-	<Box>
+	<Div>
 		<SiteHeader />
-		<Box p={[4,5]} mw="960px" mx="auto">
+		<Div p={[4,5]} maxWidth="960px" mx="auto">
 			<Section>
 				<Para>Styled Starter is built on top of <Link href="http://jxnblk.com/styled-system/">Styled System</Link> and <Link href="https://github.com/zeit/next.js">Next.js</Link>, using <Link href="https://www.catalog.style/">Catalog</Link> for the design system styleguide.</Para>
 			</Section>
@@ -28,7 +28,7 @@ export default (props) => (
 					<LI><Link href="https://hackernoon.com/next-js-react-server-side-rendering-done-right-f9700078a3b6">Next.js — React Server Side Rendering Done Right</Link></LI>
 				</UL>
 			</Section>
-		</Box>
+		</Div>
 		<SiteFooter />
-	</Box>
+	</Div>
 )

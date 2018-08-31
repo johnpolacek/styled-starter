@@ -5,7 +5,8 @@ module.exports = {
 		return {
 			'/': { page: '/' },
 			'/about': { page: '/about' },
-			'/design': { page: '/design' }
+			'/design': { page: '/design' },
+			'/components': { page: '/components' }
 		}
   	},
   	assetPrefix: assetPrefix

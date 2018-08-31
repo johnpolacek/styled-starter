@@ -183,22 +183,22 @@ describe("testing styled starter project", function() {
 
 function verifyTopLevelNav(driver, section) {
     console.log('      - active nav is home');
-    shouldNotFind(driver, "//nav//p[text()='"+section+"']");
-    verifyXpath(driver, "//nav//p[text()='Styled Starter']");
+    shouldNotFind(driver, "//nav//span[text()='"+section+"']");
+    verifyXpath(driver, "//nav//span[text()='Styled Starter']");
     
     console.log('      - click '+section+' link');
     clickXpath(driver, "//nav//a[@href='/"+section.toLowerCase()+"' and text()='"+section+"']");
     waitForPageLoad(driver);
     
     console.log('      - active nav is '+section+'')
-    verifyXpath(driver, "//nav//p[text()='"+section+"']");
+    verifyXpath(driver, "//nav//span[text()='"+section+"']");
 
     console.log('      - click home link');
     clickXpath(driver, "//nav//a[@href='/' and text()='Styled Starter']");
 
     console.log('      - active nav is home');
-    shouldNotFind(driver, "//nav//p[text()='"+section+"']");
-    return verifyXpath(driver, "//nav//p[text()='Styled Starter']");
+    shouldNotFind(driver, "//nav//span[text()='"+section+"']");
+    return verifyXpath(driver, "//nav//span[text()='Styled Starter']");
 }
 
 function verifyDesignCenterNav(driver, navText, section) {
