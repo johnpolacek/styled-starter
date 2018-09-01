@@ -17,7 +17,7 @@ const SiteNav = connect(props => (
                 </Div>
             </Div>
             <Flex flexWrap="wrap" fontSize={[1,2]}>
-                <SiteNavLink url="" isCurrent={props.current === 'Index'}>Styled Starter</SiteNavLink>
+                <SiteNavLink url="/" isCurrent={props.current === 'Index'}>Styled Starter</SiteNavLink>
                 <SiteNavLink url="/about" isCurrent={props.current === 'About'}>About</SiteNavLink>
                 <SiteNavLink url="/design" isCurrent={props.current === 'Design'}>Design</SiteNavLink>
                 <SiteNavLink url="/components" isCurrent={props.current === 'Components'}>Components</SiteNavLink>
