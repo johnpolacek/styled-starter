@@ -25,7 +25,7 @@ export default (props) => (
 								if (color != 'base' && color != 'white' && color != 'black' && color != 'gray' && !(/\d/.test(color))) {
 									return (
 										<Div pb={4}>
-											<CodeSpecimen f="12px" w={2/3} code={`<Button bg="`+color+`">`+color.substring(0,1).toUpperCase()+color.substring(1)+` Button</Button>`} scope={scope} />
+											<CodeSpecimen key={'buttonCodeSpecimen-'+color} f="12px" w={2/3} code={`<Button bg="`+color+`">`+color.substring(0,1).toUpperCase()+color.substring(1)+` Button</Button>`} scope={scope} />
 										</Div>
 									)
 								}
@@ -36,7 +36,7 @@ export default (props) => (
 						Object.keys(props.theme.colors).map(
 							(color) => { 
 								if (color != 'base' && color != 'white' && color != 'black' && color != 'gray' && !(/\d/.test(color))) {
-									return <CodeSpecimen f="14px" w={2/3} code={`<ButtonOutline color="`+color+`">Outline `+color.substring(0,1).toUpperCase()+color.substring(1)+`</ButtonOutline>`} scope={scope} />
+									return <CodeSpecimen key={'buttonOutlineCodeSpecimen-'+color} f="14px" w={2/3} code={`<ButtonOutline color="`+color+`">Outline `+color.substring(0,1).toUpperCase()+color.substring(1)+`</ButtonOutline>`} scope={scope} />
 								}
 							}
 						)

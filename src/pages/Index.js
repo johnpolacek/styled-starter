@@ -21,13 +21,13 @@ export default (props) => (
 			<Section>
 				<Heading>Getting Started</Heading>
 				<Para>First, <Link href="https://github.com/johnpolacek/styled-starter-basic/archive/master.zip">download</Link> the <Link href="https://github.com/johnpolacek/styled-starter-basic/">basic starter kit</Link>, then install from within the project directory.</Para>
-				<Box width="144px" px={3} py={1} mb={4} bg="rgba(0,0,0,.01)" border="1px solid" borderColor="rgba(0,0,0,.025)">
+				<Div width="144px" px={3} py={1} mb={4} bg="rgba(0,0,0,.01)" border="1px solid" borderColor="rgba(0,0,0,.025)">
 					<Pre><Code color="rgb(57, 58, 52)" fontSize={2}>npm install</Code></Pre>
-				</Box>
+				</Div>
 				<Para>Get a dev environment up and running.</Para>
-				<Box width="144px" px={3} py={1} mb={4} bg="rgba(0,0,0,.01)" border="1px solid" borderColor="rgba(0,0,0,.025)">
+				<Div width="144px" px={3} py={1} mb={4} bg="rgba(0,0,0,.01)" border="1px solid" borderColor="rgba(0,0,0,.025)">
 					<Pre><Code color="rgb(57, 58, 52)" fontSize={2}>npm run dev</Code></Pre>
-				</Box>
+				</Div>
 				<Para>Open up <Link href="http://localhost:3000/">localhost:3000</Link> on your browser and you should see a page that looks <Link href="https://johnpolacek.github.io/styled-starter-basic-gh-pages/">like this</Link>.</Para>
 			</Section>
 
@@ -80,9 +80,9 @@ export default (props) => (
 			<Section>
 				<Heading>Testing</Heading>
 				<Para>Included is a very simple end-to-end <Link href="http://seleniumhq.github.io/selenium/docs/api/javascript/">Selenium</Link> integration test which can be run in your local environment. With the server running:</Para>
-				<Box width="144px" px={3} py={1} mb={4} bg="rgba(0,0,0,.01)" border="1px solid" borderColor="rgba(0,0,0,.025)">
+				<Div width="144px" px={3} py={1} mb={4} bg="rgba(0,0,0,.01)" border="1px solid" borderColor="rgba(0,0,0,.025)">
 					<Pre><Code color="rgb(57, 58, 52)" fontSize={2}>npm run test</Code></Pre>
-				</Box>
+				</Div>
 				<Para>For a more detailed example, with integration with <Link href="https://travis-ci.org/">Travis CI</Link> and <Link href="https://saucelabs.com/opensauce">SauceLabs</Link>, refer to the <Link href="https://github.com/johnpolacek/styled-starter/tree/master/test">tests directory</Link> in the Styled Starter project repo. More info:</Para>
 				<UL>
 					<LI><Link href="http://seleniumhq.github.io/selenium/docs/api/javascript/">Selenium WebDriver JavaScript API</Link></LI>
