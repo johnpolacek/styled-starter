@@ -8,7 +8,7 @@ import theme from '../_Theme'
 import ChooseThemeModal from '../components/ChooseThemeModal'
 
 export default (props) => (
-	<Div fontFamily={props.theme.fontFamilies[0]}>
+	<Div id="pageWrapper" fontFamily={props.theme.fontFamilies[0]}>
 	    <Head prefix={props.prefix} />
 	    <ThemeProvider theme={props.theme}>
 	    	<Div>

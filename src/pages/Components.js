@@ -8,14 +8,14 @@ import Introduction from './components/Introduction'
 import Buttons from './components/Buttons'
 import Cards from './components/Cards'
 import Forms from './components/Forms'
-import Rebass from './components/Rebass'
+import Libraries from './components/Libraries'
 
 const content = {
 	'Introduction': Introduction,
 	'Buttons': Buttons,
 	'Cards': Cards,
 	'Forms': Forms,
-	'Rebass': Rebass,
+	'Libraries': Libraries,
 }
 
 export default (props) => (

@@ -7,20 +7,21 @@ import Link from '../../components/Link';
 import CodeBlock from '../../components/CodeBlock'
 import FontSelectBrowser from '../../components/FontSelectBrowser'
 import FontSelectWeb from '../../components/FontSelectWeb'
-import { setFont } from '../../updaters'
+import { setFont, setWebFont, updateColorName, updateColorValue, deleteColor } from '../../updaters'
+
 
 
 const Theme = (props) => (
 	<ThemeProvider theme={props.theme}>
-		<Flex wrap="wrap" p={4} mx={1}>
+		<Flex wrap="wrap">
 			<Box width={[1,1,1/2]} pr={4}>
 				<Heading>Edit Theme</Heading>
 				<H4 py={2}>Choose a font</H4>
 				<Box pb={3}>
-					<FontSelectBrowser setFont={(font) => props.update(setFont)} />
+					<FontSelectBrowser setFont={(font) => {props.update(setFont(font))}} />
 				</Box>
 				<Div pb={3}>
-					<FontSelectWeb setWebFont={(font) => props.update(setWebFont)} />
+					<FontSelectWeb setWebFont={(font) => {props.update(setWebFont(font))}} />
 				</Div>
 				<H4 pt={4} pb={2}>Choose colors</H4>
 				<Flex width={[310,310,310,310,370]} flexWrap="wrap">{
@@ -34,9 +35,9 @@ const Theme = (props) => (
 											color !== 'base' ? (
 												<Input style={{fontFamily:props.theme.font}} onBlur={(e) => { 
 													if (e.target.value !== '') {
-														props.updaters.updateColorName({old:color,new:e.target.value})
+														props.update(updateColorName({old:color,new:e.target.value}))
 													} else { 
-														props.updaters.deleteColor(color) 
+														props.update(deleteColor(color))
 													}
 												}} width={120} mr={3} defaultValue={color} />
 											) : (
@@ -46,7 +47,7 @@ const Theme = (props) => (
 									
 										<Input data-value={props.theme.colors[color].toUpperCase().replace('#','')} onBlur={(e) => {
 											if (/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(e.target.value)) {
-												props.updaters.updateColorValue({name:color,value:e.target.value})
+												props.update(updateColorValue({name:color,value:e.target.value}))
 											} else {
 												e.target.value = props.theme.colors[color].toUpperCase()
 											}
@@ -55,7 +56,7 @@ const Theme = (props) => (
 									{
 										color !== 'base' &&
 										<Div position="absolute" top="0" right="0" style={{cursor:'pointer'}}>
-											<Span position="absolute" top="0" right="8px" data-color={color} onClick={(e) => props.updaters.deleteColor(color)} fontSize='24px' color={props.theme.colors.red6 || 'indianred'} children='×' />
+											<Span position="absolute" top="0" right="8px" data-color={color} onClick={(e) => props.update(deleteColor(color))} fontSize='24px' color={props.theme.colors.red6 || 'indianred'} children='×' />
 										</Div>
 									}
 								</Flex>

@@ -11,7 +11,7 @@ var assert = require("assert"),
     until = webdriver.until;
 
 
-describe("testing styled starter project", function() {
+describe('styled starter', function() {
     this.timeout(20000);
 
     beforeEach(function() {
@@ -48,98 +48,81 @@ describe("testing styled starter project", function() {
     });
 
     it('can navigate design pages', function() {
-        this.driver.get('http://localhost:3000/design#/');
+        this.driver.get('http://localhost:3000/design/');
         waitForPageLoad(this.driver);
 
         console.log('      - default section is Introduction');
         verifyXpath(this.driver, "//h1[text()='Introduction']");
 
-        verifyDesignCenterNav(this.driver, 'Color', 'Color');
-        verifyDesignCenterNav(this.driver, 'Typography', 'Font');
-        verifyDesignCenterNav(this.driver, 'Layout', 'Layout');
-        verifyDesignCenterNav(this.driver, 'Components','Overview');
-        return verifyDesignCenterNav(this.driver, 'Introduction','Introduction');
+        verifyDocsNav(this.driver, 'Theme');
+        verifyDocsNav(this.driver, 'Color');
+        verifyDocsNav(this.driver, 'Typography');
+        verifyDocsNav(this.driver, 'Layout');
+        return verifyDocsNav(this.driver, 'Introduction');
     });
 
-    it('can navigate design typography subsections', function() {
-        this.driver.get('http://localhost:3000/design#/font');
+    it('can navigate components pages', function() {
+        this.driver.get('http://localhost:3000/components/');
         waitForPageLoad(this.driver);
 
-        console.log('      - default section is Font');
-        verifyXpath(this.driver, "//h1[text()='Font']");
+        console.log('      - default section is Introduction');
+        verifyXpath(this.driver, "//h1[text()='Introduction']");
 
-        verifyDesignCenterSubsection(this.driver, 'Type Scale');
-        verifyDesignCenterSubsection(this.driver, 'Text Elements');
-        verifyDesignCenterSubsection(this.driver, 'Headings');
-        verifyDesignCenterSubsection(this.driver, 'Paragraph');
-        verifyDesignCenterSubsection(this.driver, 'Lists');
-        return verifyDesignCenterSubsection(this.driver, 'Font');
+        verifyDocsNav(this.driver, 'Buttons');
+        verifyDocsNav(this.driver, 'Cards');
+        verifyDocsNav(this.driver, 'Forms');
+        verifyDocsNav(this.driver, 'Libraries');
+        return verifyDocsNav(this.driver, 'Introduction');
     });
 
-    it('can navigate design components subsections', function() {
-        this.driver.get('http://localhost:3000/design#/overview');
-        waitForPageLoad(this.driver);
-
-        console.log('      - default section is Overview');
-        verifyXpath(this.driver, "//h1[text()='Overview']");
-
-        verifyDesignCenterSubsection(this.driver, 'Buttons');
-        verifyDesignCenterSubsection(this.driver, 'Cards');
-        verifyDesignCenterSubsection(this.driver, 'Forms');
-        verifyDesignCenterSubsection(this.driver, 'Rebass');
-        return verifyDesignCenterSubsection(this.driver, 'Overview');
-    });
 
     it('can choose theme', function() {
         verifyXpath(this.driver, "//*[@id='currentTheme' and text()='Default Theme']");
-        verifyXpath(this.driver, "//header[@class='sc-EHOje wXwPz']");
-        verifyXpath(this.driver, "//div[contains(@style,'Nunito')]")
+        verifyXpath(this.driver, "//header[@class='sc-htpNat bSPaLj']");
         clickXpath(this.driver, "//button[text()='choose theme']");
         this.driver.sleep(1000);
         selectOption(this.driver, "selectTheme", "Orchid");
         console.log('      - choose new theme');
         verifyXpath(this.driver, "//*[@id='currentTheme' and text()='Orchid']");
-        verifyXpath(this.driver, "//header[@class='sc-EHOje dLSSXv']");
-        verifyXpath(this.driver, "//h1[@class='sc-VigVT echnWL']")
+        verifyXpath(this.driver, "//header[@class='sc-htpNat gCmTCS']");
+        verifyXpath(this.driver, "//h1[@class='sc-htpNat cySRgs']")
         console.log('      - styles applied');
-        verifyXpath(this.driver, "//div[contains(@style,'Quicksand')]")
         console.log('      - theme saved');
         this.driver.get('http://localhost:3000/design#/theme');
         waitForPageLoad(this.driver);
         verifyXpath(this.driver, "//*[@id='themeData']//*[contains(text(),'Quicksand')]");
-        verifyXpath(this.driver, "//div[contains(@style,'Quicksand')]")
         return verifyXpath(this.driver, "//*[@id='currentTheme' and text()='Orchid']");
     });
 
     it('can edit theme font', function() {
-        this.driver.get('http://localhost:3000/design#/theme');
+        this.driver.get('http://localhost:3000/design#Theme');
         waitForPageLoad(this.driver);
         verifyXpath(this.driver, "//*[@id='themeData']//*[contains(text(),'Nunito')]");
-        verifyXpath(this.driver, "//div[contains(@style,'Nunito')]")
+        verifyXpath(this.driver, "//div[@id='pageWrapper' and contains(@class,'gEcvDw')]");
         
         selectOption(this.driver, 'selectBrowserFont', 'Arial, sans-serif');
 
         console.log('      - select new browser font');
         shouldNotFind(this.driver, "//*[@id='themeData']//*[contains(text(),'Nunito')]");
-        shouldNotFind(this.driver, "//div[contains(@style,'Nunito')]")
+        shouldNotFind(this.driver, "//div[@id='pageWrapper' and contains(@class,'gEcvDw')]");
         verifyXpath(this.driver, "//*[@id='themeData']//*[contains(text(),'Arial')]");
         console.log('      - font updated');
-        verifyXpath(this.driver, "//div[contains(@style,'Arial')]")
+        verifyXpath(this.driver, "//div[@id='pageWrapper' and contains(@class,'dYrCOJ')]");
 
         console.log('      - select new web font');
         selectOption(this.driver, 'selectWebFont', 'Cabin');
         verifyXpath(this.driver, "//*[@id='themeData']//*[contains(text(),'Cabin')]");
-        verifyXpath(this.driver, "//div[contains(@style,'Cabin')]")
+        verifyXpath(this.driver, "//div[@id='pageWrapper' and contains(@class,'tQZCH')]");
 
         console.log('      - theme saved');
         clickXpath(this.driver, "//a[text()='About']");
         waitForPageLoad(this.driver);
-        verifyXpath(this.driver, "//div[contains(@style,'Cabin')]")
+        verifyXpath(this.driver, "//div[@id='pageWrapper' and contains(@class,'tQZCH')]");
         return verifyXpath(this.driver, "//*[@id='currentTheme' and text()='Custom']");
     });
 
     it('can edit theme color', function() {
-        this.driver.get('http://localhost:3000/design#/theme');
+        this.driver.get('http://localhost:3000/design#Theme');
         waitForPageLoad(this.driver);
         
         verifyXpath(this.driver, "//input[@value='base' and @readonly]");
@@ -201,18 +184,10 @@ function verifyTopLevelNav(driver, section) {
     return verifyXpath(driver, "//nav//span[text()='Styled Starter']");
 }
 
-function verifyDesignCenterNav(driver, navText, section) {
+function verifyDocsNav(driver, section) {
     console.log('      - verify design center nav: '+section);
 
-    clickXpath(driver, "//ul//li//a[text()='"+navText+"']")
-    waitForPageLoad(driver);
-    return verifyXpath(driver, "//h1[text()='"+section+"']");
-}
-
-function verifyDesignCenterSubsection(driver, section) {
-    console.log('      - verify design center nav: '+section);
-
-    clickXpath(driver, "//ul//li//ul//li//a[text()='"+section+"']");
+    clickXpath(driver, "//ul//li//a[text()='"+section+"']")
     waitForPageLoad(driver);
     return verifyXpath(driver, "//h1[text()='"+section+"']");
 }
