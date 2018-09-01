@@ -11,7 +11,6 @@ import Page from './Page'
 
 class App extends Component {
 	componentDidMount() {
-		console.log(this.props)
 		if (typeof localStorage !== 'undefined' && localStorage.getItem('savedTheme')) {
 			// overwrite default theme in state with theme from local storage
 			this.props.update(setTheme(JSON.parse(localStorage.getItem('savedTheme'))))

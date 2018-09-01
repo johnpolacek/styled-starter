@@ -24,8 +24,6 @@ export default class MyDocument extends Document {
   }
 }
 
-// console.log('document theme: '+this.props.theme);
-
 // Global style
 // eslint-disable-next-line
 injectGlobal`
