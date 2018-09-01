@@ -7,3 +7,7 @@
 <br>
 
 Docs/Demo: [johnpolacek.github.io/styled-starter](https://johnpolacek.github.io/styled-starter/)
+
+<br>
+
+Cross-browser Testing Platform Provided by [Sauce Labs](https://saucelabs.com/)
