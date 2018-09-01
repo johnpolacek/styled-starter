@@ -86,9 +86,9 @@ export const updateColorValue = color => state => {
 }
 
 const getShades = (hex) => {
-		let spectrum = []
-		const lums = [9,8,7,6,5,4,3,2,1,0].map(n => n + .5).map(n => n / 10)
-		return lums.map(lum => {
-			return chroma(hex).luminance(lum).hex()
-		})
-	}
+	let spectrum = []
+	const lums = [9,8,7,6,5,4,3,2,1,0].map(n => n + .5).map(n => n / 10)
+	return lums.map(lum => {
+		return chroma(hex).luminance(lum).hex()
+	})
+}

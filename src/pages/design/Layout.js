@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { Flex, Box, H3, Text } from 'styled-system-html';
+import { Flex, Box } from 'grid-styled';
+import { Div, H3, Text } from 'styled-system-html';
 import Section from '../../components/Section';
 import Heading from '../../components/Heading';
 import Para from '../../components/Para';
@@ -11,24 +11,24 @@ const scope = { Flex, Box };
 
 export default (props) => (
 	<ThemeProvider theme={props.theme}>
-		<Box p={4} mx={1}>
-			<Box pt={3} px={2} mw="960px">
+		<Div p={4} mx={1}>
+			<Div pt={3} px={2} maxWidth="960px">
 				<Section>
 	    			<Heading>Grid</Heading>
-	    			<Para><Link>Grid Styled</Link> is a responsive React grid system built with styled-components.</Para>
-	    			<Flex bg="white" wrap="wrap" align="center" mb={4}>
-						<Box w={[1,1/2,1/3,1/4]} py={4} borderWidth="1px" borderColor="#EEE">Box</Box>
-						<Box w={[1,1/2,1/3,1/4]} py={4} borderWidth="1px" borderColor="#EEE">Box</Box>
-						<Box w={[1,1/2,1/3,1/4]} py={4} borderWidth="1px" borderColor="#EEE">Box</Box>
-						<Box w={[1,1/2,1/3,1/4]} py={4} borderWidth="1px" borderColor="#EEE">Box</Box>
-						<Box w={[1,1/2,1/3,1/4]} py={4} borderWidth="1px" borderColor="#EEE">Box</Box>
-						<Box w={[1,1/2,1/3,1/4]} py={4} borderWidth="1px" borderColor="#EEE">Box</Box>
-						<Box w={[1,1/2,1/3,1/4]} py={4} borderWidth="1px" borderColor="#EEE">Box</Box>
-						<Box w={[1,1/2,1/3,1/4]} py={4} borderWidth="1px" borderColor="#EEE">Box</Box>
-						<Box w={[1,1/2,1/3,1/4]} py={4} borderWidth="1px" borderColor="#EEE">Box</Box>
-						<Box w={[1,1/2,1/3,1/4]} py={4} borderWidth="1px" borderColor="#EEE">Box</Box>
-						<Box w={[1,1/2,1/3,1/4]} py={4} borderWidth="1px" borderColor="#EEE">Box</Box>
-						<Box w={[1,1/2,1/3,1/4]} py={4} borderWidth="1px" borderColor="#EEE">Box</Box>
+	    			<Para><Link href="https://jxnblk.com/grid-styled/">Grid Styled</Link> is a responsive React grid system built with styled-components.</Para>
+	    			<Flex bg="white" flexWrap="wrap" align="center" mb={4}>
+	    				<Box width={[1,1/2,1/3,1/4]}><Div py={4} border="1px solid" borderColor="#EEE">Box</Div></Box>
+	    				<Box width={[1,1/2,1/3,1/4]}><Div py={4} border="1px solid" borderColor="#EEE">Box</Div></Box>
+	    				<Box width={[1,1/2,1/3,1/4]}><Div py={4} border="1px solid" borderColor="#EEE">Box</Div></Box>
+	    				<Box width={[1,1/2,1/3,1/4]}><Div py={4} border="1px solid" borderColor="#EEE">Box</Div></Box>
+	    				<Box width={[1,1/2,1/3,1/4]}><Div py={4} border="1px solid" borderColor="#EEE">Box</Div></Box>
+	    				<Box width={[1,1/2,1/3,1/4]}><Div py={4} border="1px solid" borderColor="#EEE">Box</Div></Box>
+	    				<Box width={[1,1/2,1/3,1/4]}><Div py={4} border="1px solid" borderColor="#EEE">Box</Div></Box>
+	    				<Box width={[1,1/2,1/3,1/4]}><Div py={4} border="1px solid" borderColor="#EEE">Box</Div></Box>
+	    				<Box width={[1,1/2,1/3,1/4]}><Div py={4} border="1px solid" borderColor="#EEE">Box</Div></Box>
+	    				<Box width={[1,1/2,1/3,1/4]}><Div py={4} border="1px solid" borderColor="#EEE">Box</Div></Box>
+	    				<Box width={[1,1/2,1/3,1/4]}><Div py={4} border="1px solid" borderColor="#EEE">Box</Div></Box>
+	    				<Box width={[1,1/2,1/3,1/4]}><Div py={4} border="1px solid" borderColor="#EEE">Box</Div></Box>
 					</Flex>
 				</Section>
 
@@ -38,15 +38,15 @@ export default (props) => (
 						Object.keys(props.theme.space).map(
 							(space) => { 
 								if (parseInt(space) !== 0) {
-									return <Box bg="white" display="inline-block" mx={1} borderWidth="1px" borderColor="#eee" p={parseInt(space)}>
+									return <Div key={'spaceScale'+space} bg="white" display="inline-block" mx={1} border="1px solid" borderColor="#eee" p={parseInt(space)}>
 										<Text>{space}</Text>
-									</Box>
+									</Div>
 								}
 							}
 						)
 					}
 				</Section>
-    		</Box>
-    	</Box>
+    		</Div>
+    	</Div>
 	</ThemeProvider>
 )

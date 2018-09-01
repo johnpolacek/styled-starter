@@ -1,8 +1,8 @@
 import Index from '../src/pages/Index'
-import Page	from '../src/containers/Page'
+import App	from '../src/containers/App'
 
 export default () => (
-	<Page name="Index" prefix=".">
+	<App name="Index" prefix=".">
     	<Index />
-    </Page>
+    </App>
 )

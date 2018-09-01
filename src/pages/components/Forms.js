@@ -10,12 +10,10 @@ import CodeSpecimen from '../../components/CodeSpecimen'
 const scope = { Flex, Box, Div, Form, Label, Input, Span, TextArea, Select, Legend, InputSubmit };
 
 export default (props) => (
-	<ThemeProvider theme={props.theme}>
-		<Div p={4} mx={1}>
-			<Div pt={3} px={2} maxWidth="960px">
-				<Section>
-	    			<Heading>Stacked Form</Heading>
-					<CodeSpecimen f="12px" code={`<Form pt={2} pb={5}>
+	<Div>
+		<Section>
+			<Heading>Stacked Form</Heading>
+				<CodeSpecimen f="12px" code={`<Form pt={2} pb={5}>
 	<Div pb={3}>
 		<Div pb={1}>
 			<Label htmlFor="textInput">Text Input Label</Label>
@@ -61,20 +59,17 @@ export default (props) => (
 	<Div py={3}>
 		<Label htmlFor="checkbox" mr={2}>
 			<Input type="checkbox" name="check" id="check" /> 
-			Checkbox Input Label
+		Checkbox Input Label
 		</Label>
 	</Div>
 	<Div py={3}>
 		<InputSubmit bg="base" type="submit" value="Submit" />
 	</Div>
 </Form>`} scope={scope} />
-	    		</Section>
-			</Div>
-
-			<Div pt={3} px={2} maxWidth="960px">
-				<Section>
-	    			<Heading>Responsive Inline Form</Heading>
-					<CodeSpecimen f="12px" code={`<Form pt={2} pb={5}>
+		</Section>
+		<Section>
+			<Heading>Responsive Inline Form</Heading>
+			<CodeSpecimen f="12px" code={`<Form pt={2} pb={5}>
 	<Flex alignItems="flex-start" flexWrap="wrap" pb={3}>
 		<Box width={[1,1/3]} py={1}>
 			<Label textAlign={['left','right']} htmlFor="textInput" mr={2}>Text Input</Label>
@@ -112,7 +107,7 @@ export default (props) => (
 			<Label htmlFor="radio1" mr={3}>
 				<Input type="radio" name="radio" id="radio1" /> 
 				Radio 1
-			</Label>
+				</Label>
 			<Label htmlFor="radio2" mr={3}>
 				<Input type="radio" name="radio" id="radio2" /> 
 				Radio 2
@@ -128,7 +123,7 @@ export default (props) => (
 			<Label htmlFor="checkbox" mr={2}>
 				<Input type="checkbox" name="check" id="check" /> 
 				Checkbox Input
-			</Label>
+		</Label>
 		</Box>
 	</Flex>
 	<Flex alignItems="flex-start" flexWrap="wrap" py={3}>
@@ -137,8 +132,6 @@ export default (props) => (
 		</Box>
 	</Flex>
 </Form>`} scope={scope} />
-	    		</Section>
-			</Div>
-		</Div>
-	</ThemeProvider>
+		</Section>
+	</Div>
 )

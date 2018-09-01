@@ -1,8 +1,8 @@
-import Design 	from '../src/pages/Design'
-import Page			from '../src/containers/Page'
+import Design from '../src/pages/Design'
+import App from '../src/containers/App'
 
 export default (props) => (
-	<Page name="Design" prefix="..">
-    	<Design theme={props.theme} />
-    </Page>
+	<App name="Design" prefix="..">
+    	<Design />
+    </App>
 )

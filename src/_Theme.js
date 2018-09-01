@@ -136,10 +136,10 @@ export const colors = {
 }
 
 export const breakpoints = [
-  32,
-  48,
-  64,
-  80
+  '32em',
+  '48em',
+  '64em',
+  '80em'
 ]
 
 export const space = [

@@ -1,5 +1,5 @@
-import { Button } from 'styled-system-html';
+import Button from './Button';
 
 export default (props) => (
-	<Button {...Object.assign({}, {f:1, py:1, px: 2, bg:'base'}, props)}>{props.children}</Button>
+	<Button fontSize={0} py={1} px={2} bg='base' {...props}>{props.children}</Button>
 )

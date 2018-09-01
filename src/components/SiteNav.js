@@ -1,31 +1,36 @@
-import connect from 'refunk';
+import { connect } from 'refunk';
 import { enableChooseThemeModal } from '../updaters'
-import { Nav, Flex, Box, H1, A, Img, Text, Button, Span } from 'styled-system-html';
+import { Flex, Box } from 'grid-styled'
+import { Div, Nav, H1, A, Img, Text, Span } from 'styled-system-html';
+import Button from './Button'
 import Link from 'next/link'
 import SiteNavLink from './SiteNavLink'
 import SiteNavLinkExternal from './SiteNavLinkExternal'
 
-const SiteNav = (props) => (
-	<Box bg="base" position="relative" style={{zIndex:9999}}>
-		<Nav bg="rgba(0,0,0,.2)" align='left' px={[2,0,2]}>
-	    	<Box position="absolute" style={{top:0,right:0}} mt={[4,3]} pt={4} pr={2}>
-	    		<Text onClick={() => props.update(enableChooseThemeModal(true))} style={{cursor:'pointer'}} display="inline-block" f={1} pr={3} color="white"><Span id="currentTheme">{props.theme.name}</Span> <Button fontWeight="bold" ml={1} px={1} py='2px' f={0} color="blue">choose theme</Button></Text>
-				<Box display="inline-block" p={3} mt={2}>
-					<Img position="relative" style={{top:'4px'}} width="80" src="https://travis-ci.org/johnpolacek/styled-starter.svg?branch=master" alt="branch health status" />
-				</Box>
-			</Box>
-    		<Flex wrap="wrap">
-    			<SiteNavLink url="/" isCurrent={props.current === 'Index'}>Styled Starter</SiteNavLink>
-    			<SiteNavLink url="/about" isCurrent={props.current === 'About'}>About</SiteNavLink>
-    			<SiteNavLink url="/design" isCurrent={props.current === 'Design'}>Design</SiteNavLink>
-    			<Box ml="auto">
-    				<SiteNavLinkExternal url="https://github.com/johnpolacek/styled-starter">
-    					<Img position="relative" style={{top:'3px',left:'-1px'}} src={(props.current === 'Index' ? '.' : '..') + '/static/images/github.svg'} height="18" alt="Octocat" /> Github
-    				</SiteNavLinkExternal>
-    			</Box>
-	    	</Flex>
-		</Nav>
-	</Box>
-)
+const SiteNav = connect(props => (
+    <Div bg="base" position="fixed" zIndex="9999" width={1}>
+        <Nav bg="rgba(0,0,0,.2)" textAlign='left' px={[2,0,2]}>
+            <Div display={['none','block']} position="absolute" top="48px" right="8px" pl={3} mt={[0,2,3]} bg="base" borderRadius="8px">
+                <Text onClick={() => props.update(enableChooseThemeModal(true))} style={{cursor:'pointer'}} display="inline-block" fontSize={1} pr={3} color="white"><Span id="currentTheme">{props.theme.name}</Span> <Button bg="white" fontWeight="bold" ml={1} px={1} py='2px' fontSize={0} color="blue">choose theme</Button></Text>
+                <Div display="inline-block" px={3} mt={2}>
+                    <Img position="relative" style={{top:'6px'}} width="80px" src="https://travis-ci.org/johnpolacek/styled-starter.svg?branch=master" alt="branch health status" />
+                </Div>
+            </Div>
+            <Flex flexWrap="wrap" fontSize={[1,2]}>
+                <SiteNavLink url="/" isCurrent={props.current === 'Index'}>Styled Starter</SiteNavLink>
+                <SiteNavLink url="/about" isCurrent={props.current === 'About'}>About</SiteNavLink>
+                <SiteNavLink url="/design" isCurrent={props.current === 'Design'}>Design</SiteNavLink>
+                <SiteNavLink url="/components" isCurrent={props.current === 'Components'}>Components</SiteNavLink>
+                <Box ml="auto">
+                    <Div position={['absolute','relative']} top={['36px',0]} right="0">
+                        <SiteNavLinkExternal url="https://github.com/johnpolacek/styled-starter">
+                            <Img position="relative" css={{top:'3px',left:'-1px',height:'18px'}} src={(props.current === 'Index' ? '.' : '..') + '/static/images/github.svg'} alt="Octocat" /> Github
+                        </SiteNavLinkExternal>
+                    </Div>
+                </Box>
+            </Flex>
+        </Nav>
+    </Div>
+))
 
-export default connect(SiteNav);
+export default SiteNav;

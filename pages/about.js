@@ -1,8 +1,8 @@
 import About from '../src/pages/About'
-import Page	from '../src/containers/Page'
+import App	from '../src/containers/App'
 
 export default () => (
-	<Page name="About" prefix="..">
+	<App name="About" prefix="..">
     	<About />
-    </Page>
+    </App>
 )
