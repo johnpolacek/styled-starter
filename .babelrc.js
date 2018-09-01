@@ -12,6 +12,6 @@ module.exports = {
       },
       "./env-config.js"
     ],
-    ["transform-define",{"process.env.BACKEND_URL": process.env.ENV_GH_PAGES ? '/styled-starter/' : ''}]
+    ["transform-define",{"process.env.BACKEND_URL": process.env.ENV_GH_PAGES ? '/styled-starter' : ''}]
   ]
 }
