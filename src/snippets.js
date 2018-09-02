@@ -24,7 +24,7 @@ import NewPage from '../src/pages/NewPage'
 import Page	from '../src/containers/Page'
 
 export default () => (
-	<Page name="NewPage" prefix="..">
+	<Page name="NewPage">
     	<NewPage />
     </Page>
 )
