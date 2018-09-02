@@ -2,18 +2,18 @@
 
 export const newPage1 = `// src/pages/NewPage.js
 
-import { Box } from 'styled-system';
+import { Div } from 'styled-system-html';
 import SiteFooter from '../components/SiteFooter'
 
 export default (props) => (
-	<Box>
-		<Box p={6} mw="1200px" mx="auto" align="center">
+	<Div>
+		<Div p={6} maxWidth="1200px" mx="auto" textAlign="center">
 			{
 				/* Page content will go here */ 
 			}
-		</Box>
+		</Div>
 		<SiteFooter />
-	</Box>
+	</Div>
 )`;
 
 // ------------------------------------------------------------------------------
@@ -51,13 +51,15 @@ export const blockquoteComponent = `import { Blockquote, Footer } from 'styled-s
 export default (props) => (
     <Blockquote 
         bg="gray0" color="base" 
-        px={4} py={3} 
-        borderLeft borderWidth={4} borderColor="gray2"
-        f={4} fontStyle="italic">
+        px={4} py={3} mb={4} ml={[3,4]}
+        borderLeft="8px solid" 
+        borderColor="gray2"
+        fontSize={4} 
+        fontStyle="italic">
         {props.children}
         {
             props.author &&
-            <Footer mt={2} align="right" pr={5} f={1} color="gray">
+            <Footer mt={2} textAlign="right" pr={5} fontSize={1} color="gray">
                 – {props.author}
             </Footer>
         }

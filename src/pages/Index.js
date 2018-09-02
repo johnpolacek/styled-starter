@@ -50,7 +50,7 @@ export default (props) => (
 				<CodeBlock language="xml">{snippets.blockquoteUsage}</CodeBlock>
 				<Para>... you might create that component from SSHTML like this...</Para>
 				<CodeBlock>{snippets.blockquoteComponent}</CodeBlock>
-				<Para>There are many ways to build components with <Link href="https://github.com/jxnblk/styled-system">Styled System</Link>. More documention and examples are in the <Link href="./design">Design</Link> section of this site.</Para>
+				<Para>There are many ways to build components with <Link href="https://github.com/jxnblk/styled-system">Styled System</Link>. See more examples are in the <Link href="./components">Components</Link> section of this site.</Para>
 				<Para>See also:</Para>
 				<UL>
 					<LI><Link href="https://johnpolacek.github.io/styled-system-html/">Styled System HTML</Link></LI>
