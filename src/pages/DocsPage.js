@@ -47,7 +47,7 @@ export default class extends React.Component {
 							const contentName = content[0]
 							const Content = content[1]
 							const theme = this.props.theme
-							return <DocsSection key={contentName+'Content'} title={contentName} active={this.state.content == contentName}><Content theme={theme} /></DocsSection>
+							return <DocsSection key={contentName+'Content'} docsTitle={this.props.title} title={contentName} active={this.state.content == contentName}><Content theme={theme} /></DocsSection>
 						})
 					}
 				</Div>

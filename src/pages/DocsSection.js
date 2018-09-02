@@ -25,7 +25,7 @@ class DocsSection extends Component {
 		return (
 			<Div display={this.state.active ? 'block' : 'none'} minHeight='92vh' position="absolute" top="0" left="0" width={1}>
 				<Div p={4} bg="base">
-					<H3 pt={5} fontWeight="normal" color="white" opacity=".75">Styled Starter {this.props.title}</H3>
+					<H3 pt={5} fontWeight="normal" color="white" opacity=".75">Styled Starter {this.props.docsTitle}</H3>
 					<H1 css={{opacity:this.state.opacity,transition:'opacity .25s ease-out'}} fontWeight="normal" color="white">{this.props.title}</H1>
 				</Div>
 				<Div css={{opacity:this.state.opacity,display:this.state.active ? 'block' : 'none',transition:'opacity .25s ease-out'}} p={4}>
