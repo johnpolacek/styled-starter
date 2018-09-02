@@ -48,7 +48,7 @@ describe('styled starter', function() {
     });
 
     it('can navigate design pages', function() {
-        this.driver.get('http://localhost:3000/design/');
+        this.driver.get('http://localhost:3000/design#Introduction');
         waitForPageLoad(this.driver);
 
         console.log('      - default section is Introduction');
@@ -62,7 +62,7 @@ describe('styled starter', function() {
     });
 
     it('can navigate components pages', function() {
-        this.driver.get('http://localhost:3000/components/');
+        this.driver.get('http://localhost:3000/components#Introduction');
         waitForPageLoad(this.driver);
 
         console.log('      - default section is Introduction');
